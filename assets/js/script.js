@@ -21763,9 +21763,9 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./.yarn/unplugged/
 // ハンバーガーメニューのスクリプトファイル
 // ================================================================================
 
-document.addEventListener('DOMContentLoaded', function () {
-  var dropDownButton = document.getElementById('js-mobile-menu');
-  var menuOpenTarget = document.querySelector('body');
+document.addEventListener('DOMContentLoaded', () => {
+  const dropDownButton = document.getElementById('js-mobile-menu');
+  const menuOpenTarget = document.querySelector('body');
   if (dropDownButton) {
     dropDownButton.addEventListener('click', function () {
       dropDownButton.classList.toggle('is-close');
@@ -21793,8 +21793,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-window.addEventListener('load', function () {
-  var swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-slider-swiper', {
+window.addEventListener('load', () => {
+  const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.js-slider-swiper', {
     modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__.EffectFade, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Autoplay, swiper_modules__WEBPACK_IMPORTED_MODULE_1__.Navigation],
     loop: true,
     slidesPerView: 1,
@@ -21818,14 +21818,14 @@ window.addEventListener('load', function () {
   });
   swiper.on('slideChangeTransitionStart', function () {
     // すべてのimgのanimationを一度リセット
-    document.querySelectorAll('.slide-img img').forEach(function (img) {
+    document.querySelectorAll('.slide-img img').forEach(img => {
       img.style.animation = 'none';
       // 強制リフロー（reflow）で再適用
       void img.offsetWidth;
     });
 
     // アクティブなスライドだけanimationを再度付与
-    var activeImg = document.querySelector('.swiper-slide-active .slide-img img');
+    const activeImg = document.querySelector('.swiper-slide-active .slide-img img');
     if (activeImg) {
       activeImg.style.animation = 'slide-zoom 6s linear forwards';
     }
@@ -21840,10 +21840,6 @@ window.addEventListener('load', function () {
   \***************************************/
 /***/ (function() {
 
-function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i.return) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
-function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { if (r) i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n;else { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } o("next", 0), o("throw", 1), o("return", 2); } }, _regeneratorDefine2(e, r, n, t); }
-function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
-function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 // ================================================================================
 // wp-block-details.js
 // 詳細ブロックのスクリプトファイル
@@ -21851,80 +21847,64 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 //details と summary で実装する開閉アニメーション
 function detailsToggle() {
-  var toggleItems = document.querySelectorAll('.wp-block-details');
+  const toggleItems = document.querySelectorAll('.lp-faq-item');
   if (toggleItems.length === 0) {
     return;
   }
-  var ACTIVE_CLASS = 'is-active';
+  const ACTIVE_CLASS = 'is-active';
   toggleItems.forEach(function (toggleItem) {
-    var summary = toggleItem.querySelector('summary');
+    const summary = toggleItem.querySelector('summary');
     if (!summary) {
       return;
     }
-    var toggleItemStyles = getComputedStyle(toggleItem);
-    var toggleItemClassList = toggleItem.classList;
-    var isBusy = false;
-    var startHeight, endHeight;
-    summary.addEventListener('click', /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(event) {
-        var isOpen, summaryStyles, summaryHeight, toggleItemHeight;
-        return _regenerator().w(function (_context) {
-          while (1) switch (_context.n) {
-            case 0:
-              //デフォルトの挙動を無効化（手動でopen属性の切り替えを行うため）
-              event.preventDefault();
+    const toggleItemStyles = getComputedStyle(toggleItem);
+    const toggleItemClassList = toggleItem.classList;
+    let isBusy = false;
+    let startHeight, endHeight;
+    summary.addEventListener('click', async function (event) {
+      //デフォルトの挙動を無効化（手動でopen属性の切り替えを行うため）
+      event.preventDefault();
 
-              //アニメーションが終了するまでリクエストを無効化
-              if (!isBusy) {
-                _context.n = 1;
-                break;
-              }
-              return _context.a(2);
-            case 1:
-              isBusy = true;
-              isOpen = toggleItem.open; //クリック時に閉じていた場合は先に開く
-              if (!isOpen) {
-                toggleItem.open = true;
-              }
-              toggleItemClassList.toggle(ACTIVE_CLASS, !isOpen);
+      //アニメーションが終了するまでリクエストを無効化
+      if (isBusy) {
+        return;
+      }
+      isBusy = true;
+      const isOpen = toggleItem.open;
+      //クリック時に閉じていた場合は先に開く
+      if (!isOpen) {
+        toggleItem.open = true;
+      }
+      toggleItemClassList.toggle(ACTIVE_CLASS, !isOpen);
 
-              //summaryエリアの高さを取得（閉じている状態の高さ）
-              summaryStyles = getComputedStyle(summary);
-              summaryHeight = summary.offsetHeight + parseFloat(summaryStyles.marginTop) + parseFloat(summaryStyles.marginBottom) + parseFloat(toggleItemStyles.paddingTop) + parseFloat(toggleItemStyles.paddingBottom) + parseFloat(toggleItemStyles.borderTopWidth) + parseFloat(toggleItemStyles.borderBottomWidth);
-              toggleItemHeight = toggleItem.offsetHeight;
-              if (isOpen) {
-                //閉じる
-                startHeight = toggleItemHeight;
-                endHeight = summaryHeight;
-              } else {
-                //開く
-                startHeight = summaryHeight;
-                endHeight = toggleItemHeight;
-              }
+      //summaryエリアの高さを取得（閉じている状態の高さ）
+      const summaryStyles = getComputedStyle(summary);
+      const summaryHeight = summary.offsetHeight + parseFloat(summaryStyles.marginTop) + parseFloat(summaryStyles.marginBottom) + parseFloat(toggleItemStyles.paddingTop) + parseFloat(toggleItemStyles.paddingBottom) + parseFloat(toggleItemStyles.borderTopWidth) + parseFloat(toggleItemStyles.borderBottomWidth);
+      const toggleItemHeight = toggleItem.offsetHeight;
+      if (isOpen) {
+        //閉じる
+        startHeight = toggleItemHeight;
+        endHeight = summaryHeight;
+      } else {
+        //開く
+        startHeight = summaryHeight;
+        endHeight = toggleItemHeight;
+      }
 
-              //開閉アニメーション
-              _context.n = 2;
-              return toggleItem.animate({
-                height: [startHeight + 'px', endHeight + 'px']
-              }, {
-                duration: 300,
-                easing: 'ease'
-              }).finished;
-            case 2:
-              //クリック時に開いていた場合はアニメーション終了後に閉じる
-              if (isOpen) {
-                toggleItem.open = false;
-              }
-              isBusy = false;
-            case 3:
-              return _context.a(2);
-          }
-        }, _callee);
-      }));
-      return function (_x) {
-        return _ref.apply(this, arguments);
-      };
-    }());
+      //開閉アニメーション
+      await toggleItem.animate({
+        height: [startHeight + 'px', endHeight + 'px']
+      }, {
+        duration: 300,
+        easing: 'ease'
+      }).finished;
+
+      //クリック時に開いていた場合はアニメーション終了後に閉じる
+      if (isOpen) {
+        toggleItem.open = false;
+      }
+      isBusy = false;
+    });
 
     //ページ内検索での開閉
     toggleItem.addEventListener('toggle', function () {
@@ -21936,7 +21916,7 @@ function detailsToggle() {
     });
   });
 }
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   detailsToggle();
 });
 
@@ -21954,7 +21934,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // ================================================================================
 
 document.addEventListener('DOMContentLoaded', function () {
-  var header = document.querySelector('.wp-pattern-header.js-fixed');
+  const header = document.querySelector('.wp-pattern-header.js-fixed');
   if (!header) return; // is-fixedがない場合は何もしない
 
   function onScroll() {
@@ -21981,6 +21961,12 @@ document.addEventListener('DOMContentLoaded', function () {
 /******/ 		var cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Check if module exists (development only)
+/******/ 		if (__webpack_modules__[moduleId] === undefined) {
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
