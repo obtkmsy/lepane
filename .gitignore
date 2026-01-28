@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+node_modules/*
+yarn.lock
+package-lock.json
+*.css.map
+*.sass-cache
+.yarn/.cache/*
+.yarn/unplugged/*
+install-state.gz
+.pnp.cjs
+.pnp.loader.mjs
