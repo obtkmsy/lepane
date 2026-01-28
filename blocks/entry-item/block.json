@@ -1,0 +1,36 @@
+{
+	"name": "acf/entry-item",
+	"title": "お知らせ一覧のアイテム",
+	"description": "お知らせ一覧のアイテムを挿入します。",
+	"category": "theme-original",
+	"icon": "block-default",
+	"keywords": ["entry-item", "お知らせ一覧のアイテム"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "entry-item.php"
+	},
+	"supports": {
+		"align": true,
+		"html": false,
+		"jsx": true,
+		"mode": true,
+		"anchor": true,
+		"multiple": true,
+		"reusable": true,
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"gradient": true,
+		"layout": true
+	}
+}

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+// ================================================================================
+// Map Iframe
+// マップ埋め込みのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	// NOTE: デフォルトは 16/9 のアスペクト比 ( スマホは 4/3 で統一 )
+	.wp-pattern-map-iframe {
+		iframe {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 4 / 3;
+			@media #{$md-devices} {
+				aspect-ratio: 16 / 9;
+			}
+		}
+
+		// 1 / 1
+		&.is-square {
+			iframe {
+				@media #{$md-devices} {
+					aspect-ratio: 1 / 1;
+				}
+			}
+		}
+
+		// 1.414 / 1 ( 銀比 )
+		&.is-silver {
+			iframe {
+				@media #{$md-devices} {
+					aspect-ratio: 1.414 / 1;
+				}
+			}
+		}
+	}
+}

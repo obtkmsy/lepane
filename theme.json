@@ -1,0 +1,528 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"border": {
+			"radius": true,
+			"color": true,
+			"style": true,
+			"width": true
+		},
+		"color": {
+			"defaultDuotone": false,
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"link": true,
+			"palette": [
+				{
+					"name": "デフォルト",
+					"color": "#0F0F0F",
+					"slug": "default"
+				},
+				{
+					"name": "メイン",
+					"color": "#1D2088",
+					"slug": "primary"
+				},
+				{
+					"name": "サブ",
+					"color": "#00A0E9",
+					"slug": "secondary"
+				},
+				{
+					"name": "アクセント",
+					"color": "#98D6F6",
+					"slug": "tertiary"
+				},
+				{
+					"name": "グレー",
+					"color": "#767676",
+					"slug": "gray"
+				},
+				{
+					"name": "暗いグレー",
+					"color": "#595959",
+					"slug": "dark-gray"
+				},
+				{
+					"name": "明るいグレー",
+					"color": "#949494",
+					"slug": "light-gray"
+				},
+				{
+					"name": "メイン背景色",
+					"color": "#E6F6FD",
+					"slug": "background-primary"
+				},
+				{
+					"name": "サブ背景色",
+					"color": "#F4F4F4",
+					"slug": "background-secondary"
+				},
+				{
+					"name": "メインボーダー色",
+					"color": "#D4D4D4",
+					"slug": "border-primay"
+				},
+				{
+					"name": "サブボーダー色",
+					"color": "#CCCCCC",
+					"slug": "border-secondary"
+				},
+				{
+					"name": "エラー色",
+					"color": "#DC2626",
+					"slug": "error"
+				},
+				{
+					"name": "ホワイト",
+					"color": "#FFFFFF",
+					"slug": "white"
+				},
+				{
+					"name": "透過色",
+					"color": "transparent",
+					"slug": "transparent"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "1024px",
+			"wideSize": "1216px"
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"dropCap": false,
+			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"lineHeight": true,
+			"textDecoration": false,
+			"textTransform": true,
+			"customFontSize": true,
+			"fluid": {
+				"maxViewportWidth": "1216px",
+				"minViewportWidth": "375px"
+			},
+			"fontSizes": [
+				{
+					"name": "より小さめ（10-11px）",
+					"slug": "x-small",
+					"size": "0.6875rem",
+					"fluid": {
+						"min": "0.625rem",
+						"max": "0.6875rem"
+					}
+				},
+				{
+					"name": "小さめ（12-13px）",
+					"slug": "small",
+					"size": "0.8125rem",
+					"fluid": {
+						"min": "0.75rem",
+						"max": "0.8125rem"
+					}
+				},
+				{
+					"name": "標準（14-16px）",
+					"slug": "medium",
+					"size": "1rem",
+					"fluid": {
+						"min": "0.875rem",
+						"max": "1rem"
+					}
+				},
+				{
+					"name": "大きめ（17-19px）",
+					"slug": "large",
+					"size": "1.1875rem",
+					"fluid": {
+						"min": "1.0625rem",
+						"max": "1.1875rem"
+					}
+				},
+				{
+					"name": "より大きめ（20-23px）",
+					"slug": "x-large",
+					"size": "1.4375rem",
+					"fluid": {
+						"min": "1.25rem",
+						"max": "1.4375rem"
+					}
+				},
+				{
+					"name": "見出し5（14-23px）",
+					"slug": "level-5",
+					"size": "1.4375rem",
+					"fluid": {
+						"min": "0.875rem",
+						"max": "1.4375rem"
+					}
+				},
+				{
+					"name": "見出し4（17-28px）",
+					"slug": "level-4",
+					"size": "1.75rem",
+					"fluid": {
+						"min": "1.0625rem",
+						"max": "1.75rem"
+					}
+				},
+				{
+					"name": "見出し3（20-33px）",
+					"slug": "level-3",
+					"size": "2.0625rem",
+					"fluid": {
+						"min": "1.25rem",
+						"max": "2.0625rem"
+					}
+				},
+				{
+					"name": "見出し2（24-40px）",
+					"slug": "level-2",
+					"size": "2.5rem",
+					"fluid": {
+						"min": "1.5rem",
+						"max": "2.5rem"
+					}
+				},
+				{
+					"name": "見出し1（29-48px）",
+					"slug": "level-1",
+					"size": "3rem",
+					"fluid": {
+						"min": "1.8125rem",
+						"max": "3rem"
+					}
+				},
+				{
+					"name": "タイトル（42-69px）",
+					"slug": "title",
+					"size": "4.3125rem",
+					"fluid": {
+						"min": "2.625rem",
+						"max": "4.3125rem"
+					}
+				}
+			],
+			"fontFamilies": [
+				{
+					"name": "Japanese Font",
+					"slug": "body",
+					"fontFamily": "\"Noto Sans JP\", \"ヒラギノ角ゴ ProN\", \"Hiragino Kaku Gothic ProN\", \"メイリオ\", Meiryo sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Noto Sans JP",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": ["file:./assets/fonts/NotoSansJP-Regular.woff2"]
+						},
+						{
+							"fontFamily": "Noto Sans JP",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": ["file:./assets/fonts/NotoSansJP-Medium.woff2"]
+						},
+						{
+							"fontFamily": "Noto Sans JP",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": ["file:./assets/fonts/NotoSansJP-Bold.woff2"]
+						},
+						{
+							"fontFamily": "Noto Sans JP",
+							"fontStyle": "normal",
+							"fontWeight": "900",
+							"src": ["file:./assets/fonts/NotoSansJP-Black.woff2"]
+						}
+					]
+				},
+				{
+					"name": "English Font",
+					"slug": "decoration",
+					"fontFamily": "\"Open Sans\", \"Noto Sans JP\", sans-serif"
+				}
+			]
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true,
+			"spacingScale": {
+				"steps": 0
+			},
+			"defaultSpacingSizes": false,
+			"customSpacingSize": true,
+			"spacingSizes": [
+				{
+					"name": "4-8px",
+					"size": "clamp(0.25rem, 0.148rem + 0.43vw, 0.5rem)",
+					"slug": "4-8"
+				},
+				{
+					"name": "8-16px",
+					"size": "clamp(0.5rem, 0.296rem + 0.87vw, 1rem)",
+					"slug": "8-16"
+				},
+				{
+					"name": "16-24px",
+					"size": "clamp(1rem, 0.796rem + 0.87vw, 1.5rem)",
+					"slug": "16-24"
+				},
+				{
+					"name": "24-32px（デフォルト）",
+					"size": "clamp(1.5rem, 1.296rem + 0.87vw, 2rem)",
+					"slug": "24-32"
+				},
+				{
+					"name": "32-48px",
+					"size": "clamp(2rem, 1.593rem + 1.74vw, 3rem)",
+					"slug": "32-48"
+				},
+				{
+					"name": "40-64px",
+					"size": "clamp(2.5rem, 1.889rem + 2.61vw, 4rem)",
+					"slug": "40-64"
+				},
+				{
+					"name": "48-80px",
+					"size": "clamp(3rem, 2.186rem + 3.47vw, 5rem)",
+					"slug": "48-80"
+				},
+				{
+					"name": "56-96px",
+					"size": "clamp(3.5rem, 2.482rem + 4.34vw, 6rem)",
+					"slug": "56-96"
+				},
+				{
+					"name": "64-128px",
+					"size": "clamp(4rem, 2.371rem + 6.95vw, 8rem)",
+					"slug": "64-128"
+				},
+				{
+					"name": "固定 4px",
+					"size": "0.25rem",
+					"slug": "fixed-4"
+				},
+				{
+					"name": "固定 8px",
+					"size": "0.5rem",
+					"slug": "fixed-8"
+				},
+				{
+					"name": "固定 16px",
+					"size": "1rem",
+					"slug": "fixed-16"
+				},
+				{
+					"name": "固定 20px",
+					"size": "1.25rem",
+					"slug": "fixed-20"
+				},
+				{
+					"name": "固定 24px",
+					"size": "1.5rem",
+					"slug": "fixed-24"
+				},
+				{
+					"name": "固定 32px",
+					"size": "2rem",
+					"slug": "fixed-32"
+				},
+				{
+					"name": "ヘッダー高さ",
+					"size": "clamp(4rem, 0.957rem + 6.23vw, 6rem)",
+					"slug": "header"
+				}
+			],
+			"units": [
+				"%", "px", "em", "rem", "vh", "vw"
+			]
+		},
+		"shadow": {
+			"presets": [
+			]
+		},
+		"blocks": {
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"color": {
+			"text": "var:preset|color|default"
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|body",
+			"fontSize": "var:preset|font-size|medium",
+			"lineHeight": "2"
+		},
+		"spacing": {
+			"blockGap": "clamp(1.5rem, 1.296rem + 0.87vw, 2rem)",
+			"padding": {
+				"right": "clamp(1.5rem, 1.093rem + 1.74vw, 2.5rem)",
+				"left": "clamp(1.5rem, 1.093rem + 1.74vw, 2.5rem)"
+			}
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|primary"
+				},
+				"typography": {
+					"textDecoration": "underline"
+				},
+				":hover": {
+					"color": {
+						"text": "var:preset|color|primary"
+					},
+					"typography": {
+						"textDecoration": "none"
+					}
+				},
+				":focus": {
+					"color": {
+						"text": "var:preset|color|primary"
+					}
+				},
+				":active": {
+					"color": {
+						"text": "var:preset|color|primary"
+					}
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontSize": "var:preset|font-size|level-1"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var:preset|font-size|level-2"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var:preset|font-size|level-3"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "var:preset|font-size|level-4"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "var:preset|font-size|level-5"
+				}
+			},
+			"heading": {
+				"typography": {
+				}
+			}
+
+		},
+		"blocks": {
+			"core/paragraph": {
+			},
+			"core/buttons": {
+				"spacing": {
+					"margin": {
+						"top": "var:preset|spacing|32-48",
+						"bottom": "var:preset|spacing|32-48"
+					}
+				}
+			},
+			"core/button": {
+				"color": {
+					"background": "var:preset|color|primary"
+				},
+				"typography": {
+					"fontSize": "14px",
+					"fontWeight": "700"
+				},
+				"border": {
+					"radius": "4px"
+				},
+				"spacing": {
+					"padding": {
+						"top": "1.14285714em",
+						"bottom": "1.14285714em",
+						"left": "1.14285714em",
+						"right": "1.14285714em"
+					}
+				},
+				"variations": {
+					"outline": {
+						"spacing": {
+							"padding": {
+								"top": "calc(1.14285714em - 1px)",
+								"bottom": "calc(1.14285714em - 1px)",
+								"left": "1.14285714em",
+								"right": "1.14285714em"
+							}
+						},
+						"border": {
+							"color": "currentColor",
+							"width": "1px"
+						}
+					}
+				}
+			},
+			"core/separator": {
+				"border": {
+					"color": "var:preset|color|border-primay",
+					"width": "1px"
+				},
+				"css": ".wp-block-separator { width: 100% !important; } &.alignfull { padding-left: var(--wp--style--root--padding-left); padding-right: var(--wp--style--root--padding-right); }"
+			},
+			"core/cover": {
+				"css": ".wp-block-cover { padding-left: var(--wp--style--root--padding-left); padding-right: var(--wp--style--root--padding-right); }"
+			},
+			"core/media-text": {
+			},
+			"core/group": {
+			},
+			"core/query": {
+				"spacing": {
+					"margin": {
+						"top": "0"
+					}
+				}
+			},
+			"core/query-pagination": {
+				"border": {
+				},
+				"spacing": {
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "デフォルトヘッダー"
+		},
+		{
+			"area": "header",
+			"name": "header-sticky",
+			"title": "スティッキーヘッダー"
+		},
+		{
+			"area": "header",
+			"name": "header-fixed",
+			"title": "固定ヘッダー"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "デフォルトフッター"
+		},
+		{
+			"area": "uncategorized",
+			"name": "navigation",
+			"title": "デフォルトナビゲーション"
+		}
+	]
+}

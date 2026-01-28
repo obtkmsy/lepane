@@ -1,0 +1,176 @@
+@charset "UTF-8";
+// ================================================================================
+// Footer
+// フッターのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.wp-pattern-footer {
+}
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	// ----------------------------------------------------------------
+	// フッター 骨格
+	// ----------------------------------------------------------------
+
+	.wp-pattern-footer-top {
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		gap: rem(48);
+		@media #{$md-devices} {
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+
+	.wp-pattern-footer-bottom {
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		gap: rem(48);
+		@media #{$md-devices} {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+
+
+
+
+	// ----------------------------------------------------------------
+	// インフォメーション
+	// ----------------------------------------------------------------
+
+	.wp-pattern-footer-information {
+
+		.wp-pattern-footer-information__logo {
+			a {
+				@include hover;
+			}
+			img {
+				object-fit: contain;
+				object-position: left top;
+				width: rem(200);
+				height: rem(60);
+				@media #{$md-devices} {
+					width: fluid-calc(256);
+					height: fluid-calc(72);
+				}
+			}
+		}
+
+		.wp-pattern-footer-information__title {
+			a {
+				@include hover;
+				& {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+
+
+	// ----------------------------------------------------------------
+	// メニュー
+	// ----------------------------------------------------------------
+
+	.wp-pattern-footer-navigations {
+		@media #{$md-devices} {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	nav.wp-pattern-footer-navigation {
+		ul.wp-pattern-footer-navigation {
+			.wp-block-navigation-item {
+				font-size: rem(14);
+				@media #{$md-devices} {
+					font-size: fluid-calc(14);
+				}
+
+				a {
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+	// ----------------------------------------------------------------
+	// コピーライト
+	// ----------------------------------------------------------------
+
+	.wp-pattern-footer-copyright {
+		text-align: center;
+		@media #{$md-devices} {
+			text-align: left;
+		}
+	}
+
+
+
+	// ----------------------------------------------------------------
+	// ページトップ
+	// ----------------------------------------------------------------
+
+	.wp-pattern-footer-pagetop {
+		margin-left: auto;
+		margin-right: auto;
+		@media #{$md-devices} {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		a {
+			@include hover;
+
+			& {
+				position: relative;
+				box-sizing: border-box;
+				border: 1px solid CurrentColor;
+				display: block;
+				width: rem(48);
+				height: rem(48);
+				border-radius: $radius-max;
+				text-decoration: none;
+				@media #{$md-devices} {
+					width: fluid-calc(48);
+					height: fluid-calc(48);
+				}
+			}
+
+
+			mark {
+				@include mask-icon-chevron();
+				@include mask-icon();
+				@include icon(0, 0, 0, 0);
+				mask-size: rem(16) rem(16);
+				transform-origin: 50% 50%;
+				transform: rotate(-90deg);
+				font-size: 0;
+				line-height: 0;
+				display: block;
+				width: rem(16);
+				height: rem(16);
+				@media #{$md-devices} {
+					mask-size: fluid-calc(16) fluid-calc(16);
+					width: fluid-calc(16);
+					height: fluid-calc(16);
+					transform-origin: 50% 50%;
+				}
+			}
+		}
+	}
+
+}

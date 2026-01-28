@@ -1,0 +1,36 @@
+{
+	"name": "acf/hamburger-menu",
+	"title": "ハンバーガーメニュー",
+	"description": "ハンバーガーメニューを挿入します。",
+	"category": "theme-original",
+	"icon": "block-default",
+	"keywords": ["hamburger-menu", "ハンバーガーメニュー"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "hamburger-menu.php"
+	},
+	"supports": {
+		"align": false,
+		"html": false,
+		"jsx": true,
+		"mode": true,
+		"anchor": false,
+		"multiple": true,
+		"reusable": true,
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"gradient": true,
+		"layout": true
+	}
+}

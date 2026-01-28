@@ -1,0 +1,95 @@
+@charset "UTF-8";
+// ================================================================================
+// Service Vertical Item
+// 縦並びのサービス紹介アイテムのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	.wp-pattern-service-vertical {
+		@media #{$md-devices} {
+			margin-top: var(--wp--preset--spacing--40-64, 64px);
+		}
+	}
+
+	.wp-pattern-service-vertical-item {
+
+		& > .wp-block-image:first-child {
+			@media #{$md-devices} {
+				max-width: none;
+				margin-right: 0 !important;
+				text-align: right;
+				// width: 42.7184466%;
+				width: calc( 50% - fluid-calc(120) );
+				min-width: fluid-calc(704);
+
+				img {
+					@media #{$md-devices} {
+						width: 100%;
+					}
+				}
+			}
+
+			& + .wp-block-group {
+				@media #{$md-devices} {
+					width: 100%;
+					// margin-top: -21.2vw;
+					margin-top: fluid-calc(-366);
+				}
+				// @media #{$xxl-devices} {
+				// 	margin-top: -16.2vw;
+				// }
+
+				& > .wp-block-group {
+					@media #{$md-devices} {
+						background: var(--wp--preset--color--white, #FFF);
+						box-sizing: border-box;
+						width: 100%;
+						margin-left: 0 !important;
+						padding-top: var(--wp--preset--spacing--24-32, 32px);
+						padding-bottom: var(--wp--preset--spacing--24-32, 32px);
+						padding-right: fluid-calc(36);
+						max-width: 60%;
+					}
+					@media #{$xl-devices} {
+						max-width: calc( 50% + fluid-calc(200) );
+					}
+
+				}
+
+				.wp-block-buttons {
+					@media #{$sm-devices-only} {
+						justify-content: center;
+					}
+				}
+			}
+		}
+
+
+		&.is-reverse {
+			& > .wp-block-image:first-child {
+				@media #{$md-devices} {
+					margin-left: 0 !important;
+					margin-right: auto !important;
+					text-align-last: left;
+				}
+
+				& + .wp-block-group {
+					& > .wp-block-group {
+						@media #{$md-devices} {
+							margin-left: auto !important;
+							margin-right: 0 !important;
+							padding-right: 0;
+							padding-left: fluid-calc(36);
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+// ================================================================================
+// wp:categories
+// カテゴリー一覧のスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	.wp-block-categories-list {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(8);
+		@media #{$md-devices} {
+			gap: fluid-calc(24);
+		}
+
+		&.aligncenter {
+			justify-content: center;
+		}
+
+
+		.cat-item {
+			margin: 0;
+			a {
+				@include hover;
+
+				& {
+					font-size: 0.875em;
+					display: block;
+					box-sizing: border-box;
+					padding: 2px var(--wp--preset--spacing--fixed-16, 16px);
+					border-radius: calc( $radius * .5 );
+					text-decoration: none;
+				}
+
+			}
+
+			&.current-cat {
+				a {
+					font-weight: 700;
+					background-color: var(--wp--preset--color--primary, #1D2088);
+					color: var(--wp--preset--color--white, #FFF);
+				}
+			}
+		}
+
+	}
+
+}

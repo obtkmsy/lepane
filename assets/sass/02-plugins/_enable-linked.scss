@@ -1,0 +1,15 @@
+@charset "UTF-8";
+// ================================================================================
+// Enable Linked Groupsa
+// Enable Linked Groupsa のスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.wp-block-group:has(> a.wp-block-group__link) {
+	transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+	backface-visibility: hidden;
+	&:hover {
+		opacity: .7;
+	}
+}

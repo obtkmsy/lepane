@@ -1,0 +1,100 @@
+@charset "UTF-8";
+// ================================================================================
+// wp:details
+// 区切りのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	.wp-block-details {
+		overflow: hidden;
+		box-sizing: border-box;
+		position: relative;
+
+		summary {
+			@include hover;
+
+			& {
+				list-style: none;
+				display: block;
+				position: relative;
+				padding:
+					var(--wp--preset--spacing--16-24, 16px)
+					var(--wp--preset--spacing--32-48, 32px)
+					var(--wp--preset--spacing--16-24, 16px)
+					var(--wp--preset--spacing--16-24, 16px);
+				@media #{$md-devices} {
+					padding:
+					var(--wp--preset--spacing--16-24, 24px)
+					var(--wp--preset--spacing--48-80, 80px)
+					var(--wp--preset--spacing--16-24, 24px)
+					var(--wp--preset--spacing--24-32, 32px);
+				}
+			}
+
+			.wp-block-details__icon {
+				@include anime-all;
+				@include background-icon-chevron("%23999999");
+				@include background-icon(0, 0);
+				background-size: rem(16) rem(16);
+				width: rem(16);
+				height: rem(16);
+				position: absolute;
+				top: calc(50% - rem(8));
+				right: rem(8);
+				transform-origin: center center;
+				transform: rotate(90deg);
+
+				@media #{$md-devices} {
+					background-size: fluid-calc(20) fluid-calc(20);
+					width: fluid-calc(20);
+					height: fluid-calc(20);
+					top: calc(50% - fluid-calc(10));
+					right: fluid-calc(32);
+				}
+			}
+
+			& > mark:first-child,
+			[data-wp-block-attribute-key="summary"] > mark:first-child {
+				font-family: var(--wp--preset--font-family--decoration);
+				font-size: 121.42857142857142%;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 1.04;
+				margin-right: var(--wp--preset--spacing--8-16, 16px);
+			}
+
+			& + * {
+				padding:
+					0
+					var(--wp--preset--spacing--32-48, 32px)
+					var(--wp--preset--spacing--16-24, 16px)
+					var(--wp--preset--spacing--16-24, 16px);
+				@media #{$md-devices} {
+					padding:
+						0
+						var(--wp--preset--spacing--48-80, 80px)
+						var(--wp--preset--spacing--16-24, 24px)
+						var(--wp--preset--spacing--24-32, 32px);
+				}
+			}
+		}
+		summary::-webkit-details-marker {
+			display: none;
+		}
+
+		&[open],
+		&.is-active {
+			summary {
+				.wp-block-details__icon {
+					transform: rotate(270deg);
+				}
+			}
+		}
+
+	}
+
+}

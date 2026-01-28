@@ -1,0 +1,140 @@
+@charset "UTF-8";
+// ================================================================================
+// Function
+// グローバルなFunctionはここに格納します。それ以外はそのscssファイルのみで完結。
+// ================================================================================
+
+@use 'variables' as *;
+@use "sass:meta";
+@use "sass:math";
+
+$font_size_root: 16px; // ルートフォントサイズ
+
+
+// -----------------------------------------------------------------
+// 数値から単位を取り除く
+// -----------------------------------------------------------------
+
+@function stripUnit($number) {
+	@if meta.type-of($number)=='number'and not math.is-unitless($number) {
+		@return math.div($number, $number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+
+
+// -----------------------------------------------------------------
+// px→remの変換
+// NORE: 引数の値に単位は入れない
+// -----------------------------------------------------------------
+
+@function rem($px, $base: $font_size_root) {
+	$value: $px;
+
+	$value: math.div($px, stripUnit($base)) * 1rem;
+
+	@return $value;
+}
+
+
+
+// -----------------------------------------------------------------
+// ビューポートの幅に応じて動的サイズにサイズを変更するための関数
+// 単位はなしか px で指定
+// clamp の値については _variables を参照
+//
+// $num デザイン上の数値 (px)
+// -----------------------------------------------------------------
+
+@function fluid-calc( $num, $base: $font_size_root ) {
+
+	$num-stripped: stripUnit($num);
+	$base-stripped: stripUnit($base);
+
+	$value: math.div($num-stripped, $base-stripped);
+
+	$fluid-value: calc( $clamp * $value );
+
+	@return $fluid-value;
+
+}
+
+
+
+// -----------------------------------------------------------------
+// ビューポートの幅に応じて動的サイズにサイズを変更するための関数
+//
+// clamp の値
+// $min-view-port : 最小 viewport 値
+// $max-view-port : 最大 viewport 値
+//
+// $min-rem SP デザイン上の数値 (px)
+// $max-rem PC デザイン上の数値 (px)
+//
+// https://zenn.dev/hilosiva/articles/e9ae1bee08bdfc
+// -----------------------------------------------------------------
+
+@function fluid($min, $max, $min-view-port: 375, $max-view-port: 1512) {
+	$valiable-part: calc(($max - $min) / ($max-view-port - $min-view-port));
+	$constant: calc(($max - $max-view-port * $valiable-part) / 16);
+	$min-rem: calc($min / 16 * 1rem);
+	$max-rem: calc($max / 16 * 1rem);
+	$variable-rem: calc($constant * 1rem);
+	$variable-vw: calc(100 * $valiable-part * 1vw);
+
+	@return clamp($min-rem, $variable-rem + $variable-vw, $max-rem);
+}
+
+
+
+// -----------------------------------------------------------------
+// ビューポートの幅に応じて動的サイズにサイズを変更するためのclamp()関数を返却
+//
+// $fzMin 最小px値
+// $fzMax 最大px値
+// $vpMax 最大viewport値
+// $vpMin 最小viewport値
+// $rootFz ルートフォントサイズ
+//
+// https://chrisburnell.com/clamp-calculator/
+// -----------------------------------------------------------------
+
+// $width_artboard: 1512px;
+// $width_artboard_sp: 375px;
+
+// @function fluid($fzMin, $fzMax, $vpMin: $width_artboard_sp, $vpMax: $width_artboard, $rootFz: $font_size_root) {
+// 	// $fzMin と $fzMax が指定されていない場合は警告を出す
+// 	@if not $fzMin or not $fzMax {
+// 		@error 'fluid()の引数に最小値と最大値を指定してください';
+// 	}
+
+// 	// 単位がpx以外の場合は警告を出す
+// 	@if unit($fzMin) !='px' or unit($fzMax) !='px' or unit($vpMin) !='px' or unit($vpMax) !='px' or unit($rootFz) !='px' {
+// 		@error 'fluid()の引数にpx以外の値を指定しても計算できません';
+// 	}
+
+// 	// それぞれの引数から単位を取り除く
+// 	$fzMin: stripUnit($fzMin);
+// 	$fzMax: stripUnit($fzMax);
+// 	$vpMin: stripUnit($vpMin);
+// 	$vpMax: stripUnit($vpMax);
+// 	$rootFz: stripUnit($rootFz);
+
+// 	$clampMin: math.div($fzMin, $rootFz) * 1rem;
+
+// 	$x: math.div(($fzMax - $fzMin), ($vpMax - $vpMin));
+// 	// @debug $x;
+// 	$y: $fzMax - $vpMax * $x;
+// 	$y: math.div($y, $rootFz) * 1rem;
+// 	// @debug $y;
+// 	$z: $x * 100vw;
+// 	// @debug $z;
+
+// 	$clampMax: math.div($fzMax, $rootFz) * 1rem;
+
+// 	$value: clamp($clampMin, $y + $z, $clampMax);
+
+// 	@return $value;
+// }

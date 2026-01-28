@@ -1,0 +1,77 @@
+@charset "UTF-8";
+// ================================================================================
+// wp:media-text
+// メディアと文章ブロックのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.wp-block-media-text {
+
+	// コンテンツ側の最初と最後の要素のマージンを削る
+	.wp-block-media-text__content {
+		* {
+			&:first-child {
+				@media (min-width:601px) {
+					margin-top: 0;
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	// NOTE: 「モバイルでは縦に並べる」場合、small device は画像との間にスペースをもたせる
+	// NOTE: その上で一番最初のブロックの上マージンはなくす
+	&.is-stacked-on-mobile {
+		.wp-block-media-text__content {
+			@media (max-width:600px) {
+				margin-top: $block-gap;
+			}
+			* {
+				&:first-child {
+					@media (max-width:600px) {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+
+
+	// NOTE: 「モバイルでは縦に並べる」場合、small device はテキスト側に余分な幅を持たせない
+	&.is-stacked-on-mobile {
+		.wp-block-media-text__content {
+			@media (max-width:600px) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	// NOTE: mdium device ではコンテンツの左右端の余分なパディングを削る
+	&:not(.has-media-on-the-right) {
+		.wp-block-media-text__content {
+			@media (min-width:601px) {
+				padding-right: 0;
+				padding-left: calc($block-gap * 1.5);
+			}
+		}
+	}
+	&.has-media-on-the-right {
+		.wp-block-media-text__content {
+			@media (min-width:601px) {
+				padding-left: 0;
+				padding-right: calc($block-gap * 1.5);
+			}
+		}
+	}
+
+}
+
+// 追加スタイル
+// --------------------------------------------------------------- //
+
+
+

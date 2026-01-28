@@ -1,0 +1,32 @@
+@charset "UTF-8";
+// ================================================================================
+// Dl
+// 定義済みリストのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	.wp-pattern-dl {
+		align-items: flex-start;
+		@media #{$sm-devices-only} {
+			gap: var(--wp--preset--spacing--4-8, 4px);
+		}
+
+		& > * {
+			&:first-child {
+				width: 100%;
+				@media #{$md-devices} {
+					width: 8.125em;
+				}
+			}
+
+			& + * {
+				flex: 1;
+			}
+		}
+	}
+
+}

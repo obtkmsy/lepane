@@ -1,0 +1,32 @@
+@charset "UTF-8";
+// ================================================================================
+// Member Item Portrait
+// 縦長の写真 + 横にテキストのメンバーアイテムのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	.wp-pattern-member-item-portrait {
+		@media #{$sm-devices-only} {
+			gap: rem(16);
+		}
+		.wp-block-image {
+			width: 100%;
+			max-width: rem(152);
+			margin-left: auto;
+			margin-right: auto;
+			@media #{$md-devices} {
+				max-width: fluid-calc(272);
+				text-align: left;
+			}
+
+			& + * {
+				flex: 1;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+// ================================================================================
+// Block Style
+// 共通のブロックスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	.has-background {
+		box-sizing: border-box;
+	}
+
+	:where(.has-background):not(.wp-block-button__link):not(.wp-pattern-header):not(.wp-block-separator):not(.wp-block-details) {
+		padding: var(--wp--style--block-gap, 2rem);
+	}
+
+}

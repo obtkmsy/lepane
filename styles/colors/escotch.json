@@ -1,0 +1,132 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"border": {
+			"radius": true,
+			"color": true,
+			"style": true,
+			"width": true
+		},
+		"color": {
+			"defaultDuotone": false,
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"link": true,
+			"palette": [
+				{
+					"name": "デフォルト",
+					"color": "#191919",
+					"slug": "default"
+				},
+				{
+					"name": "メイン",
+					"color": "#D66810",
+					"slug": "primary"
+				},
+				{
+					"name": "サブ",
+					"color": "#63BAAB",
+					"slug": "secondary"
+				},
+				{
+					"name": "アクセント",
+					"color": "#D44852",
+					"slug": "tertiary"
+				},
+				{
+					"name": "グレー",
+					"color": "#7D7D7D",
+					"slug": "gray"
+				},
+				{
+					"name": "暗いグレー",
+					"color": "#4B4B4B",
+					"slug": "dark-gray"
+				},
+				{
+					"name": "明るいグレー",
+					"color": "#979797",
+					"slug": "light-gray"
+				},
+				{
+					"name": "メイン背景色",
+					"color": "#FBF0E7",
+					"slug": "background-primary"
+				},
+				{
+					"name": "サブ背景色",
+					"color": "#F2F2F2",
+					"slug": "background-secondary"
+				},
+				{
+					"name": "メインボーダー色",
+					"color": "#DCDCDC",
+					"slug": "border-primay"
+				},
+				{
+					"name": "サブボーダー色",
+					"color": "#ECECEC",
+					"slug": "border-secondary"
+				},
+				{
+					"name": "エラー色",
+					"color": "#DC2626",
+					"slug": "error"
+				},
+				{
+					"name": "ホワイト",
+					"color": "#FFFFFF",
+					"slug": "white"
+				},
+				{
+					"name": "透過色",
+					"color": "transparent",
+					"slug": "transparent"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"name": "Japanese Font",
+					"slug": "body",
+					"fontFamily": "\"Noto Sans JP\", \"ヒラギノ角ゴ ProN\", \"Hiragino Kaku Gothic ProN\", \"メイリオ\", Meiryo sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Noto Sans JP",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": ["file:./assets/fonts/NotoSansJP-Regular.woff2"]
+						},
+						{
+							"fontFamily": "Noto Sans JP",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": ["file:./assets/fonts/NotoSansJP-Medium.woff2"]
+						},
+						{
+							"fontFamily": "Noto Sans JP",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": ["file:./assets/fonts/NotoSansJP-Bold.woff2"]
+						},
+						{
+							"fontFamily": "Noto Sans JP",
+							"fontStyle": "normal",
+							"fontWeight": "900",
+							"src": ["file:./assets/fonts/NotoSansJP-Black.woff2"]
+						}
+					]
+				},
+				{
+					"name": "English Font",
+					"slug": "decoration",
+					"fontFamily": "\"Montserrat\", \"Noto Sans JP\", sans-serif"
+				}
+			]
+		}
+
+	}
+}

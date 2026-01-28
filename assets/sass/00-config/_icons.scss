@@ -1,0 +1,26 @@
+@charset "UTF-8";
+// ================================================================================
+// Mixin
+// グローバルなmixinはここに格納します。それ以外はそのscssファイルのみで完結。
+// ================================================================================
+
+@use 'variables' as *;
+@use 'functions' as *;
+@use "sass:meta";
+@use "sass:math";
+
+
+// シェブロンアイコン
+@mixin mask-icon-chevron($color: "currentColor") {
+	mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#{$color}" d="M19.56 10.94a1.5 1.5 0 0 1 0 2.124l-9 9a1.502 1.502 0 0 1-2.124-2.123L16.376 12 8.442 4.06a1.502 1.502 0 0 1 2.123-2.124l9 9z"/></svg>');
+}
+
+@mixin background-icon-chevron($color: "currentColor") {
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path fill="#{$color}" d="M19.56 10.94a1.5 1.5 0 0 1 0 2.124l-9 9a1.502 1.502 0 0 1-2.124-2.123L16.376 12 8.442 4.06a1.502 1.502 0 0 1 2.123-2.124l9 9z"/></svg>');
+}
+
+
+// プルダウンのアイコン
+@mixin background-icon-select($color: "currentColor") {
+	background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m18 10-1.41-1.41L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="#{$color}"/></svg>');
+}

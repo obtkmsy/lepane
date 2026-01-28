@@ -1,0 +1,175 @@
+@charset "UTF-8";
+// ================================================================================
+// Mixin
+// グローバルなmixinはここに格納します。それ以外はそのscssファイルのみで完結。
+// ================================================================================
+
+@use 'variables' as *;
+@use 'functions' as *;
+@use "sass:meta";
+@use "sass:math";
+
+// -----------------------------------------------------------------
+// レイアウト関連
+// -----------------------------------------------------------------
+
+// コンテナサイズ - ワイド
+@mixin content-wide() {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: calc( 100vw - #{$spacing-horizontal} * 2);
+	margin-left: auto;
+	margin-right: auto;
+	@media #{$md-devices} {
+		box-sizing: content-box;
+		max-width: fluid-calc($wide-size);
+		padding-right: fluid-calc($spacing-horizontal-md);
+		padding-left: fluid-calc($spacing-horizontal-md);
+	}
+}
+
+// コンテナサイズ - ノーマル
+@mixin content() {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: calc( 100vw - #{$spacing-horizontal} * 2);
+	margin-left: auto;
+	margin-right: auto;
+	@media #{$md-devices} {
+		box-sizing: content-box;
+		max-width: fluid-calc($content-size);
+		padding-right: fluid-calc($spacing-horizontal-md);
+		padding-left: fluid-calc($spacing-horizontal-md);
+	}
+}
+
+
+
+// -----------------------------------------------------------------
+// アイコン関連
+// -----------------------------------------------------------------
+
+// 疑似要素の背景設定
+@mixin ps-icon($t: 0, $r: 0, $b: 0, $l: 0) {
+	box-sizing: border-box;
+	content: "";
+	display: block;
+	position: absolute;
+	top: $t;
+	right: $r;
+	bottom: $b;
+	left: $l;
+	margin: auto;
+}
+
+// 背景アイコン
+@mixin icon($t: 0, $r: 0, $b: 0, $l: 0) {
+	box-sizing: border-box;
+	position: absolute;
+	display: block;
+	top: $t;
+	right: $r;
+	bottom: $b;
+	left: $l;
+	margin: auto;
+}
+
+// svg アイコン利用時の background 設定
+@mixin background-icon($l: 0, $t: 0) {
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-position: $l $t;
+}
+
+// svg アイコン利用時の mask 設定
+@mixin mask-icon($l: 0, $t: 0) {
+	mask-repeat: no-repeat;
+	mask-origin: border-box;
+	mask-mode: alpha;
+	mask-position: $l $t;
+}
+
+// h2 見出しのアイコン
+// @mixin background-icon-h2() {
+// 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"><circle cx="10" cy="10" r="10" fill="%23E6EDF5"/><circle cx="10" cy="10" r="5" fill="%230B50A1"/></svg>');
+// }
+
+
+
+// -----------------------------------------------------------------
+// アニメーション関連
+// -----------------------------------------------------------------
+
+// プロパティ・秒数指定
+@mixin anime($property, $duration) {
+	transition: $property $duration cubic-bezier(0.4, 0.0, 0.2, 1);
+	backface-visibility: hidden;
+}
+
+// allアニメーション
+@mixin anime-all {
+	transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+	backface-visibility: hidden;
+}
+
+// ホバーアニメーション
+@mixin anime-hover {
+	transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+	backface-visibility: hidden;
+}
+
+
+
+// -----------------------------------------------------------------
+// ホバー関連
+// NOTE: 参考 https://zenn.dev/kagan/articles/css-hover-style
+// -----------------------------------------------------------------
+
+// デフォルト使用
+@mixin hover {
+	@media (hover: hover) {
+		&:where(:any-link, :enabled, summary):hover {
+			opacity: .7;
+		}
+	}
+	& {
+		@include anime-hover;
+	}
+}
+
+// class 依存
+@mixin hover-customize {
+	@media (hover: hover){
+		&:where(:any-link, :enabled, summary):hover {
+			@content;
+		}
+	}
+	& {
+		@include anime-hover;
+	}
+}
+
+
+
+// -----------------------------------------------------------------
+// ユーティリティ関連
+// -----------------------------------------------------------------
+
+// margin, padding リセット
+@mixin reset {
+	padding: 0;
+	margin: 0;
+}
+
+// inline-blockレイアウト
+@mixin ib($value) {
+	text-align: $value;
+	letter-spacing: -.40em;
+}
+
+@mixin ib_child {
+	display: inline-block;
+	letter-spacing: normal;
+}
+
+

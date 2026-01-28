@@ -1,0 +1,36 @@
+{
+	"name": "acf/srcset-image",
+	"title": "デバイス切り替え画像",
+	"description": "PCとモバイルで切り替える画像を挿入します。",
+	"category": "theme-original",
+	"icon": "block-default",
+	"keywords": ["srcset-image", "デバイス切り替え画像", "レスポンシブ画像"],
+	"acf": {
+		"mode": "auto",
+		"renderTemplate": "srcset-image.php"
+	},
+	"supports": {
+		"align": true,
+		"html": false,
+		"jsx": true,
+		"mode": true,
+		"anchor": true,
+		"multiple": true,
+		"reusable": true,
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"color": {
+			"text": true,
+			"background": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"gradient": true,
+		"layout": true
+	}
+}

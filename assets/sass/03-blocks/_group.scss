@@ -1,0 +1,33 @@
+@charset "UTF-8";
+// ================================================================================
+// wp:group
+// グループブロックのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	// 追加スタイル
+	// --------------------------------------------------------------- //
+
+	.wp-block-group {
+
+		// 幅狭
+		&.is-style-narrow-size {
+			@media #{$md-devices} {
+				max-width: $narrow-size;
+			}
+		}
+
+		// モバイル縦表示
+		&.is-style-stacked-on-mobile {
+			@media #{$sm-devices-only} {
+				grid-template-columns: repeat(1, minmax(0, 1fr));
+				flex-direction: column;
+			}
+		}
+	}
+
+}

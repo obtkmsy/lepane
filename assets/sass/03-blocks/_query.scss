@@ -1,0 +1,39 @@
+@charset "UTF-8";
+// ================================================================================
+// wp:query
+// クエリループのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	.wp-block-query {
+
+		margin-top: 0;
+
+
+	}
+
+
+	// 追加スタイル
+	// --------------------------------------------------------------- //
+
+	.wp-block-query .wp-block-post-template {
+
+		// 投稿
+		// &.is-style-entry {
+		// 	display: flex;
+		// 	flex-direction: column;
+		// 	gap: rem(24);
+		// 	@media #{$md-devices} {
+		// 		gap: fluid-calc(32);
+		// 	}
+		// }
+
+	}
+
+
+}
+

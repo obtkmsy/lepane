@@ -1,0 +1,79 @@
+@charset "UTF-8";
+// ================================================================================
+// acf:site-menu-button
+// ハンバーガーメニューのスタイル
+// ================================================================================
+
+@use '../../00-config' as *;
+
+.is-layout-constrained,
+.is-root-container.block-editor-block-list__layout {
+
+	.wp-block-acf-site-menu-button,
+	.wp-block-site-menu-button {
+
+		display: block;
+		cursor: pointer;
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: $header-height;
+		height: $header-height;
+		z-index: 999;
+		@media #{$md-devices} {
+			width: $md-header-height;
+			height: $md-header-height;
+			display: none;
+		}
+
+		.dropdown-icon {
+			@include icon(0, 0, 0, 0);
+			width: rem(32);
+			height: rem(8);
+		}
+		.dropdown-icon__line {
+			@include icon(0, 0, 0, 0);
+			transition: all .3s linear;
+			backface-visibility: hidden;
+			background: currentColor;
+			width: rem(32);
+			height: 1px;
+			transform-origin: 50% 50%;
+			&:nth-child(1) {
+				transform: translate(0, rem(-3.5));
+			}
+			&:nth-child(2) {
+				transform: translate(0, rem(3.5));
+			}
+		}
+
+		&.is-close {
+			.dropdown-icon__line {
+				&:nth-child(1) {
+					transform: translate(0, 0) rotate(30deg);
+				}
+				&:nth-child(2) {
+					transform: translate(0, 0) rotate(-30deg);
+				}
+			}
+		}
+
+	}
+}
+
+// for admin
+// --------------------------------------------------------------- //
+
+.editor-styles-wrapper {
+	div[data-type="acf/hamburger-menu"] {
+		&.has-background {
+			padding: 0;
+		}
+		.wp-block-site-menu-button {
+			display: block;
+			position: static;
+		}
+	}
+}
+
+
