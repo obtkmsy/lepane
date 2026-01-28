@@ -12,39 +12,37 @@
  */
 
 wp.hooks.addFilter(
-	'blocks.registerBlockType',
-	'my-plugin/add-align-all',
-	(settings, name) => {
-		settings.supports = settings.supports || {};
+  "blocks.registerBlockType",
+  "my-plugin/add-align-all",
+  (settings, name) => {
+    settings.supports = settings.supports || {};
 
-		// 対象ブロックが段落またはリストの場合、明示的にアラインメントオプションを追加
-		if ( typeof settings.supports.align === 'undefined' ) {
-			if ( ['core/paragraph', 'core/list'].includes(name) ) {
-				settings.supports.align = [ 'left', 'center', 'right', 'wide', 'full' ];
-			}
-		} else {
-			let alignmentOptions = [];
-		if ( settings.supports.align === true ) {
-			alignmentOptions = [ 'left', 'center', 'right' ];
-		} else if ( Array.isArray( settings.supports.align ) ) {
-			alignmentOptions = settings.supports.align;
-		}
+    // 対象ブロックが段落またはリストの場合、明示的にアラインメントオプションを追加
+    if (typeof settings.supports.align === "undefined") {
+      if (["core/paragraph", "core/list"].includes(name)) {
+        settings.supports.align = ["left", "center", "right", "wide", "full"];
+      }
+    } else {
+      let alignmentOptions = [];
+      if (settings.supports.align === true) {
+        alignmentOptions = ["left", "center", "right"];
+      } else if (Array.isArray(settings.supports.align)) {
+        alignmentOptions = settings.supports.align;
+      }
 
-		// 重複なく wide, full を追加
-		[ 'wide', 'full' ].forEach(option => {
-			if ( ! alignmentOptions.includes(option) ) {
-			alignmentOptions.push(option);
-			}
-		});
+      // 重複なく wide, full を追加
+      ["wide", "full"].forEach((option) => {
+        if (!alignmentOptions.includes(option)) {
+          alignmentOptions.push(option);
+        }
+      });
 
-		settings.supports.align = alignmentOptions;
-		}
+      settings.supports.align = alignmentOptions;
+    }
 
-		return settings;
-	}
+    return settings;
+  },
 );
-
-
 
 /*
  * カスタムクラスの設定
