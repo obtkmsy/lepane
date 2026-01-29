@@ -1,0 +1,181 @@
+@charset "UTF-8";
+// ================================================================================
+// Footer
+// フッターのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.cta {
+    padding: rem(40) rem(20) rem(72);
+    background-image: url(../images/cta-bg.jpg);
+    background-size: cover;
+    text-align: center;
+    @media #{$md-devices} {
+        padding: fluid-calc(100) fluid-calc(24) fluid-calc(48);
+    }
+}
+
+.cta__heading {
+    font-size: rem(20);
+    font-weight: 400;
+    font-family: $font-mincho;
+    line-height: 1.4;
+    margin: 0 0 rem(24);
+    @media #{$md-devices} {
+        font-size: fluid-calc(40);
+        margin-bottom: fluid-calc(54);
+    }
+}
+
+.cta__text {
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: 2.4;
+    @media #{$md-devices} {
+        font-size: fluid-calc(14);
+    }
+}
+
+.cta__banner {
+    margin: rem(80) auto 0;
+    display: block;
+    line-height: 0;
+    box-shadow: 0 4px 4px 0 rgba($color: #000000, $alpha: .25);
+    @media #{$md-devices} {
+        max-width: fluid-calc(645);
+        margin: fluid-calc(100) auto 0;
+        @include hover-customize {
+            box-shadow: 0 0 0 0 rgba($color: #000000, $alpha: .25);
+        }
+    }
+}
+
+// ----------------------------------------------------------------
+// フッター 骨格
+// ----------------------------------------------------------------
+
+.site-footer {
+    margin-top: rem(120);
+    @media #{$md-devices} {
+        margin-top: fluid-calc(160);
+        
+    }
+}
+
+.footer-contents {
+    background-color: $color-background-tertiary;
+    padding: rem(46) rem(16) rem(30);
+    @media #{$md-devices} {
+        padding: fluid-calc(72) fluid-calc(24) fluid-calc(54);
+    }
+}
+
+.footer-contents-inner {
+    @media #{$md-devices} {
+        display: flex;
+        justify-content: space-between;
+        gap: fluid-calc(16);
+        max-width: fluid-calc(1280);
+        margin: 0 auto fluid-calc(24);
+    }
+}
+
+// ----------------------------------------------------------------
+// フッター ナビゲーション
+// ----------------------------------------------------------------
+
+.footer-navigation {
+
+}
+
+
+.footer-navigation-lists {
+    display: flex;
+    gap: fluid-calc(48);
+    padding: 0;
+    list-style: none;
+    margin: fluid-calc(16) 0 0;
+}
+
+.footer-navigation-lists__title {
+    display: block;
+    text-decoration: none;
+    font-family: $font-english;
+    color: $color-default;
+    font-weight: 500;
+    width: fluid-calc(132);
+    padding: 0 0 fluid-calc(8) fluid-calc(12);
+    border-bottom: 1px $color-primary solid;
+    line-height: 1.2;
+    font-size: fluid-calc(14);
+    @media #{$md-devices} {
+        @include hover-customize {
+            border-bottom: 1px $color-default solid;
+        }
+    }
+    
+    &:nth-of-type(2) {
+        margin-top: fluid-calc(24);
+    }
+}
+
+.footer-navigation-sub {
+    margin-top: fluid-calc(8);
+    list-style: none;
+    padding: 0 0 0 fluid-calc(8);
+}
+
+.footer-navigation-sub__link {
+    display: flex;
+    gap: fluid-calc(16);
+    align-items: center;
+    font-size: fluid-calc(14);
+    font-weight: 500;
+    text-decoration: none;
+    color: $color-default;
+    @media #{$md-devices} {
+        @include hover-customize {
+            text-decoration: underline;
+        }
+    }
+    &:before {
+        content: "";
+        display: block;
+        width: fluid-calc(19);
+        height: 1px;
+        background-color: $color-default;
+        @media #{$md-devices} {
+            width: fluid-calc(19);
+        }
+    }
+}
+
+.footer-navigation-policy {
+    display: block;
+    margin-left: auto;
+    width: fit-content;
+    font-family: $font-english;
+    font-weight: 500;
+    font-size: fluid-calc(14);
+    color: $color-default;
+    text-decoration: none;
+    padding-right: fluid-calc(16);
+    @include hover-customize {
+        text-decoration: underline;
+    }
+}
+
+
+.copyright {
+    text-align: center;
+    font-size: rem(10);
+    margin: rem(38) 0 0;
+    @media #{$md-devices} {
+        margin-top: fluid-calc(28);
+        font-size: fluid-calc(11);
+    }
+    small {
+        font-size: inherit;
+    }
+}

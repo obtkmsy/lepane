@@ -32,9 +32,7 @@ $font_size_root: 16px; // ルートフォントサイズ
 
 @function rem($px, $base: $font_size_root) {
 	$value: $px;
-
 	$value: math.div($px, stripUnit($base)) * 1rem;
-
 	@return $value;
 }
 
@@ -101,40 +99,40 @@ $font_size_root: 16px; // ルートフォントサイズ
 // https://chrisburnell.com/clamp-calculator/
 // -----------------------------------------------------------------
 
-// $width_artboard: 1512px;
-// $width_artboard_sp: 375px;
+$width_artboard: 1512px;
+$width_artboard_sp: 375px;
 
-// @function fluid($fzMin, $fzMax, $vpMin: $width_artboard_sp, $vpMax: $width_artboard, $rootFz: $font_size_root) {
-// 	// $fzMin と $fzMax が指定されていない場合は警告を出す
-// 	@if not $fzMin or not $fzMax {
-// 		@error 'fluid()の引数に最小値と最大値を指定してください';
-// 	}
+@function fluid($fzMin, $fzMax, $vpMin: $width_artboard_sp, $vpMax: $width_artboard, $rootFz: $font_size_root) {
+	// $fzMin と $fzMax が指定されていない場合は警告を出す
+	@if not $fzMin or not $fzMax {
+		@error 'fluid()の引数に最小値と最大値を指定してください';
+	}
 
-// 	// 単位がpx以外の場合は警告を出す
-// 	@if unit($fzMin) !='px' or unit($fzMax) !='px' or unit($vpMin) !='px' or unit($vpMax) !='px' or unit($rootFz) !='px' {
-// 		@error 'fluid()の引数にpx以外の値を指定しても計算できません';
-// 	}
+	// 単位がpx以外の場合は警告を出す
+	@if unit($fzMin) !='px' or unit($fzMax) !='px' or unit($vpMin) !='px' or unit($vpMax) !='px' or unit($rootFz) !='px' {
+		@error 'fluid()の引数にpx以外の値を指定しても計算できません';
+	}
 
-// 	// それぞれの引数から単位を取り除く
-// 	$fzMin: stripUnit($fzMin);
-// 	$fzMax: stripUnit($fzMax);
-// 	$vpMin: stripUnit($vpMin);
-// 	$vpMax: stripUnit($vpMax);
-// 	$rootFz: stripUnit($rootFz);
+	// それぞれの引数から単位を取り除く
+	$fzMin: stripUnit($fzMin);
+	$fzMax: stripUnit($fzMax);
+	$vpMin: stripUnit($vpMin);
+	$vpMax: stripUnit($vpMax);
+	$rootFz: stripUnit($rootFz);
 
-// 	$clampMin: math.div($fzMin, $rootFz) * 1rem;
+	$clampMin: math.div($fzMin, $rootFz) * 1rem;
 
-// 	$x: math.div(($fzMax - $fzMin), ($vpMax - $vpMin));
-// 	// @debug $x;
-// 	$y: $fzMax - $vpMax * $x;
-// 	$y: math.div($y, $rootFz) * 1rem;
-// 	// @debug $y;
-// 	$z: $x * 100vw;
-// 	// @debug $z;
+	$x: math.div(($fzMax - $fzMin), ($vpMax - $vpMin));
+	// @debug $x;
+	$y: $fzMax - $vpMax * $x;
+	$y: math.div($y, $rootFz) * 1rem;
+	// @debug $y;
+	$z: $x * 100vw;
+	// @debug $z;
 
-// 	$clampMax: math.div($fzMax, $rootFz) * 1rem;
+	$clampMax: math.div($fzMax, $rootFz) * 1rem;
 
-// 	$value: clamp($clampMin, $y + $z, $clampMax);
+	$value: clamp($clampMin, $y + $z, $clampMax);
 
-// 	@return $value;
-// }
+	@return $value;
+}

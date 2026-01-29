@@ -28,6 +28,18 @@ body {
 	height: 100%;
 	box-sizing: border-box;
 	word-wrap: break-word;
+	color: $color-default;
+	font-family: $font;
+	box-sizing: border-box;
+	counter-reset: number 0;
+
+	&.is-noscroll {
+		overflow: hidden;
+	}
+}
+
+* {
+	box-sizing: border-box;
 }
 
 
@@ -45,19 +57,185 @@ img {
 
 
 // ----------------------------------------------------------------
+// Inner
+// ----------------------------------------------------------------
+
+.inner {
+	@media #{$md-devices} {
+		max-width: fluid-calc(1070);
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.wide-inner {
+	@media #{$md-devices} {
+		max-width: fluid-calc(1200);
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.wrapper {
+	overflow: hidden;
+	position: relative;
+	@media #{$md-devices} {
+	}
+}
+
+
+// ----------------------------------------------------------------
+// Inner
+// ----------------------------------------------------------------
+
+.is-line-bg {
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: rem(4);
+		background-image: url(../images/common/line.png);
+		background-size: auto rem(4);
+		background-repeat: repeat-x;
+		background-position: left top;
+		z-index: 1;
+		@media #{$md-devices} {
+			height: fluid-calc(4);
+			background-size: auto fluid-calc(4);
+			max-width: fluid-calc(1060);
+			margin: 0 auto;
+		}
+	}
+}
+
+.section-headline {
+    color: $color-primary;
+	margin-bottom: rem(10);
+	@media #{$md-devices} {
+		margin-bottom: fluid-calc(32);
+	}
+    p {
+        margin: 0 0 rem(2);
+        font-weight: 700;
+        font-size: rem(12);
+		@media #{$md-devices} {
+			font-size: fluid-calc(13);
+			margin-bottom: fluid-calc(8);
+			letter-spacing: .16em;
+		}
+    }
+
+    h2 {
+        font-weight: 900;
+        font-size: rem(32);
+        line-height: 1.3;
+        letter-spacing: .12em;
+        margin: 0;
+		@media #{$md-devices} {
+			font-size: fluid-calc(40);
+			line-height: 1.2;
+		}
+    }
+}
+
+
+.section__catch {
+    font-size: rem(18);
+    font-weight: 900;
+    line-height: 1.73;
+    margin: 0 0 rem(20);
+    color: $color-primary;
+	@media #{$md-devices} {
+		font-size: fluid-calc(24);
+		margin: 0 0 fluid-calc(12);
+	}
+}
+
+.section__text {
+    font-size: rem(14);
+    line-height: 1.86;
+    margin: rem(20) 0 rem(36);
+	color: $color-default;
+	@media #{$md-devices} {
+		font-size: fluid-calc(16);
+		line-height: 1.81;
+		font-weight: 500;
+		margin: fluid-calc(12) 0 fluid-calc(30);
+	}
+}
+
+.section-btn {
+	margin: 0;
+}
+
+.section-btn__link {
+    border: 2px solid $color-primary;
+    border-radius: 100vmax;
+    background-color: #fff;
+    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.08);
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: $color-primary;
+    font-weight: 700;
+    letter-spacing: normal;
+    letter-spacing: .05em;
+    padding: rem(19) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: rem(300);
+    margin: 0 auto;
+    gap: 0 rem(5);
+	font-size: rem(17);
+	width: 100%;
+	@media #{$md-devices} {
+		max-width: fluid-calc(350);
+		padding: fluid-calc(22) 0;
+		gap: 0 fluid-calc(6);
+		font-size: fluid-calc(20);
+		@include hover-customize {
+			box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.08);
+		}
+	}
+    &:before {
+        content: "";
+        display: block;
+        width: rem(10);
+        height: rem(14);
+        background-image: url(../images/common/icon-triangle.svg);
+        background-size: rem(10) auto;
+		@media #{$md-devices} {
+			width: fluid-calc(11);
+			height: fluid-calc(16);
+			background-size: fluid-calc(11);
+		}
+    }
+}
+
+
+.editor-visual-editor.is-scrollable .block-editor-block-canvas {
+	background-color: #fff;
+}
+
+
+// ----------------------------------------------------------------
 // Form
 // ----------------------------------------------------------------
 
 // palceholder
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-	color: #ccc;
+	color: var(--wp--preset--color--col-txtsubsub, #ABABAB);
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
-	color: #ccc;
+	color: var(--wp--preset--color--col-txtsubsub, #ABABAB);
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-	color: #ccc;
+	color: var(--wp--preset--color--col-txtsubsub, #ABABAB);
 }
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-	color: #ccc;
+	color: var(--wp--preset--color--col-txtsubsub, #ABABAB);
 }

@@ -6,15 +6,17 @@
 if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
+
 /**
  * オプションページを追加
  */
-add_action( 'acf/init', function() {
+
+ add_action( 'acf/init', function() {
 
 	if ( ! function_exists( 'acf_add_options_page' ) ) {
 	 return;
 	}
-
+   
 	// 親ページ
 	$parent = acf_add_options_page( array(
 	 'menu_slug'  => 'theme-options',
@@ -24,7 +26,7 @@ add_action( 'acf/init', function() {
 	 'position'   => 59,
 	 // 'redirect' => false,
 	) );
-
+   
 	// サブページ：初期設定
 	acf_add_options_sub_page( array(
 	 'menu_slug'   => 'common-options',
@@ -32,18 +34,16 @@ add_action( 'acf/init', function() {
 	 'menu_title'  => '初期設定',
 	 'parent_slug' => $parent['menu_slug'],
 	) );
-
-	// サブページ：プラグイン設定
+   
+	// サブページ：パーツ設定
 	acf_add_options_sub_page( array(
-	 'menu_slug'   => 'plugins-options',
-	 'page_title'  => 'プラグイン設定',
-	 'menu_title'  => 'プラグイン設定',
+	 'menu_slug'   => 'parts-options',
+	 'page_title'  => 'パーツ設定',
+	 'menu_title'  => 'パーツ設定',
 	 'parent_slug' => $parent['menu_slug'],
 	) );
-
+   
 });
-
-
 
 /**
 * カスタムフィールドのプレビューを有効にする
@@ -101,27 +101,38 @@ add_action('wp_insert_post', 'get_cf_preview_insert' );
 
 
 
-/**
-* 管理画面の関連フィールドをカスタマイズ
-*/
 
-if ( ! function_exists( 'relationship_result_customize' ) ) {
-	function relationship_result_customize( $title, $post, $field, $post_id ) {
-		$page_views = get_field('p_number', $post->ID);
-		if ( $page_views ) {
-			$title .= ' 【' . $page_views .  '】';
+
+// 完了画面をページ遷移にする
+add_action(
+	'wp_enqueue_scripts',
+	function() {
+		ob_start();
+?>
+window.addEventListener(
+	'load',
+	function() {
+
+		var download = document.getElementById( 'snow-monkey-form-22' );
+		if ( download ) {
+			download.addEventListener(
+				'smf.submit',
+				function(event) {
+					if ('complete' === event.detail.status) {
+						window.location.href = '/contact/thanks/';
+					}
+				}
+			);
 		}
-
-		return $title;
 	}
-}
-add_filter('acf/fields/relationship/result', 'relationship_result_customize', 10, 4);
-
-
-
-/**
-* REST API に追加
-*/
-
-add_filter('acf/rest_api/field_settings/show_in_rest', '__return_true');
-
+);
+<?php
+		$data = ob_get_clean();
+		wp_add_inline_script(
+			'snow-monkey-forms',
+			$data,
+			'after'
+		);
+	},
+	11
+);

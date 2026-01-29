@@ -1,0 +1,40 @@
+@charset "UTF-8";
+// ================================================================================
+// Heading
+// 見出しスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+
+.is-style-band-heading {
+    background-color: #EEECE4;
+    text-align: center;
+    font-weight: 500;
+    font-size: rem(22);
+    padding: rem(16);
+    line-height: 1.44;
+    @media #{$md-devices} {
+        padding: fluid-calc(32) fluid-calc(24) fluid-calc(24);
+        font-size: fluid-calc(22);
+    }
+    mark {
+        font-size: rem(14);
+        display: block;
+        @media #{$md-devices} {
+            font-size: fluid-calc(14);
+            display: inline-block;
+        }
+    }
+}
+
+.is-style-mincho-heading {
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: 1.45;
+    font-family: $font-mincho;
+    color: $color-primary;
+    @media #{$md-devices} {
+        font-size: fluid-calc(40);
+    }
+}

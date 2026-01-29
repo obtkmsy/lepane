@@ -1,0 +1,70 @@
+@charset "UTF-8";
+// ================================================================================
+// Course
+// コース内容ブロックスタイル
+// ================================================================================
+
+@use '../../00-config' as *;
+
+.wp-block-course-item {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #D9D9D9;
+    background-color: #fff;
+    margin: 0;
+    @media #{$md-devices} {
+        align-items: center;
+    }
+    &:not(:last-of-type) {
+        border-bottom: none;
+    }
+}
+
+.wp-block-course-row {
+    border-bottom: 1px solid #D9D9D9;
+    flex: 1;
+    text-align: center;
+    padding: rem(16) rem(12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media #{$md-devices} {
+        width: 100%;
+        flex: 1;
+        align-self: stretch; 
+        padding: fluid-calc(18) fluid-calc(12);
+        &:not(:first-of-type) {
+            border-left: 1px solid #D9D9D9;
+        }
+    }
+    &:last-of-type {
+        border-left: 1px solid #D9D9D9;
+    }
+    &.is-pink {
+        background-color: #FFF6F5;
+        width: 100%;
+        flex: inherit;
+        @media #{$md-devices} {
+            min-width: 40%;
+            flex: 1;
+        }
+    }
+    p {
+        font-size: rem(16);
+        font-weight: 500;
+        margin: 0;
+        line-height: 1.4;
+        @media #{$md-devices} {
+            font-size: fluid-calc(18);
+        }
+    }
+    span {
+        font-size: rem(12);
+        display: block;
+        line-height: 1.4;
+        @media #{$md-devices} {
+            font-size: fluid-calc(14);
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+// ================================================================================
+// Single Page
+// シングルページのスタイル
+// ================================================================================
+
+@use '../../00-config' as *;
+
+
+.single-post-contents {
+    margin-top: rem(120);
+    @media #{$md-devices} {
+        margin-top: fluid-calc(150);
+        max-width: fluid-calc(800);
+    }
+}
+
+.entry-header__title {
+    font-size: rem(32);
+    margin-top: rem(16);
+    line-height: 1.2;
+    font-weight: 500;
+    font-family: $font-mincho;
+    color: $color-primary;
+}
+
+.entry-header__info {
+    display: flex;
+    gap: rem(16);
+    margin-bottom: rem(32);
+}
+
+.entry-header__cat {
+    margin: 0!important;
+    font-size: rem(14);
+}
+
+.entry-header__date {
+    margin: 0!important;
+    font-size: rem(14);
+
+    .weekday {
+        color: $color-secondary;
+    }
+}

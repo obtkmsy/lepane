@@ -1,0 +1,86 @@
+@charset "UTF-8";
+// ================================================================================
+// Header
+// ヘッダーのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+// ----------------------------------------------------------------
+// header 骨格
+// ----------------------------------------------------------------
+
+.site-header {
+    // position: fixed;
+    top: rem(24);
+    padding: 0 rem(16);
+    display: flex;
+    width: 100%;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+    @media #{$md-devices} {
+        top: fluid-calc(24);
+        padding: 0 fluid-calc(48) 0 fluid-calc(24);
+    }
+}
+
+.site-branding {
+    max-width: rem(139);
+    margin: 0;
+    line-height: 1;
+    @media #{$md-devices} {
+        max-width: fluid-calc(262);
+    }
+    a {
+        display: block;
+    }
+}
+
+.site-branding__link {
+    display: block;
+    @media #{$md-devices} {
+        @include hover;
+    }
+}
+
+// ----------------------------------------------------------------
+// header ボタン
+// ----------------------------------------------------------------
+
+.site-menu-button {
+    width: rem(78);
+    aspect-ratio: 78 / 66;
+    background-color: #fff;
+    position: relative;
+    z-index: 20;
+    @media #{$md-devices} {
+        width: fluid-calc(78);
+        @include hover-customize {
+            background-color: #FCDFDC;
+        }
+    }
+}
+
+.dropdown-icon__line {
+    position: absolute;
+    left: rem(14);
+    right: rem(14);
+    top: 0;
+    bottom: 0;
+    background-color: $color-default;
+    height: rem(3);
+    margin: auto;
+    &:nth-of-type(1) {
+       bottom: rem(18); 
+    }
+    &:nth-of-type(2) {
+        left: rem(32);
+       
+    }
+    &:nth-of-type(3) {
+       top: rem(18); 
+    }
+}

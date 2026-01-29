@@ -1,0 +1,141 @@
+@charset "UTF-8";
+// ================================================================================
+// Utility
+// モジュールの設定
+// ================================================================================
+
+@use '../00-config' as *;
+
+// ----------------------------------------------------------------
+// hidden, not
+// ----------------------------------------------------------------
+
+.hidden {
+	display: none !important;
+}
+.sm\:hidden {
+	@media #{$sm-devices-only} {
+		display: none !important;
+	}
+}
+.md\:hidden {
+	@media #{$md-devices} {
+		display: none !important;
+	}
+}
+
+.bg-none {
+	background: none;
+}
+
+
+
+
+// // ----------------------------------------------------------------
+// // align
+// // ----------------------------------------------------------------
+
+.left {
+	text-align: left !important;
+}
+// .md\:left {
+// 	@media #{$md_devices} {
+// 		text-align: left !important;
+// 	}
+// }
+// .sm\:left {
+// 	@media #{$sm_devices_only} {
+// 		text-align: left !important;
+// 	}
+// }
+
+.center {
+	text-align: center !important;
+}
+.md\:center {
+	@media #{$md_devices} {
+		text-align: center !important;
+	}
+}
+.sm\:center {
+	@media #{$sm_devices_only} {
+		text-align: center !important;
+	}
+}
+
+// .right {
+// 	text-align: right !important;
+// }
+// .md\:right {
+// 	@media #{$md_devices} {
+// 		text-align: right !important;
+// 	}
+// }
+// .sm\:right {
+// 	@media #{$sm_devices_only} {
+// 		text-align: right !important;
+// 	}
+// }
+
+
+// // ----------------------------------------------------------------
+// // space
+// // ----------------------------------------------------------------
+
+// // スペースの配列化
+$array_space: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 24, 25, 28, 30, 32, 35, 40, 45, 48, 50, 55, 56, 60, 64, 65, 70, 72, 75, 80, 85, 90, 95, 100;
+
+// margin
+.mx-0 {
+	margin: 0 !important;
+}
+
+.mx-auto {
+	margin: auto !important;
+}
+
+.mb-auto {
+	margin-bottom: auto;
+}
+.mt-auto {
+	margin-top: auto;
+}
+.ml-auto {
+	margin-left: auto;
+}
+.mr-auto {
+	margin-right: auto;
+}
+@media #{$sm_devices_only} {
+	.sm\:mb-auto {
+		margin-bottom: auto;
+	}
+	.sm\:mt-auto {
+		margin-top: auto;
+	}
+	.sm\:ml-auto {
+		margin-left: auto;
+	}
+	.sm\:mr-auto {
+		margin-right: auto;
+	}
+}
+@media #{$md_devices} {
+	.md\:mb-auto {
+		margin-bottom: auto;
+	}
+	.md\:mt-auto {
+		margin-top: auto;
+	}
+	.md\:ml-auto {
+		margin-left: auto;
+	}
+	.md\:mr-auto {
+		margin-right: auto;
+	}
+}
+
+
+.px-0 {
+	padding: 0 !important;
+}

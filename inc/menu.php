@@ -10,11 +10,13 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * メニューの登録
  */
-// register_nav_menus(
-// 	array(
-// 		'site_menu' => 'サイトメニュー',
-// 	)
-// );
+register_nav_menus(
+	array(
+		'header_menu'     => 'ヘッダーメニュー',
+		'footer_menu'     => 'フッターメニュー',
+		'footer_sub_menu' => 'フッターサブメニュー',
+	)
+);
 
 
 /**
@@ -42,19 +44,17 @@ add_filter('wp_nav_menu_args', 'nav_menu_args_remove');
 
 
 /**
- * 特定の class がある場合に nav_menu に アコーディオン用のタグを挿入する
+ * デフォルトで nav_menu に span タグを挿入する
  */
-function my_custom_menu_item_output( $item_output, $item, $depth, $args ) {
-	// 特定のCSSクラスが含まれているかチェック
-	if ( in_array( 'is-parent', $item->classes ) ) {
-		// 追加するリンクのHTMLを定義
-		$button_html = '<a href="javascript:void(0)" class="menu-toggle-button js-menu-toggle"></a>';
-		// 既存の出力に追加
-		$item_output .= $button_html;
-	}
-	return $item_output;
-}
-add_filter( 'walker_nav_menu_start_el', 'my_custom_menu_item_output', 10, 4 );
+//if ( ! function_exists( 'modify_menu_insert' ) ) {
+//	function modify_menu_insert( $args ) {
+//
+//		$args['after'] = '<span></span>';
+//
+//		return $args;
+//	}
+//}
+//add_filter( 'wp_nav_menu_args', 'modify_menu_insert' );
 
 
 /**
@@ -64,10 +64,10 @@ add_filter( 'walker_nav_menu_start_el', 'my_custom_menu_item_output', 10, 4 );
 /**
  * ヘッダーメニュー
  */
-class site_menu_walker extends Walker_Nav_Menu {
+class header_menu_walker extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		global $wp_query;
-		$output .= '<ul class="site-menu-child js-site-menu-child">';
+		$output .= '<ul class="header-menu-child js-header-menu-child">';
 	}
 
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0, $current_object_id = 0 ) {
@@ -86,7 +86,7 @@ class site_menu_walker extends Walker_Nav_Menu {
 							);
 
 		$output .= $indent . '<li class="';
-		$output .= 'site-menu-item';
+		$output .= 'header-menu-item';
 
 		if ( in_array('menu-item-has-children', $item->classes) ) {
 			$output .= ' has-children';
@@ -94,7 +94,7 @@ class site_menu_walker extends Walker_Nav_Menu {
 
 		// current の場合は active 表示
 		if ( in_array('current_page_item', $item->classes) || in_array('current-menu-item', $item->classes) ) {
-			$output .= ' site-menu-item--active';
+			$output .= ' header-menu-item--active';
 		}
 		// 管理画面側で class がある場合も表示
 		if ( $item->classes[0] != '' ) {
@@ -125,22 +125,16 @@ class site_menu_walker extends Walker_Nav_Menu {
 		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $url              ) .'"' : '';
 		$item_output = $args->before;
 
-		$item_output .= '<a'. $attributes .' class="site-menu-item__link"><span>';
-		// $item_output .= '<span class="site-menu-item__title">';
+		$item_output .= '<a'. $attributes .' class="header-menu-item__link">';
+		// $item_output .= '<span class="header-menu-item__title">';
 
-		// $item_output .= '<span class="site-menu-item__link-inner">' . $args->link_before . '' . apply_filters( 'the_title', $item->title, $item->ID ) . '' . $args->link_after . '</span>';
-
-		if ( $item->target ) {
-			$item_output .= $args->link_before . '<span>' . apply_filters( 'the_title', $item->title, $item->ID ) . '</span>' . $args->link_after;
-		} else {
-			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		}
-
+		// $item_output .= '<span class="header-menu-item__link-inner">' . $args->link_before . '' . apply_filters( 'the_title', $item->title, $item->ID ) . '' . $args->link_after . '</span>';
+		$item_output .= $args->link_before . '' . apply_filters( 'the_title', $item->title, $item->ID ) . '' . $args->link_after;
 		// $item_output .= '</span>';
 		if ( $item->description ) {
-			$item_output .= '<span class="site-menu-item__sub">' . $item->description . '</span>';
+			$item_output .= '<span class="header-menu-item__sub">' . $item->description . '</span>';
 		}
-		$item_output .= '</span></a>';
+		$item_output .= '</a>';
 
 		$item_output .= $args->after;
 
@@ -151,7 +145,7 @@ class site_menu_walker extends Walker_Nav_Menu {
 
 
 /**
- * フッターメニュー
+ * フッターサブメニュー
  */
 
 class footer_menu_walker extends Walker_Nav_Menu {
@@ -179,28 +173,17 @@ class footer_menu_walker extends Walker_Nav_Menu {
 		$output .= 'footer-menu-item';
 
 		// current の場合は active 表示
-		if ( in_array('current_page_item', $item->classes) || in_array('current-menu-item', $item->classes) ) {
-			$output .= ' footer-menu-item--active';
-		}
+		// if ( in_array('current_page_item', $item->classes) || in_array('current-menu-item', $item->classes) ) {
+			// $output .= ' footer-menu-item--active';
+		// }
+
 		// 管理画面側で class がある場合も表示
 		if ( $item->classes[0] != '' ) {
 			$output .= ' ' . $item->classes[0];
 		}
 		$output .= '">';
 
-		// front のページ内リンク
-		if ( is_front_page() ) {
-			if ( in_array('self', $item->classes) ) {
-				$url = $item->url;
-				$host = home_url();
-				$anchor = str_replace($host, '', $item->url);
-				$url = $anchor;
-			} else {
-				$url = $item->url;
-			}
-		} else {
-			$url = $item->url;
-		}
+		$url = $item->url;
 
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
@@ -209,14 +192,79 @@ class footer_menu_walker extends Walker_Nav_Menu {
 		$item_output = $args->before;
 
 		$item_output .= '<a'. $attributes .' class="footer-menu-item__link">';
-		// $item_output .= '<span class="footer-menu-item__title">';
 
-		// $item_output .= '<span class="footer-menu-item__link-inner">' . $args->link_before . '' . apply_filters( 'the_title', $item->title, $item->ID ) . '' . $args->link_after . '</span>';
 		$item_output .= $args->link_before . '' . apply_filters( 'the_title', $item->title, $item->ID ) . '' . $args->link_after;
 		// $item_output .= '</span>';
-		if ( $item->description ) {
-			$item_output .= '<span class="footer-menu-item__sub">' . $item->description . '</span>';
+		// if ( $item->description ) {
+			// $item_output .= '<span class="footer-menu-item__sub">' . $item->description . '</span>';
+		// }
+		$item_output .= '</a>';
+
+		if ( in_array('menu-item-has-children', $item->classes) ) {
+			$item_output .= '<a href="javascript:void(0);" class="js-footer-menu-toggle footer-menu-item__toggle"></a>';
 		}
+
+		$item_output .= $args->after;
+
+		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args, $current_object_id );
+	}
+}
+
+
+
+/**
+ * フッターサブメニュー
+ */
+
+class footer_sub_menu_walker extends Walker_Nav_Menu {
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		global $wp_query;
+		$output .= '<ul class="footer-sub-menu-child">';
+	}
+
+	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0, $current_object_id = 0 ) {
+		global $wp_query;
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		$classes = empty ( $item->classes ) ? array () : (array) $item->classes;
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+		$class_names = join(
+								' ',
+								apply_filters
+									(
+										'nav_menu_css_class',
+										array_filter( $classes ),
+										$item
+									)
+							);
+
+		$output .= $indent . '<li class="';
+		$output .= 'footer-sub-menu-item';
+
+		// current の場合は active 表示
+		if ( in_array('current_page_item', $item->classes) || in_array('current-menu-item', $item->classes) ) {
+			$output .= ' footer-sub-menu-item--active';
+		}
+		// 管理画面側で class がある場合も表示
+		if ( $item->classes[0] != '' ) {
+			$output .= ' ' . $item->classes[0];
+		}
+		$output .= '">';
+
+		$url = $item->url;
+
+		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
+		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
+		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
+		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $url              ) .'"' : '';
+		$item_output = $args->before;
+
+		$item_output .= '<a'. $attributes .' class="footer-sub-menu-item__link">';
+
+		$item_output .= $args->link_before . '' . apply_filters( 'the_title', $item->title, $item->ID ) . '' . $args->link_after;
+		// $item_output .= '</span>';
+		// if ( $item->description ) {
+			// $item_output .= '<span class="footer-sub-menu-item__sub">' . $item->description . '</span>';
+		// }
 		$item_output .= '</a>';
 
 		$item_output .= $args->after;

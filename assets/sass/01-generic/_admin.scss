@@ -6,27 +6,72 @@
 @use '../00-config' as *;
 
 // ----------------------------------------------------------------
-// ページタイトル
-// ----------------------------------------------------------------
-
-.editor-visual-editor__post-title-wrapper {
-
-	.wp-block-post-title {
-		line-height: 1.5;
-		font-size: var(--wp--preset--font-size--level-2);
-	}
-
-	&.edit-post-visual-editor__post-title-wrapper {
-	}
-}
-
-
-
-// ----------------------------------------------------------------
-// エディタラッパー
+// ページメイン
 // ----------------------------------------------------------------
 
 .editor-styles-wrapper {
-	// padding-bottom: rem(64);
+    
+    .alignfull {
+        @media #{$md-devices} {
+            max-width: 1100px!important;
+            margin-left: auto!important;
+            margin-right: auto!important;
+        }
+    }
+    .page-main {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .wp-block-image {
+            top: 0;
+            right: 0;
+            width: 50%;
+        }
+
+        .page-main-detail {
+            width: 50%;
+            transform: none;
+            bottom: 0;
+        }
+    }
+    .snow-monkey-form {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .wp-block-qa-item__detail {
+        height: auto;
+    }
+
+    .component-button {
+        max-width: fluid-calc(400)!important;
+    }
+
+    .front-main {
+        &:after {
+            display: none;
+        }
+    }
+
+    .js-animation-fade {
+        opacity: 1;
+    }
+
+    .wp-block-main-slide-item {
+        &:not(:first-of-type) {
+            display: none;
+        }
+    }
 }
+
+
+// // ----------------------------------------------------------------
+// // エディタラッパー
+// // ----------------------------------------------------------------
+
+// .editor-styles-wrapper {
+// 	padding-bottom: rem(64);
+// }
 

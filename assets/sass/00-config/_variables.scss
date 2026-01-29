@@ -13,10 +13,9 @@
 
 //$breakpoint-xs: 320px;
 $breakpoint-sm: 375px;
-$breakpoint-md: 782px;
-$breakpoint-lg: 1080px;
-$breakpoint-xl: 1200px;
-$breakpoint-xxl: 1366px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
 
 // iPhone SE サイズ
 $xs-devices-only: "only screen and ( max-width: #{$breakpoint-sm - 1} )";
@@ -27,14 +26,11 @@ $sm-devices-only: "only screen and ( max-width: #{$breakpoint-md - 1} )";
 // タブレット以上
 $md-devices: "print, only screen and ( min-width: #{$breakpoint-md} )";
 
-// 1080px~
+// 1160px~
 $lg-devices: "print, only screen and ( min-width: #{$breakpoint-lg} )";
 
-// 1200px~
+// 1360px~
 $xl-devices: "print, only screen and ( min-width: #{$breakpoint-xl} )";
-
-// 1366px~
-$xxl-devices: "print, only screen and ( min-width: #{$breakpoint-xxl} )";
 
 
 
@@ -44,24 +40,21 @@ $xxl-devices: "print, only screen and ( min-width: #{$breakpoint-xxl} )";
 
 // fluid
 // --------------------------------------------------------------- //
-// clamp の値 ※ README.md を参照
-// Values min : 14
+// clamp の値
+// Values min : 12
 // Values max : 16
-// Viewport min : 1080
-// Viewport max : 1296
-$clamp: clamp(0.875rem, 0.25rem + 0.93vw, 1rem);
+// Viewport min : 1024
+// Viewport max : 1160
+$clamp: clamp(0.75rem, -1.132rem + 2.94vw, 1rem);
 
 // width
-$content-size: var(--wp--style--global--content-size);
-$wide-size: var(--wp--style--global--wide-size);
-$narrow-size: 832px;
+$content-size: 960px;
+$wide-size: 1200px;
+$content-size: 1040px;
+$side-size: 22.72727273%;
 
 // for ipad reduce scaling
-$min-width: $breakpoint-lg;
-
-// header
-$header-height: var(--wp--preset--spacing--header, 64px);
-$md-header-height: var(--wp--preset--spacing--header, 64px);
+$min-width: 1024px;
 
 // space
 $spacing-left: var(--wp--style--root--padding-left);
@@ -71,7 +64,6 @@ $spacing-right: var(--wp--style--root--padding-right);
 $block-gap: var(--wp--style--block-gap);
 
 // radius
-$radius: 4px;
 $radius-max: 160px;
 
 
@@ -80,10 +72,26 @@ $radius-max: 160px;
 // Font Family
 // ----------------------------------------------------------------
 
-// ベースフォント
-$font: var(--wp--preset--font-family--body);
+// デフォルトフォント
+$font: 'Zen Kaku Gothic New', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo sans-serif;
+
 
 // 英語フォント
-$font-english: var(--wp--preset--font-family--decoration);
+$font-english: 'Roboto', 'Zen Kaku Gothic New', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo sans-serif;
 
+
+// 明朝フォント
+$font-mincho: 'Zen Old Mincho', 'Zen Kaku Gothic New', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo sans-serif;
+
+// ----------------------------------------------------------------
+// Color
+// ----------------------------------------------------------------
+
+$color-default: #000000;
+$color-primary: #B69B76;
+$color-secondary: #D17882;
+$color-gray: #EFEFEF;
+$color-background-primary: #FFF2F1;
+$color-background-secondary: #F2F8E4;
+$color-background-tertiary: #FAF7F2;
 

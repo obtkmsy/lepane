@@ -5,6 +5,16 @@
 // ================================================================================
 
 // ================================================================
+// 00 Config
+// ================================================================
+
+@use "00-config/_functions";
+@use "00-config/_index";
+@use "00-config/_mixins";
+@use "00-config/_variables";
+
+
+// ================================================================
 // 01 Generic
 // ================================================================
 
@@ -17,8 +27,8 @@
 // 02 Plugins
 // ================================================================
 
-@use "02-plugins/_enable-linked";
 @use "02-plugins/_snow-monkey-forms";
+@use "02-plugins/_swiper";
 
 
 
@@ -27,32 +37,13 @@
 // ================================================================
 
 @use "03-blocks/_block-style";
-@use "03-blocks/_group";
-@use "03-blocks/_columns";
-@use "03-blocks/_paragraph";
-// @use "03-blocks/_heading";
-// @use "03-blocks/_list";
-// @use "03-blocks/_image";
-@use "03-blocks/_media-text";
-@use "03-blocks/_buttons";
-@use "03-blocks/_cover";
-// @use "03-blocks/_navigation";
-@use "03-blocks/_query";
-@use "03-blocks/_query-pagination";
-// @use "03-blocks/_separator";
-// @use "03-blocks/_gallery";
-// @use "03-blocks/_quote";
-@use "03-blocks/_categories";
-@use "03-blocks/_post-terms";
-@use "03-blocks/_details";
-
+@use "03-blocks/_heading";
+@use "03-blocks/_button";
 
 // for acf pro
-@use "03-blocks/acf/_hamburger-menu";
-@use "03-blocks/acf/_entry-item";
-@use "03-blocks/acf/_slider";
-// @use "03-blocks/acf/_breadcrumb";
-// @use "03-blocks/acf/_logo-loop-slider";
+@use "03-blocks/acf/_block-banner";
+@use "03-blocks/acf/_block-faq";
+@use "03-blocks/acf/_block-course";
 
 
 
@@ -60,36 +51,30 @@
 // 04 Patterns
 // ================================================================
 
-@use "04-patterns/_page-header";
-@use "04-patterns/_heading";
-@use "04-patterns/_navigation";
-@use "04-patterns/_header";
-@use "04-patterns/_footer";
-@use "04-patterns/_dl";
-@use "04-patterns/_map-iframe";
-@use "04-patterns/_member-item-landscape";
-@use "04-patterns/_member-item-portrait";
-@use "04-patterns/_members-portrait";
-@use "04-patterns/_service-horizontal";
-@use "04-patterns/_service-vertical";
-@use "04-patterns/_local-navigation";
-@use "04-patterns/_hero-cover";
-@use "04-patterns/_hero-slider";
-@use "04-patterns/_hero-movie";
-
+@use "04-patterns/_cards";
 
 
 // ================================================================
 // 05 Components
 // ================================================================
 
-@use "05-templates/_templates-style";
 
+
+@use "05-components/_site-header";
+@use "05-components/_site-footer";
+@use "05-components/_site-navigation";
+@use "05-components/_layout";
+@use "05-components/_local-navigation";
+@use "05-components/_pager";
+@use "05-components/_loop";
+
+
+@use "05-components/page/_front-page";
+@use "05-components/page/_single";
 
 
 // ================================================================
 // 06 Utilities
 // ================================================================
 
-// @use "06-utilities/_utilities";
-
+@use "06-utilities/_utilities";

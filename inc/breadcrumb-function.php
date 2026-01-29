@@ -29,11 +29,11 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 			'container_class'   => 'breadcrumb',
 			'container_id'      => '',
 			'crumb_tag'         => 'ul',
-			'crumb_class'       => 'breadcrumb-lists',
+			'crumb_class'       => 'breadcrumb-list',
 			'crumb_id'          => '',
 			'echo'              => true,
 			'home_class'        => 'is-home',
-			'home_text'         => 'ホーム',
+			'home_text'         => __( 'ホーム', 'metrol' ),
 			'delimiter'         => '',
 			'crumb_microdata'   => ' itemscope itemtype="http://schema.org/BreadcrumbList"',
 			'li_microdata'      => ' itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"',
@@ -89,11 +89,11 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 				$current_after      = '</strong></span>' . $end_anchor_tag . '</li>';
 				if ( get_query_var( 'paged' ) ) {
 					if ( is_paged() || is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) {
-						$current_after = ' (' . get_query_var( 'paged' ) . 'ページ目)' . $current_after;
+						$current_after = __(' ', 'metrol') . get_query_var('paged') . __('ページ目', 'metrol') . $current_after;
 					}
 
 				} elseif ( ( is_page() || is_single() ) && get_query_var( 'page' ) ) {
-					$current_after = ' (' . get_query_var( 'page' ) . 'ページ目)' . $current_after;
+					$current_after = __(' ', 'metrol') . get_query_var('page') . __('ページ目', 'metrol') . $current_after;
 				}
 
 				return $current_before . $current_crumb_tag . $current_after;
@@ -137,13 +137,13 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 				$home_ID = get_option('page_for_posts');
 				$breadcrumb_html .= current_crumb_tag( get_the_permalink( $home_ID ), get_the_title( $home_ID ), $current_microdata );
 
-			} else if ( is_paged() ) {
-				if ( 'post' == get_post_type() ) {
-					$breadcrumb_html .= current_crumb_tag( get_pagenum_link( get_query_var( 'paged' ) ), '投稿一覧', $current_microdata );
-
-				} elseif ( 'page' == get_post_type() ) {
-					$breadcrumb_html .= current_crumb_tag( get_pagenum_link( get_query_var( 'paged' ) ), get_the_title(), $current_microdata );
-				}
+//			} else if ( is_paged() ) {
+//				if ( 'post' == get_post_type() ) {
+//					$breadcrumb_html .= current_crumb_tag( get_pagenum_link( get_query_var( 'paged' ) ), '投稿一覧', $current_microdata );
+//
+//				} elseif ( 'page' == get_post_type() ) {
+//					$breadcrumb_html .= current_crumb_tag( get_pagenum_link( get_query_var( 'paged' ) ), get_the_title(), $current_microdata );
+//				}
 
 			} elseif ( is_category() ) {
 				$cat = get_queried_object();
@@ -154,6 +154,8 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 						$breadcrumb_html .= '<li' . $li_microdata . '><a href="' . get_category_link( $ancestor ) . '"' . $url_microdata . '><span' . $title_microdata . '>' . get_cat_name( $ancestor ) . '</span></a></li>' . $args->delimiter;
 					}
 				}
+
+				$breadcrumb_html .= '<li' . $li_microdata . '><a href="' . get_permalink(ID_HOME) . '"' . $url_microdata . '><span' . $title_microdata . '>' . get_the_title( get_option( 'page_for_posts' ) ) . '</span></a></li>' . $args->delimiter;
 
 				$breadcrumb_html .= current_crumb_tag( get_category_link( $cat->term_id ), single_cat_title( '', false ), $current_microdata );
 
@@ -191,22 +193,14 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 					$breadcrumb_html .= current_crumb_tag( get_the_permalink( $single->ID ), get_the_title( $single->ID ), $current_microdata );
 
 				} else {
-
 					$post_type_object = get_post_type_object( get_post_type() );
 
-					if ( custom_post_array() ) {
-						if ( is_singular( custom_post_array() ) ) {
-							$id = get_page_id();
-						}
-					}
-					$page_title_sub  = get_field('page_title_sub', $id);
-					if ( $page_title_sub ) {
-						$title = $page_title_sub;
+					if ( is_singular(CP_SRS) ) {
+						$breadcrumb_html .= '<li' . $li_microdata . '><a href="' . get_post_type_archive_link( get_post_type() ) . '"' . $url_microdata . '><span' . $title_microdata . '>' . __( '製品', 'metrol' ) . '</span></a></li>' . $args->delimiter;
 					} else {
-						$title = $post_type_object->label;
+						$breadcrumb_html .= '<li' . $li_microdata . '><a href="' . get_post_type_archive_link( get_post_type() ) . '"' . $url_microdata . '><span' . $title_microdata . '>' . $post_type_object->label . '</span></a></li>' . $args->delimiter;
 					}
 
-					$breadcrumb_html .= '<li' . $li_microdata . '><a href="' . get_post_type_archive_link( get_post_type() ) . '"' . $url_microdata . '><span' . $title_microdata . '>' . $title . '</span></a></li>' . $args->delimiter;
 					$taxonomies =  get_object_taxonomies( get_post_type() );
 					$category_term = '';
 
@@ -264,7 +258,7 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 				$breadcrumb_html .= current_crumb_tag( get_the_permalink( $page->ID ), get_the_title( $page->ID ), $current_microdata );
 
 			} elseif ( is_search() ) {
-				$breadcrumb_html .= current_crumb_tag( get_search_link(), 'Search Results for "' . get_search_query() . '"', $current_microdata );
+				$breadcrumb_html .= current_crumb_tag( get_search_link(), __( 'キーワード（型式名）検索結果', 'metrol' ), $current_microdata );
 
 			} elseif ( is_tag() ) {
 				$tag = get_queried_object();
@@ -295,28 +289,13 @@ if ( ! function_exists( 'custom_breadcrumb' ) ) {
 				$breadcrumb_html .= current_crumb_tag( null, '404 Not found' );
 
 			} elseif ( is_post_type_archive( get_post_type() ) ) {
-				// カスタム投稿アーカイブ
 				if ( false == get_post_type() ) {
 					$post_type_obj = get_queried_object();
-					$id = get_page_id();
-					$page_title_sub  = get_field('page_title_sub', $id);
-					if ( $page_title_sub ) {
-						$title = $page_title_sub;
-					} else {
-						$title = $post_type_obj->label;
-					}
-					$breadcrumb_html .= current_crumb_tag( $post_type_obj->name, $title, $current_microdata );
+					$breadcrumb_html .= current_crumb_tag( $post_type_obj->name, $post_type_obj->label, $current_microdata );
+
 				} else {
 					$post_type_obj = get_post_type_object( get_post_type() );
-					$id = get_page_id();
-					$page_title_sub  = get_field('page_title_sub', $id);
-					if ( $page_title_sub ) {
-						$title = $page_title_sub;
-					} else {
-						$title = $post_type_obj->label;
-					}
-
-					$breadcrumb_html .= current_crumb_tag( get_post_type_archive_link( get_post_type() ), $title, $current_microdata );
+					$breadcrumb_html .= current_crumb_tag( get_post_type_archive_link( get_post_type() ), $post_type_obj->label, $current_microdata );
 				}
 
 			} else {

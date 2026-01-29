@@ -1,0 +1,43 @@
+{
+	"name": "acf/main-slider",
+	"title": "メインスライダー",
+	"description": "メインスライダーを挿入します。",
+	"category": "theme-original",
+	"icon": "block-default",
+	"keywords": ["main-slider", "メインスライダー"],
+	"acf": {
+	  "mode": "auto",
+	  "renderTemplate": "main-slider.php"
+	},
+	"attributes": {
+		"layout": {
+		"type": "object",
+		"default": {
+			"type": "full-width"
+		}
+		}
+	},
+	"supports": {
+	  "align": true,
+	  "anchor": true,
+	  "multiple": true,
+	  "reusable": true,
+	  "html": false,
+	  "color": {
+		"text": true,
+		"background": true,
+		"gradients": true
+	  },
+	  "spacing": {
+		"margin": true,
+		"padding": true,
+		"blockGap": true
+	  },
+	  "typography": {
+		"fontSize": true,
+		"lineHeight": true
+	  },
+	  "layout": true
+	}
+  }
+  

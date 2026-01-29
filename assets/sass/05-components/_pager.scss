@@ -1,0 +1,68 @@
+@charset "UTF-8";
+// ==========================================================================
+// Pager
+// ページャーの設定
+// ==========================================================================
+
+@use '../00-config' as *;
+
+// ページャー
+// ---------------------------------------------------------------- //
+
+.pager {
+	margin-top: rem(80);
+	@media #{$md-devices} {
+		margin-top: fluid-calc(110);
+	}
+}
+
+.pager-lists {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0 rem(12);
+	width: fit-content;
+	margin: 0 auto;
+	@media #{$md-devices} {
+		gap: 0 fluid-calc(16);
+	}
+}
+
+.page-numbers {
+	font-size: rem(14);
+	color: $color-default;
+	display: flex;
+	width: rem(40);
+	height: rem(40);
+	justify-content: center;
+	align-items: center;
+    font-weight: 500;
+	text-decoration: none;
+	border: 1px solid #FCDFDC;
+    color: #FCDFDC;
+	@media #{$md-devices} {
+		width: fluid-calc(40);
+		height: fluid-calc(40);
+		font-size: fluid-calc(14);
+		@include anime-all;
+		@include hover-customize {
+			background-color: #FCDFDC;
+			color: #fff;
+		}
+	}
+	&.is-current {
+		background-color: #FCDFDC;
+		color: #fff;
+	}
+}
+
+.prev,
+.next {
+    display: none;
+}
+
+span.prev,
+span.next {
+	opacity: 0;
+	visibility: hidden;
+}

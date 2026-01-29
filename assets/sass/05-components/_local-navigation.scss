@@ -1,0 +1,128 @@
+@charset "UTF-8";
+// ================================================================================
+// Local Navigation
+// ローカルナビゲーションのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.local-navigation-items {
+    margin-top: rem(60);
+    padding-top: rem(32);
+    padding-bottom: rem(64);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-top: 2px solid $color-secondary;
+    @media #{$md-devices} {
+        margin-top: fluid-calc(60);
+        padding-top: fluid-calc(32);
+        padding-bottom: 0;
+    }
+}
+
+.local-navigation-item {
+    @media #{$md-devices} {
+        width: fluid-calc(110);
+    }
+}
+
+.local-navigation-item__link {
+    display: block;
+    text-decoration: none;
+    font-size: rem(16);
+    font-weight: 500;
+    color: $color-secondary;
+    line-height: 1.5;
+    position: relative;
+    @media #{$md-devices} {
+        font-size: fluid-calc(16);
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: rem(8);
+        height: rem(12);
+        @include background-icon-arrow("D17882");
+        background-size: rem(8.5) auto;
+        top: rem(2);
+        bottom: 0;
+        margin: auto;
+        @media #{$md-devices} {
+            width: fluid-calc(8);
+            height: fluid-calc(12);
+            @include anime-all;
+        }
+    }
+       
+        
+}
+
+.is-prev {
+    .local-navigation-item__link {
+        padding-left: rem(20);
+        @media #{$md-devices} {
+            padding-left: fluid-calc(22);
+            @include hover-customize {
+                &:after {
+                    left: fluid-calc(-2);
+                }   
+            }
+        }
+        &:after {
+            left: 0;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.is-next {
+    .local-navigation-item__link {
+        padding-right: rem(20);
+        @media #{$md-devices} {
+            padding-right: fluid-calc(22);
+            @include hover-customize {
+                &:after {
+                    right: fluid-calc(-2);
+                }   
+            }
+        }
+        &:after {
+            right: 0;
+        }
+    }
+}
+
+.local-navigation-button {
+    position: absolute;
+    bottom: 0;
+    width: fit-content;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1;
+    @media #{$md-devices} {
+        position: initial;
+    }
+}
+
+.back-button {
+    font-size: rem(16);
+    line-height: 1.5;
+    font-weight: 500;
+    color: $color-secondary;
+    text-decoration: none;
+    padding: 0 rem(8) rem(4);
+    border-bottom: 2px solid $color-secondary;
+    @media #{$md-devices} {
+        font-size: fluid-calc(16);
+        letter-spacing: .02em;
+        line-height: 1.3;
+        padding: 0 fluid-calc(8) fluid-calc(4);
+        transform: all .3s!important;
+        @include hover-customize {
+            padding: 0 fluid-calc(8) fluid-calc(6);
+        }
+    }
+}

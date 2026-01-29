@@ -1,0 +1,130 @@
+@charset "UTF-8";
+// ================================================================================
+// Faq banner
+// よくある質問ブロックスタイル
+// ================================================================================
+
+@use '../../00-config' as *;
+
+
+.wp-block-qa-item__title {
+    font-size: rem(16);
+    background-color: #FCE2DF;
+    display: flex;
+    gap: rem(8);
+    padding: rem(24) rem(48) rem(24) rem(16);
+    font-weight: 500;
+    position: relative;
+    margin: 0!important;
+    @media #{$md-devices} {
+        font-size: fluid-calc(18);
+        padding: fluid-calc(32) fluid-calc(64) fluid-calc(32) fluid-calc(32);
+        gap: fluid-calc(32);
+        align-items: center;
+        @include hover-customize {
+            cursor: pointer!important;
+        }
+    }
+    &:before {
+        content: "Q";
+        font-family: $font-english;
+        min-width: rem(24);
+        height: rem(24);
+        font-size: rem(14);
+        background-color: #D17882;
+        border-radius: 100%;
+        color:#fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media #{$md-devices} {
+            min-width: fluid-calc(32);
+            height: fluid-calc(32);
+            font-size: fluid-calc(16);
+        }
+    }
+
+    span {
+        position: absolute;
+        width: rem(16);
+        aspect-ratio: 1;
+        right: rem(16);
+        top: rem(32);
+        @media #{$md-devices} {
+            height: fit-content;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: fluid-calc(24);
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: #D17882;
+            inset: 0;
+            margin: auto;
+            z-index: 1;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background-color: #D17882;
+            inset: 0;
+            margin: auto;
+            z-index: 1;
+            @include anime-all;
+        }
+    }
+}
+
+.wp-block-qa-item__detail {
+    overflow: hidden;
+    height: 0;
+    transition: height 240ms ease;
+    @include anime-all;
+    p {
+        font-size: rem(14);
+        display: flex;
+        gap: rem(16);
+        font-weight: 500;
+        padding: rem(24) rem(16) 0;
+        @media #{$md-devices} {
+            font-size: fluid-calc(16);
+            padding: fluid-calc(32) fluid-calc(32) 0;
+        }
+        &:before {
+            content: "A";
+            font-family: $font-english;
+            min-width: rem(24);
+            height: rem(24);
+            font-size: rem(14);
+            color: #D17882;
+            border-radius: 100%;
+            border: 1px solid #D17882;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media #{$md-devices} {
+                min-width: fluid-calc(32);
+                height: fluid-calc(32);
+                font-size: fluid-calc(16);
+            }
+        }
+    }
+}
+
+.wp-block-qa-item {
+    &.is-open {
+        .wp-block-qa-item__title {
+            span {
+                &:after {
+                    opacity: 0;
+                }   
+            }
+        }
+    }
+}

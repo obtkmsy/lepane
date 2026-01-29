@@ -1,0 +1,35 @@
+@charset "UTF-8";
+// ================================================================================
+// Button
+// ボタンスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.component-button {
+    width: 100%;
+    max-width: rem(470);
+    font-size: rem(16);
+    @media #{$md-devices} {
+        max-width: fluid-calc(470);
+        font-size: fluid-calc(18);
+    }
+    &--min {
+        @media #{$md-devices} {
+            max-width: fluid-calc(300);
+        }
+    }
+    
+
+    .wp-block-button__link {
+        background-color: $color-primary;
+        color: #fff;
+        border: 2px solid $color-primary;
+        @media #{$md-devices} {
+            @include hover-customize {
+                color: $color-primary!important;
+                background-color: #fff!important;
+            }
+        }
+    }
+}

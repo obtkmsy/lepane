@@ -1,0 +1,78 @@
+
+@charset "UTF-8";
+// ================================================================================
+// Card Pattern
+//カードパターンのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+.wp-pattern-cards {
+    margin: rem(32) 0;
+    @media #{$md-devices} {
+        margin: fluid-calc(32) 0;
+    }
+}
+
+.wp-pattern-card {
+    padding: rem(48) 0;
+    background-image: url(../images/common/line.png);
+    background-size: auto rem(4);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    margin: 0!important;
+    @media #{$md-devices} {
+        padding: fluid-calc(54) 0;
+        background-size: auto fluid-calc(4);
+
+    }
+    &:last-of-type {
+        background: none;
+    }
+}
+
+.wp-pattern-card__contents {
+    flex-direction: column-reverse;
+    @media #{$md-devices} {
+        flex-direction: row;
+        gap: 0 fluid-calc(48);
+    }
+
+    h3.wp-block-heading {
+        font-size: rem(18);
+        font-weight: 700;
+        line-height: 1.37;
+        position: relative;
+        @media #{$md-devices} {
+            font-size: fluid-calc(24);
+        }   
+    }
+
+    p {
+        font-size: rem(14);
+        color: $color-default;
+        line-height: 2;
+        font-weight: 500;
+        margin-top: rem(12);
+        @media #{$md-devices} {
+            font-size: fluid-calc(16);
+            margin-top: rem(24);
+        }
+    }
+
+    .wp-block-image {
+        overflow: hidden;
+        border-radius: 10px;
+        text-align: center;
+    }
+}
+
+.wp-block-post-content {
+    .wp-block-columns-is-layout-flex {
+        &.wp-pattern-card__contents {
+            @media #{$md-devices} {
+                gap: 0 fluid-calc(30);
+            }
+        }
+    }
+}

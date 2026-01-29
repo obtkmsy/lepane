@@ -1,0 +1,368 @@
+@charset "UTF-8";
+// ================================================================================
+// Navigation
+// ナビゲーションのスタイル
+// ================================================================================
+
+@use '../00-config' as *;
+
+// // ----------------------------------------------------------------
+// // サイトナビゲーション ( 骨格 )
+// // ----------------------------------------------------------------
+
+.site-navigation {
+    background-color: #F9F9ED;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+    padding: rem(80) rem(32);
+    display: flex;
+    flex-direction: column;
+    @include anime-all;
+    opacity: 0;
+    visibility: hidden;
+    @media #{$md-devices} {
+        max-width: fluid-calc(860);
+        padding: fluid-calc(150) fluid-calc(140);
+        flex-direction: row;
+        gap: fluid-calc(100);
+    }
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.site-navigation__close {
+    position: absolute;
+    width: rem(32);
+    aspect-ratio: 1;
+    top: rem(24);
+    right: rem(24);
+    z-index: 1;
+    @media #{$md-devices} {
+        width: fluid-calc(48);
+        top: fluid-calc(30);
+        right: fluid-calc(72);
+        @include hover-customize {
+            cursor: pointer;
+            opacity: .8;
+        }
+    }
+    &:before,&:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        height: rem(3);
+        width: 100%;
+        background-color: $color-secondary;
+        @media #{$md-devices} {
+            height: fluid-calc(3);
+        }
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
+.site-navigation-info {
+    display: contents;
+    @media #{$md-devices} {
+        display: block;
+    }
+}
+
+.site-navigation-info__logo {
+    max-width: rem(300);
+    margin: 0 auto;
+    order: 0;
+    @media #{$md-devices} {
+        max-width: fluid-calc(262);
+        margin: 0 0 fluid-calc(26);
+    }
+}
+
+.site-navigation-access {
+    margin: fluid-calc(30) 0 fluid-calc(32);
+    font-size: fluid-calc(14);
+    font-weight: 500;
+    dt {
+        margin-bottom: fluid-calc(4);
+    }
+    dd {
+        margin: 0;
+    }
+}
+
+.site-navigation-lists {
+    order: 1;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: rem(14);
+    margin: rem(32) 0;
+    padding: 0;
+    @media #{$md-devices} {
+        margin: fluid-calc(16) 0 0;
+        gap: fluid-calc(16);
+    }
+}
+
+.site-navigation-lists__title {
+    font-size: rem(16);
+    font-weight: 500;
+    padding-bottom: rem(12);
+    display: block;
+    border-bottom: 1px solid $color-primary;
+    color: $color-default;
+    text-decoration: none;
+    font-family: $font-english;
+    letter-spacing: .05em;
+    @media #{$md-devices} {
+        font-size: fluid-calc(14);
+        padding-bottom: fluid-calc(12);
+    }
+}
+
+a.site-navigation-lists__title {
+    @media #{$md-devices} {
+        @include hover-customize {
+            border-bottom: 1px solid $color-default;
+        }
+    }
+}
+
+.site-navigation-sub {
+    list-style: none;
+    padding-left: rem(6);
+    margin: rem(8) 0;
+    @media #{$md-devices} {
+        padding-left: fluid-calc(6);
+        margin: fluid-calc(8) 0;
+    }
+}
+
+.site-navigation-sub__link {
+    display: block;
+    position: relative;
+    font-size: rem(14);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+    color: $color-default;
+    text-decoration: none;
+    @media #{$md-devices} {
+        font-size: fluid-calc(14);
+        gap: fluid-calc(16);
+        @include hover-customize {
+            text-decoration: underline;
+        }
+    }
+    &:before {
+        content: "";
+        display: block;
+        width: rem(19);
+        height: 1px;
+        background-color: #FCDFDC;
+        @media #{$md-devices} {
+            width: fluid-calc(19);
+        }
+    }
+}
+
+.site-navigation-sns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(24);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    order: 2;
+    margin-top: rem(48);
+    @media #{$md-devices} {
+        justify-content: flex-start;
+        gap: fluid-calc(24);
+        margin: 0;
+    }
+}
+
+.site-navigation-sns__item {
+    aspect-ratio: 1;
+    width: rem(30);
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media #{$md-devices} {
+        width: fluid-calc(32);
+    }
+
+    &.icon-instagram {
+        @include background-icon-insta("FCDFDC");
+        background-size: rem(20) auto;
+        @media #{$md-devices} {
+            background-size: fluid-calc(20) auto;
+            @include hover;
+        }
+    }
+
+    &.icon-line {
+        @include background-icon-line("FCDFDC");
+        background-size: rem(22) auto;
+        @media #{$md-devices} {
+            background-size: fluid-calc(22) auto;
+            @include hover;
+        }
+    }
+
+    &.icon-mail {
+        @include background-icon-mail("FCDFDC");
+        background-size: rem(20) auto;
+        @media #{$md-devices} {
+            background-size: fluid-calc(20) auto;
+            @include hover;
+        }
+    }
+
+    &.icon-youtube {
+        @include background-icon-youtube("FCDFDC");
+        background-size: rem(27) auto;
+        @media #{$md-devices} {
+            background-size: fluid-calc(27) auto;
+            @include hover;
+        }
+    }
+}
+
+.site-navigation__contact {
+    font-size: rem(18);
+    line-height: 1.44;
+    display: block;
+    padding: rem(16);
+    display: block;
+    max-width: rem(290);
+    background-color: $color-primary;
+    color: #fff;
+    font-family: $font-mincho;
+    text-align: center;
+    text-decoration: none;
+    margin: rem(32) auto 0;
+    width: 100%;
+    order: 3;
+    @media #{$md-devices} {
+        font-size: fluid-calc(18);
+        padding: fluid-calc(14);
+        border: 2px solid $color-primary;
+        margin: fluid-calc(26) 0 0;
+        max-width: fluid-calc(272);
+        @include hover-customize {
+            background-color: #fff;
+            color: $color-primary;
+        }
+    }
+}
+
+
+
+// ----------------------------------------------------------------
+// header セカンダリーナビゲーションメニュー
+// ----------------------------------------------------------------
+
+.site-secondary-navigation {
+    @include anime-all;
+    display: flex;
+    @media #{$md-devices} {
+        gap: fluid-calc(56);
+        flex: 1;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    @media #{$sm-devices-only} {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        &.is-scroll {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+.site-sns-lists {
+    display: flex;
+    gap: fluid-calc(16);
+}
+
+.site-sns-lists__item {
+    aspect-ratio: 1;
+    width: fluid-calc(30);
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.icon-instagram {
+        @include background-icon-insta("fff");
+        background-size: fluid-calc(20) auto;
+        @include hover-customize {
+            @include background-icon-insta("FCDFDC");
+        }
+    }
+
+    &.icon-line {
+        @include background-icon-line("fff");
+        background-size: fluid-calc(22) auto;
+        @include hover-customize {
+            @include background-icon-line("FCDFDC");
+        }
+    }
+
+    &.icon-mail {
+        @include background-icon-mail("fff");
+        background-size: fluid-calc(20) auto;
+        @include hover-customize {
+            @include background-icon-mail("FCDFDC");
+        }
+    }
+
+    &.icon-youtube {
+        @include background-icon-youtube("fff");
+        background-size: fluid-calc(27) auto;
+        @include hover-customize {
+            @include background-icon-youtube("FCDFDC");
+        }
+    }
+}
+
+.site-secondary-navigation__contact {
+    flex: 1;
+    font-size: rem(18);
+    font-family: $font-mincho;
+    line-height: 1.44;
+    display: block;
+    background-color: $color-primary;
+    color: #fff;
+    padding: rem(20);
+    text-align: center;
+    text-decoration: none;
+    @media #{$md-devices} {
+        max-width: fluid-calc(272);
+        font-size: fluid-calc(18);
+        padding: fluid-calc(18);
+        border: 2px solid $color-primary;
+        width: 100%;
+        @include hover-customize {
+            color: $color-primary;
+            background-color: #fff;
+        }
+    }
+}

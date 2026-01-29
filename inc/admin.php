@@ -105,45 +105,67 @@ add_action( 'category_add_form', 'hide_description_row');
 
 
 /**
- * 固定ページに抜粋を入れる
+ * デバイス別改行のショートコード
+ * [br-sp], [br-pc]
  */
+if ( ! function_exists( 'br_sp' ) ) {
+	function br_sp() {
+		return '<br class="md:hidden">';
+	}
+}
+add_shortcode('br-sp', 'br_sp');
 
-add_post_type_support( 'page', 'excerpt' );
-
-
-
-/**
-* 別テンプレートの場合クラスを付与する
-*/
-// if ( ! function_exists( 'custom_admin_body_class' ) ) {
-// 	function custom_admin_body_class( $classes ) {
-
-// 		global $post;
-
-// 		if ( isset( $post->ID ) ) {
-// 			$page_template = get_page_template_slug( $post->ID );
-// 			if ( $page_template == 'page-background-gray.php' ) {
-// 				return $classes. ' page-background-gray';
-// 			}
-// 			if ( $page_template == 'page-door.php' ) {
-// 				return $classes. ' page-background-gray';
-// 			}
-// 		}
-// 		return $classes;
-// 	}
-// }
-// add_filter( 'admin_body_class', 'custom_admin_body_class' );
+if ( ! function_exists( 'br_pc' ) ) {
+	function br_pc() {
+		return '<br class="sm:hidden">';
+	}
+}
+add_shortcode('br-pc', 'br_pc');
 
 
 
-/**
-* 管理画面に CSS を読み込む
-*/
-// if ( ! function_exists( 'add_admin_style' ) ) {
-// 	function add_admin_style(){
-// 		$path_css = '//fonts.googleapis.com/css2?family=Material+Symbols+Outlined';
-// 		wp_enqueue_style('admin-font-css', $path_css);
-// 	}
-// }
-// add_action('admin_enqueue_scripts', 'add_admin_style');
+add_filter( 'post_thumbnail_html', function( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
 
+	// 既にアイキャッチが出力されている場合はそのまま
+	if ( ! empty( $html ) ) {
+		return $html;
+	}
+
+	// 代替画像のパス（テーマ内に配置しておく）
+	// 例：/assets/img/noimage-*.webp を用意
+	$map = array(
+		'thumbnail' => get_theme_file_uri( '/assets/images/thumbnail.jpg' ),
+		'medium'    => get_theme_file_uri( '/assets/images/thumbnail.jpg' ),
+		'large'     => get_theme_file_uri( '/assets/images/thumbnail.jpg' ),
+		'full'      => get_theme_file_uri( '/assets/images/thumbnail.jpg' ),
+	);
+
+	// $size は文字列 or 配列のことがある
+	$key = is_string( $size ) ? $size : 'full';
+	$src = isset( $map[ $key ] ) ? $map[ $key ] : $map['full'];
+
+	// 既存クラスを維持しつつ、判別用クラスを付与
+	$class = 'wp-post-image is-fallback';
+	if ( is_array( $attr ) && ! empty( $attr['class'] ) ) {
+		$class = trim( $attr['class'] . ' is-fallback' );
+	}
+
+	// ALT は記事タイトルを使用（必要に応じて固定文言でもOK）
+	$alt = esc_attr( get_the_title( $post_id ) );
+
+	return sprintf(
+		'<img src="%s" alt="%s" class="%s" loading="lazy" decoding="async" />',
+		esc_url( $src ),
+		$alt,
+		esc_attr( $class )
+	);
+}, 10, 5 );
+
+
+
+// 初回のみローディングを表示
+add_action('send_headers', function() {
+    if (!isset($_COOKIE['visited'])) {
+        setcookie('visited', '1', time() + 60*60*24*30, '/wpnew');
+    }
+});

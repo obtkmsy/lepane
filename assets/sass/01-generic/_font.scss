@@ -6,8 +6,20 @@
 
 @use '../00-config' as *;
 
+// デフォルトフォント
+// --------------------------------------------------------------- //
+// Zen Kaku Gothic New
+@import url(https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap);
+// font-family: "Zen Kaku Gothic New", sans-serif;
+
 // 英語フォント
 // --------------------------------------------------------------- //
-// NOTE: theme.json の "fontFamily" のデフォルト。変更や追加は管理画面のエディターで行う。
-// Open Sans
-@import url('//fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+// Robot
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap);
+// font-family: "Roboto", sans-serif;
+
+// 明朝フォント
+// --------------------------------------------------------------- //
+// Zen Old Mincho
+@import url(https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700&display=swap);
+// font-family: "Zen Old Mincho", serif;
