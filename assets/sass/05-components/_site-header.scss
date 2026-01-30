@@ -13,8 +13,7 @@
 .site-header {
     // position: fixed;
     top: rem(24);
-    padding: 0 rem(16);
-    display: flex;
+    padding: rem(16);
     width: 100%;
     left: 0;
     right: 0;
@@ -26,13 +25,23 @@
         padding: 0 fluid-calc(48) 0 fluid-calc(24);
     }
 }
+.header__caption{
+    display: none;
+    @media #{$md-devices} {
+        font-size: rem(10);
+        text-align: right;
+        font-weight: 100;
+        display: block;
+    }
+   
+}
 
 .site-branding {
-    max-width: rem(139);
+    max-width: rem(80);
     margin: 0;
     line-height: 1;
     @media #{$md-devices} {
-        max-width: fluid-calc(262);
+        max-width: fluid-calc(200);
     }
     a {
         display: block;
@@ -46,6 +55,12 @@
     }
 }
 
+.header__inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 // ----------------------------------------------------------------
 // header ボタン
 // ----------------------------------------------------------------

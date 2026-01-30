@@ -1,18 +1,18 @@
-/*!*********************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss ***!
-  \*********************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/css-loader-virtual-12fb2bf6ea/8/.yarn/berry/cache/css-loader-npm-7.1.3-446668b56e-10c0.zip/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./.yarn/__virtual__/postcss-loader-virtual-273cc71e7d/8/.yarn/berry/cache/postcss-loader-npm-8.2.0-5ef532d469-10c0.zip/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./.yarn/__virtual__/sass-loader-virtual-a853fff6ca/8/.yarn/berry/cache/sass-loader-npm-16.0.6-af7e26fbcb-10c0.zip/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap);
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (1) ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/css-loader-virtual-12fb2bf6ea/8/.yarn/berry/cache/css-loader-npm-7.1.3-446668b56e-10c0.zip/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./.yarn/__virtual__/postcss-loader-virtual-273cc71e7d/8/.yarn/berry/cache/postcss-loader-npm-8.2.0-5ef532d469-10c0.zip/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./.yarn/__virtual__/sass-loader-virtual-a853fff6ca/8/.yarn/berry/cache/sass-loader-npm-16.0.6-af7e26fbcb-10c0.zip/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (1) ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap);
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (2) ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/css-loader-virtual-12fb2bf6ea/8/.yarn/berry/cache/css-loader-npm-7.1.3-446668b56e-10c0.zip/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./.yarn/__virtual__/postcss-loader-virtual-273cc71e7d/8/.yarn/berry/cache/postcss-loader-npm-8.2.0-5ef532d469-10c0.zip/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./.yarn/__virtual__/sass-loader-virtual-a853fff6ca/8/.yarn/berry/cache/sass-loader-npm-16.0.6-af7e26fbcb-10c0.zip/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (2) ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700&display=swap);
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (3) ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/css-loader-virtual-12fb2bf6ea/8/.yarn/berry/cache/css-loader-npm-7.1.3-446668b56e-10c0.zip/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./.yarn/__virtual__/postcss-loader-virtual-273cc71e7d/8/.yarn/berry/cache/postcss-loader-npm-8.2.0-5ef532d469-10c0.zip/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./.yarn/__virtual__/sass-loader-virtual-a853fff6ca/8/.yarn/berry/cache/sass-loader-npm-16.0.6-af7e26fbcb-10c0.zip/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (3) ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 html {
   width: 100%;
@@ -97,7 +97,7 @@ img {
 }
 
 .section-headline {
-  color: #B69B76;
+  color: #8fc04a;
   margin-bottom: 0.625rem;
 }
 @media print, only screen and ( min-width: 960px ) {
@@ -136,7 +136,7 @@ img {
   font-weight: 900;
   line-height: 1.73;
   margin: 0 0 1.25rem;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .section__catch {
@@ -165,14 +165,14 @@ img {
 }
 
 .section-btn__link {
-  border: 2px solid #B69B76;
+  border: 2px solid #8fc04a;
   border-radius: 100vmax;
   background-color: #fff;
   box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.08);
   display: block;
   text-decoration: none;
   text-align: center;
-  color: #B69B76;
+  color: #8fc04a;
   font-weight: 700;
   letter-spacing: normal;
   letter-spacing: 0.05em;
@@ -1188,7 +1188,7 @@ button.swiper-pagination-bullet {
   }
 }
 .wp-block-post-content p a {
-  color: #B69B76;
+  color: #8fc04a;
   text-decoration: underline;
 }
 @media print, only screen and ( min-width: 960px ) {
@@ -1320,7 +1320,7 @@ button.swiper-pagination-bullet {
   font-size: 1.125rem;
   line-height: 1.45;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .is-style-mincho-heading {
@@ -1345,9 +1345,9 @@ button.swiper-pagination-bullet {
   }
 }
 .component-button .wp-block-button__link {
-  background-color: #B69B76;
+  background-color: #8fc04a;
   color: #fff;
-  border: 2px solid #B69B76;
+  border: 2px solid #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .component-button .wp-block-button__link {
@@ -1358,7 +1358,7 @@ button.swiper-pagination-bullet {
 }
 @media print and (hover: hover), only screen and ( min-width: 960px ) and (hover: hover) {
   .component-button .wp-block-button__link:hover {
-    color: #B69B76 !important;
+    color: #8fc04a !important;
     background-color: #fff !important;
   }
 }
@@ -1683,8 +1683,7 @@ button.swiper-pagination-bullet {
 
 .site-header {
   top: 1.5rem;
-  padding: 0 1rem;
-  display: flex;
+  padding: 1rem;
   width: 100%;
   left: 0;
   right: 0;
@@ -1699,14 +1698,26 @@ button.swiper-pagination-bullet {
   }
 }
 
+.header__caption {
+  display: none;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .header__caption {
+    font-size: 0.625rem;
+    text-align: right;
+    font-weight: 100;
+    display: block;
+  }
+}
+
 .site-branding {
-  max-width: 8.6875rem;
+  max-width: 5rem;
   margin: 0;
   line-height: 1;
 }
 @media print, only screen and ( min-width: 960px ) {
   .site-branding {
-    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 16.375);
+    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 12.5);
   }
 }
 .site-branding a {
@@ -1727,6 +1738,13 @@ button.swiper-pagination-bullet {
   .site-branding__link:where(:any-link, :enabled, summary):hover {
     opacity: 0.7;
   }
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .site-menu-button {
@@ -1873,7 +1891,7 @@ button.swiper-pagination-bullet {
   font-weight: 500;
   width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 8.25);
   padding: 0 0 calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.5) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.75);
-  border-bottom: 1px #B69B76 solid;
+  border-bottom: 1px #8fc04a solid;
   line-height: 1.2;
   font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
 }
@@ -1988,10 +2006,15 @@ button.swiper-pagination-bullet {
 }
 @media print, only screen and ( min-width: 960px ) {
   .site-navigation {
+    background-color: transparent;
     max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 53.75);
-    padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 9.375) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 8.75);
+    padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.5);
     flex-direction: row;
     gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 6.25);
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    justify-content: flex-end;
   }
 }
 .site-navigation.is-show {
@@ -2088,8 +2111,10 @@ button.swiper-pagination-bullet {
 }
 @media print, only screen and ( min-width: 960px ) {
   .site-navigation-lists {
-    margin: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1) 0 0;
-    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
+    margin: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0) 0 0;
+    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2.5);
+    flex-direction: row;
+    justify-content: flex-end;
   }
 }
 
@@ -2098,7 +2123,6 @@ button.swiper-pagination-bullet {
   font-weight: 500;
   padding-bottom: 0.75rem;
   display: block;
-  border-bottom: 1px solid #B69B76;
   color: #000000;
   text-decoration: none;
   font-family: "Roboto", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
@@ -2106,8 +2130,8 @@ button.swiper-pagination-bullet {
 }
 @media print, only screen and ( min-width: 960px ) {
   .site-navigation-lists__title {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-    padding-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.75);
+    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.125);
+    padding-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0);
   }
 }
 
@@ -2281,7 +2305,7 @@ button.swiper-pagination-bullet {
   padding: 1rem;
   display: block;
   max-width: 18.125rem;
-  background-color: #B69B76;
+  background-color: #8fc04a;
   color: #fff;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
   text-align: center;
@@ -2294,7 +2318,7 @@ button.swiper-pagination-bullet {
   .site-navigation__contact {
     font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.125);
     padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-    border: 2px solid #B69B76;
+    border: 2px solid #8fc04a;
     margin: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.625) 0 0;
     max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 17);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2305,7 +2329,7 @@ button.swiper-pagination-bullet {
 @media print and (hover: hover), only screen and ( min-width: 960px ) and (hover: hover) {
   .site-navigation__contact:hover {
     background-color: #fff;
-    color: #B69B76;
+    color: #8fc04a;
   }
 }
 
@@ -2404,7 +2428,7 @@ button.swiper-pagination-bullet {
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
   line-height: 1.44;
   display: block;
-  background-color: #B69B76;
+  background-color: #8fc04a;
   color: #fff;
   padding: 1.25rem;
   text-align: center;
@@ -2415,7 +2439,7 @@ button.swiper-pagination-bullet {
     max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 17);
     font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.125);
     padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.125);
-    border: 2px solid #B69B76;
+    border: 2px solid #8fc04a;
     width: 100%;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-backface-visibility: hidden;
@@ -2424,9 +2448,77 @@ button.swiper-pagination-bullet {
 }
 @media print and (hover: hover), only screen and ( min-width: 960px ) and (hover: hover) {
   .site-secondary-navigation__contact:hover {
-    color: #B69B76;
+    color: #8fc04a;
     background-color: #fff;
   }
+}
+
+.toggle_btn {
+  position: relative; /*ボタン内側の基点となるためrelativeを指定*/
+  cursor: pointer;
+  width: 30px;
+  height: 40px;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .toggle_btn {
+    display: block;
+  }
+}
+.toggle_btn .openbtn-area {
+  width: 30px;
+  height: 40px;
+  transition: all 0.6s;
+}
+
+/*ボタン内側*/
+.toggle_btn span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 0px;
+  height: 3px;
+  border-radius: 2px;
+  background: #8fc04a;
+  width: 100%;
+  z-index: 999;
+}
+
+.toggle_btn span:nth-of-type(1) {
+  top: 10px;
+}
+
+.toggle_btn span:nth-of-type(2) {
+  top: 18px;
+}
+
+.toggle_btn span:nth-of-type(3) {
+  top: 26px;
+}
+
+/*activeクラスが付与されると .openbtn-areaが360度回転し、その中の線が回転して×に*/
+.toggle_btn.active .openbtn-area {
+  transform: rotate(360deg);
+}
+
+.toggle_btn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 0px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 100%;
+  background: #fff;
+}
+
+.toggle_btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.toggle_btn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 0px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 100%;
+  background: #fff;
 }
 
 .wp-block-post-content {
@@ -2532,7 +2624,7 @@ button.swiper-pagination-bullet {
   letter-spacing: 0.12em;
   font-weight: 500;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .page-main-detail .wp-block-heading {
@@ -2546,7 +2638,7 @@ button.swiper-pagination-bullet {
   margin: 0;
   font-weight: 500;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .page-main-detail p {
@@ -3128,7 +3220,7 @@ span.next {
   font-size: 1.125rem;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
   font-weight: 500;
-  color: #B69B76;
+  color: #8fc04a;
   margin: 0;
 }
 @media print, only screen and ( min-width: 960px ) {
@@ -3231,7 +3323,7 @@ span.next {
   }
 }
 .front-extend h2 + p {
-  color: #B69B76;
+  color: #8fc04a;
   font-size: 1.125rem;
   line-height: 1.77;
   margin: -2rem 0 0;
@@ -3244,7 +3336,7 @@ span.next {
   }
 }
 .front-extend h2 + p mark {
-  color: #B69B76 !important;
+  color: #8fc04a !important;
 }
 @media print, only screen and ( min-width: 960px ) {
   .front-extend h2 + p mark {
@@ -3283,7 +3375,7 @@ span.next {
   font-size: 1.125rem;
   line-height: 1.7;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
   font-weight: 500;
 }
 @media print, only screen and ( min-width: 960px ) {
@@ -3448,7 +3540,7 @@ span.next {
   }
 }
 .front-event .front-event__catch {
-  color: #B69B76;
+  color: #8fc04a;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
   font-size: 1.25rem;
   text-align: center;
@@ -3497,7 +3589,7 @@ span.next {
   text-align: center;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .front-event .wp-block-post-title {
@@ -3671,7 +3763,7 @@ span.next {
   line-height: 1.2;
   font-weight: 500;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
 }
 
 .entry-header__info {
