@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 
 <footer role="contentinfo" class="site-footer">
 	<div class="footer__inner">
-		<h2 class="site-branding">
+		<h2 class="site-branding site-footer__logo">
 			<a href="<?php echo home_url(); ?>/" class="site-branding__link">
 				<img src="<?php echo IMG; ?>/logo.png" alt="<?php bloginfo('name'); ?>">
 			</a>

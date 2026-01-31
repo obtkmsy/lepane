@@ -55,12 +55,24 @@
 // フッター 骨格
 // ----------------------------------------------------------------
 
+.site-footer__logo{
+    margin: 0 auto;
+    @media #{$md-devices}{
+        margin: 0;
+    }
+}
 .site-footer {
     margin-top: rem(120);
     @media #{$md-devices} {
         margin-top: fluid-calc(160);
         
     }
+}
+
+.footer__inner{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 rem(24);
 }
 
 .footer-contents {
@@ -91,11 +103,14 @@
 
 
 .footer-navigation-lists {
-    display: flex;
-    gap: fluid-calc(48);
-    padding: 0;
-    list-style: none;
-    margin: fluid-calc(16) 0 0;
+    display: none;
+    @media #{$md-devices}{
+        display: flex;
+        gap: fluid-calc(48);
+        padding: 0;
+        list-style: none;
+        margin: fluid-calc(16) 0 0;
+    }
 }
 
 .footer-navigation-lists__title {
@@ -106,7 +121,7 @@
     font-weight: 500;
     width: fluid-calc(132);
     padding: 0 0 fluid-calc(8) fluid-calc(12);
-    border-bottom: 1px $color-primary solid;
+    // border-bottom: 1px $color-primary solid;
     line-height: 1.2;
     font-size: fluid-calc(14);
     @media #{$md-devices} {
