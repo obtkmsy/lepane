@@ -8,61 +8,28 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 /**
-* custom post 「OUR STORY」を追加
+* custom taxonomy 「BLOG」のカテゴリー
 */
-// if ( ! function_exists( 'create_post_type_ourstory' ) ) {
-// 	function create_post_type_ourstory() {
-
-// 		register_post_type( 'ourstory',
-// 		array(
-// 			'labels'         => array(
-// 				'name'           => 'OUR STORY',
-// 				'singular_name'  => 'OUR STORY'
-// 			),
-// 			'rewrite'        => array(true, 'with_front' => false),
-// 			'public'         => true,
-// 			'menu_position'  => 4,
-// 			'has_archive'    => true,
-// 			'show_in_rest'   => true,
-// 			'supports'       => array(
-// 					'author',
-// 					'custom-fields',
-// 					'revisions',
-// 					'title',
-// 					'editor',
-// 					'thumbnail',
-// 					'excerpt',
-// 					'comments',
-// 					'page-attributes',
-// 					'trackbacks',
-// 				)
-// 			)
-// 		);
-// 	}
-// }
-// add_action( 'init', 'create_post_type_ourstory' );
-
-
-
-/**
-* custom taxonomy 「テスト」のカテゴリー
-*/
-
-// if ( ! function_exists( 'create_taxonomy_series_cat' ) ) {
-// 	function create_taxonomy_series_cat() {
-// 		register_taxonomy(
-// 			TAX_TEST_CAT,
-// 			array('OUR STORY'),
-// 			array(
-// 				'hierarchical'           => true,
-// 				'update_count_callback'  => '_update_post_term_count',
-// 				'label'                  => TAX_LABEL_TEST_CAT,
-// 				'singular_label'         => TAX_LABEL_TEST_CAT,
-// 				'public'                 => true,
-// 				'show_ui'                => true,
-// 				'show_in_rest'           => true
-// 			)
-// 		);
-// 	}
-// }
-// add_action( 'init', 'create_taxonomy_series_cat' );
+add_action('init', function () {
+	register_taxonomy(TAX_BLOG_CAT, [CP_BLOG], [
+	  'label'        => TAX_LABEL_BLOG_CAT,
+	  'public'       => true,
+	  'show_ui'      => true,
+	  'show_in_rest' => true,
+	  'hierarchical' => true,
+	  'rewrite'      => ['slug' => TAX_BLOG_CAT],
+	]);
+  
+	register_post_type(CP_BLOG, [
+	  'label'        => CL_BLOG,
+	  'public'       => true,
+	  'show_ui'      => true,
+	  'show_in_menu' => true,
+	  'show_in_rest' => true,
+	  'supports'     => ['title','editor','thumbnail'],
+	  'has_archive'  => true,
+	  'taxonomies'   => [TAX_BLOG_CAT],
+	  'taxonomies'   => [TAX_BLOG_CAT, 'post_tag'],
+	]);
+  
+});

@@ -21,16 +21,16 @@ define( 'ID_HOME', get_option( 'page_for_posts' ) );
 
 
 // カスタム投稿の slug
-const CP_TEST = 'test';
+const CP_BLOG = 'blog';
 
 // カスタムタクソノミーの slug
-const TAX_TEST_CAT = 'test-category';
+const TAX_BLOG_CAT = 'blog-category';
 
 // カスタムタクソノミーの label
-const TAX_LABEL_TEST_CAT = 'カテゴリー';
+const TAX_LABEL_BLOG_CAT = 'カテゴリー';
 
 // カスタム投稿の label
-define( 'CL_TEST', __('テスト', 'test') );
+define( 'CL_BLOG', __('ブログ', 'blog') );
 
 
 /**
