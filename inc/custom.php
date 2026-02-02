@@ -18,7 +18,7 @@ add_action('init', function () {
 		'show_in_rest' => true,
 		'hierarchical' => true,
 		'rewrite'      => [
-			'slug' => 'meeting',
+			'slug' => 'meeting/category',
 			'with_front' => false,
 		],
 	]);
@@ -30,12 +30,12 @@ add_action('init', function () {
 		'show_in_menu' => true,
 		'show_in_rest' => true,
 		'supports'     => ['title','editor','thumbnail'],
-		'has_archive'  => true,
+		'has_archive'  => 'meeting',
 		'rewrite'      => [
 		  'slug'       => 'meeting',
 		  'with_front' => false,
 		],
 		'taxonomies'   => [TAX_MEETING_CAT, 'post_tag'],
 	]);
-  
+
 });
