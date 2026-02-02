@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
+// DOM Read for jQuery
+// --------------------------------------------------------------- //
+jQuery(function ($) {
+    console.log("jqueryを使えるぞい");
+    $('body').addClass('success');
+});

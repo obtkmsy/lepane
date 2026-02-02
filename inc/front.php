@@ -98,7 +98,7 @@ if ( ! function_exists( 'enqueue_scripts' ) ) {
 			null,
 			true
 		);
-		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/assets/js/script.js', '?', rand(), '' );
+		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/assets/js/script.js', ['jquery'], rand(), true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
