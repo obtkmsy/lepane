@@ -21,16 +21,16 @@ define( 'ID_HOME', get_option( 'page_for_posts' ) );
 
 
 // カスタム投稿の slug
-const CP_BLOG = 'blog';
+const CP_MEETING = 'meeting';
 
 // カスタムタクソノミーの slug
-const TAX_BLOG_CAT = 'blog-category';
+const TAX_MEETING_CAT = 'meeting-category';
 
 // カスタムタクソノミーの label
-const TAX_LABEL_BLOG_CAT = 'カテゴリー';
+const TAX_LABEL_MEETING_CAT = 'カテゴリー';
 
 // カスタム投稿の label
-define( 'CL_BLOG', __('ブログ', 'blog') );
+define( 'CL_MEETING', __('交流会', 'meeting') );
 
 
 /**
