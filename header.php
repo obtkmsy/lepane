@@ -66,7 +66,7 @@ $first_visit = !isset($_COOKIE['visited']);
 						</li>
 					</ul>
 				</nav>
-				<div class="toggle_btn active">
+				<div class="toggle_btn">
 					<div class="openbtn-area">
 						<span></span>
 						<span></span>
