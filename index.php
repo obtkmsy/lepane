@@ -23,8 +23,6 @@ if ( !defined( 'ABSPATH' ) ) {
 
 			<?php get_template_part('template', 'parts/component/pager'); ?>
 
-			<?php get_template_part('template', 'parts/entry/posts-content'); ?>
-
 		<?php else: endif; ?>
 	</div>
 </main>

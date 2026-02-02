@@ -18,11 +18,11 @@ if ( !defined( 'ABSPATH' ) ) {
         </li>
       <?php endwhile; ?>
     </ul>
-
-    <?php the_posts_pagination(); ?>
   <?php else: ?>
     <p>記事がありません。</p>
   <?php endif; ?>
+
+  <?php get_template_part('template', 'parts/component/pager'); ?>
 </main>
 
 <?php get_footer(); ?>
