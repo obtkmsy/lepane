@@ -36,6 +36,7 @@ add_action('init', function () {
 		  'with_front' => false,
 		],
 		'taxonomies'   => [TAX_MEETING_CAT, 'post_tag'],
+		'supports' => ['title','editor','thumbnail','excerpt'],
 	]);
 
 });
