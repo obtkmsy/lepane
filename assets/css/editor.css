@@ -97,7 +97,7 @@ img {
 }
 
 .section-headline {
-  color: #B69B76;
+  color: #8fc04a;
   margin-bottom: 0.625rem;
 }
 @media print, only screen and ( min-width: 960px ) {
@@ -136,7 +136,7 @@ img {
   font-weight: 900;
   line-height: 1.73;
   margin: 0 0 1.25rem;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .section__catch {
@@ -165,14 +165,14 @@ img {
 }
 
 .section-btn__link {
-  border: 2px solid #B69B76;
+  border: 2px solid #8fc04a;
   border-radius: 100vmax;
   background-color: #fff;
   box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.08);
   display: block;
   text-decoration: none;
   text-align: center;
-  color: #B69B76;
+  color: #8fc04a;
   font-weight: 700;
   letter-spacing: normal;
   letter-spacing: 0.05em;
@@ -1231,7 +1231,7 @@ button.swiper-pagination-bullet {
   }
 }
 .wp-block-post-content p a {
-  color: #B69B76;
+  color: #8fc04a;
   text-decoration: underline;
 }
 @media print, only screen and ( min-width: 960px ) {
@@ -1250,6 +1250,9 @@ button.swiper-pagination-bullet {
   font-size: 1.125rem;
   line-height: 1.38;
   margin: 3rem 0 1.5rem;
+  border-top: 2px solid #8fc04a;
+  border-bottom: 2px solid #8fc04a;
+  padding: 1rem 0;
 }
 @media print, only screen and ( min-width: 960px ) {
   .wp-block-post-content h2.wp-block-heading {
@@ -1363,7 +1366,7 @@ button.swiper-pagination-bullet {
   font-size: 1.125rem;
   line-height: 1.45;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .is-style-mincho-heading {
@@ -1388,9 +1391,9 @@ button.swiper-pagination-bullet {
   }
 }
 .component-button .wp-block-button__link {
-  background-color: #B69B76;
+  background-color: #8fc04a;
   color: #fff;
-  border: 2px solid #B69B76;
+  border: 2px solid #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .component-button .wp-block-button__link {
@@ -1401,7 +1404,7 @@ button.swiper-pagination-bullet {
 }
 @media print and (hover: hover), only screen and ( min-width: 960px ) and (hover: hover) {
   .component-button .wp-block-button__link:hover {
-    color: #B69B76 !important;
+    color: #8fc04a !important;
     background-color: #fff !important;
   }
 }
@@ -1724,60 +1727,9 @@ button.swiper-pagination-bullet {
   }
 }
 
-.loading {
-  position: fixed;
-  inset: 0;
-  background: #FFF2F1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 1;
-  pointer-events: all;
-  transition: opacity 0.6s ease;
-}
-
-.loading.is-hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.four-notes {
-  display: flex;
-  gap: 24px;
-}
-
-.note svg {
-  width: 70px;
-  height: 70px;
-  animation: bounce 1.4s ease-in-out infinite;
-}
-
-.note:nth-child(2) svg {
-  animation-delay: 0.15s;
-}
-
-.note:nth-child(3) svg {
-  animation-delay: 0.3s;
-}
-
-.note:nth-child(4) svg {
-  animation-delay: 0.45s;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
 .site-header {
-  position: fixed;
   top: 1.5rem;
-  padding: 0 1rem;
-  display: flex;
+  padding: 1rem;
   width: 100%;
   left: 0;
   right: 0;
@@ -1792,14 +1744,26 @@ button.swiper-pagination-bullet {
   }
 }
 
+.header__caption {
+  display: none;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .header__caption {
+    font-size: 0.625rem;
+    text-align: right;
+    font-weight: 100;
+    display: block;
+  }
+}
+
 .site-branding {
-  max-width: 8.6875rem;
+  max-width: 5rem;
   margin: 0;
   line-height: 1;
 }
 @media print, only screen and ( min-width: 960px ) {
   .site-branding {
-    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 16.375);
+    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 12.5);
   }
 }
 .site-branding a {
@@ -1820,6 +1784,13 @@ button.swiper-pagination-bullet {
   .site-branding__link:where(:any-link, :enabled, summary):hover {
     opacity: 0.7;
   }
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .site-menu-button {
@@ -1882,10 +1853,15 @@ button.swiper-pagination-bullet {
 }
 @media print, only screen and ( min-width: 960px ) {
   .site-navigation {
+    background-color: transparent;
     max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 53.75);
-    padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 9.375) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 8.75);
+    padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.5);
     flex-direction: row;
     gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 6.25);
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    justify-content: flex-end;
   }
 }
 .site-navigation.is-show {
@@ -1982,8 +1958,10 @@ button.swiper-pagination-bullet {
 }
 @media print, only screen and ( min-width: 960px ) {
   .site-navigation-lists {
-    margin: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1) 0 0;
-    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
+    margin: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0) 0 0;
+    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2.5);
+    flex-direction: row;
+    justify-content: flex-end;
   }
 }
 
@@ -1992,7 +1970,6 @@ button.swiper-pagination-bullet {
   font-weight: 500;
   padding-bottom: 0.75rem;
   display: block;
-  border-bottom: 1px solid #B69B76;
   color: #000000;
   text-decoration: none;
   font-family: "Roboto", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
@@ -2000,8 +1977,8 @@ button.swiper-pagination-bullet {
 }
 @media print, only screen and ( min-width: 960px ) {
   .site-navigation-lists__title {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-    padding-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.75);
+    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.125);
+    padding-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0);
   }
 }
 
@@ -2175,7 +2152,7 @@ button.swiper-pagination-bullet {
   padding: 1rem;
   display: block;
   max-width: 18.125rem;
-  background-color: #B69B76;
+  background-color: #8fc04a;
   color: #fff;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
   text-align: center;
@@ -2188,7 +2165,7 @@ button.swiper-pagination-bullet {
   .site-navigation__contact {
     font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.125);
     padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-    border: 2px solid #B69B76;
+    border: 2px solid #8fc04a;
     margin: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.625) 0 0;
     max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 17);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2199,7 +2176,7 @@ button.swiper-pagination-bullet {
 @media print and (hover: hover), only screen and ( min-width: 960px ) and (hover: hover) {
   .site-navigation__contact:hover {
     background-color: #fff;
-    color: #B69B76;
+    color: #8fc04a;
   }
 }
 
@@ -2298,7 +2275,7 @@ button.swiper-pagination-bullet {
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
   line-height: 1.44;
   display: block;
-  background-color: #B69B76;
+  background-color: #8fc04a;
   color: #fff;
   padding: 1.25rem;
   text-align: center;
@@ -2309,7 +2286,7 @@ button.swiper-pagination-bullet {
     max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 17);
     font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.125);
     padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.125);
-    border: 2px solid #B69B76;
+    border: 2px solid #8fc04a;
     width: 100%;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-backface-visibility: hidden;
@@ -2318,9 +2295,75 @@ button.swiper-pagination-bullet {
 }
 @media print and (hover: hover), only screen and ( min-width: 960px ) and (hover: hover) {
   .site-secondary-navigation__contact:hover {
-    color: #B69B76;
+    color: #8fc04a;
     background-color: #fff;
   }
+}
+
+.toggle_btn {
+  position: relative; /*ボタン内側の基点となるためrelativeを指定*/
+  cursor: pointer;
+  width: 30px;
+  height: 40px;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .toggle_btn {
+    display: block;
+  }
+}
+.toggle_btn .openbtn-area {
+  width: 30px;
+  height: 40px;
+  transition: all 0.6s;
+}
+
+/*ボタン内側*/
+.toggle_btn span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 0px;
+  height: 3px;
+  border-radius: 2px;
+  background: #8fc04a;
+  width: 100%;
+  z-index: 999;
+}
+
+.toggle_btn span:nth-of-type(1) {
+  top: 10px;
+}
+
+.toggle_btn span:nth-of-type(2) {
+  top: 18px;
+}
+
+.toggle_btn span:nth-of-type(3) {
+  top: 26px;
+}
+
+/*activeクラスが付与されると .openbtn-areaが360度回転し、その中の線が回転して×に*/
+.toggle_btn.active .openbtn-area {
+  transform: rotate(360deg);
+}
+
+.toggle_btn.active span:nth-of-type(1) {
+  top: 8px;
+  left: 0px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 100%;
+}
+
+.toggle_btn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.toggle_btn.active span:nth-of-type(3) {
+  top: 20px;
+  left: 0px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 100%;
 }
 
 .cta {
@@ -2381,6 +2424,15 @@ button.swiper-pagination-bullet {
   }
 }
 
+.site-footer__logo {
+  margin: 0 auto;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .site-footer__logo {
+    margin: 0;
+  }
+}
+
 .site-footer {
   margin-top: 7.5rem;
 }
@@ -2388,6 +2440,12 @@ button.swiper-pagination-bullet {
   .site-footer {
     margin-top: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 10);
   }
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
 }
 
 .footer-contents {
@@ -2411,11 +2469,16 @@ button.swiper-pagination-bullet {
 }
 
 .footer-navigation-lists {
-  display: flex;
-  gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 3);
-  padding: 0;
-  list-style: none;
-  margin: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1) 0 0;
+  display: none;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .footer-navigation-lists {
+    display: flex;
+    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 3);
+    padding: 0;
+    list-style: none;
+    margin: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1) 0 0;
+  }
 }
 
 .footer-navigation-lists__title {
@@ -2426,7 +2489,6 @@ button.swiper-pagination-bullet {
   font-weight: 500;
   width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 8.25);
   padding: 0 0 calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.5) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.75);
-  border-bottom: 1px #B69B76 solid;
   line-height: 1.2;
   font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
 }
@@ -2625,7 +2687,7 @@ button.swiper-pagination-bullet {
   letter-spacing: 0.12em;
   font-weight: 500;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .page-main-detail .wp-block-heading {
@@ -2639,7 +2701,7 @@ button.swiper-pagination-bullet {
   margin: 0;
   font-weight: 500;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .page-main-detail p {
@@ -3138,493 +3200,6 @@ span.next {
   visibility: hidden;
 }
 
-.archive-contents {
-  margin: 7.5rem 0 0;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents {
-    margin-top: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 8.75);
-    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 80);
-  }
-}
-.archive-contents .entry-loop {
-  display: flex;
-  gap: 3rem 1rem;
-  flex-wrap: wrap;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-loop {
-    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 3) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 5);
-  }
-}
-.archive-contents .entry-item {
-  width: 100%;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item {
-    width: calc((100% - clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 10) / 3);
-  }
-}
-.archive-contents .entry-item__link {
-  display: block;
-  text-decoration: none;
-  color: #000000;
-  position: relative;
-  height: 100%;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__link {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-  }
-}
-@media print and (hover: hover), only screen and ( min-width: 960px ) and (hover: hover) {
-  .archive-contents .entry-item__link:hover .entry-item__thumbnail img {
-    transform: scale(1.08);
-  }
-}
-.archive-contents .entry-item__thumbnail {
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  line-height: 0;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__thumbnail {
-    margin-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
-  }
-}
-.archive-contents .entry-item__thumbnail img {
-  object-fit: cover;
-  aspect-ratio: 366/244;
-  object-position: center;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__thumbnail img {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-  }
-}
-.archive-contents .entry-item__info {
-  position: absolute;
-  top: 0;
-  left: 1rem;
-  z-index: 1;
-  background-color: #fff;
-  border-radius: 0 0 16px 16px;
-  text-align: center;
-  padding: 0.25rem 0 0.375rem;
-  min-width: 6.25rem;
-  background-color: #f2eee6;
-  background-image: linear-gradient(0deg, #fff 90%, transparent 100%);
-  background-size: 14px 14px;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__info {
-    padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.25) 0 calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.375);
-    min-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 6.875);
-  }
-}
-.archive-contents .entry-item__date {
-  font-size: 1.125rem;
-  font-weight: 500;
-  margin: 0;
-  line-height: 1.2;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__date {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.25);
-    line-height: 1.1;
-  }
-}
-.archive-contents .entry-item__date span {
-  display: block;
-  font-size: 0.8125rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__date span {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-  }
-}
-.archive-contents .entry-item__date strong {
-  color: #D17882;
-  font-weight: 500;
-}
-.archive-contents .entry-item__cat {
-  margin: 0.25rem 0 0;
-  color: #D17882;
-  font-weight: 500;
-  line-height: 1.2;
-  font-size: 0.8125rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__cat {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-    margin-top: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.25);
-  }
-}
-.archive-contents .entry-item__title {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #000000;
-  font-weight: 500;
-  padding-bottom: 0.625rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.625rem;
-  border-bottom: 1px solid #D17882;
-  letter-spacing: 0.04em;
-}
-.archive-contents .entry-item__title:before {
-  content: "";
-  display: block;
-  width: 1.5rem;
-  aspect-ratio: 1;
-  background-color: #eacbc8;
-  border-radius: 100%;
-  filter: blur(0.5rem);
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__title:before {
-    width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.5);
-    filter: blur(calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.625));
-  }
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__title {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
-    padding-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.625);
-    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-  }
-}
-.archive-contents .entry-item__text {
-  overflow: hidden;
-  display: -webkit-box;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  margin: 0;
-  padding: 0 0.75rem;
-  line-height: 1.7;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .archive-contents .entry-item__text {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-    padding: 0 calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.75);
-  }
-}
-
-.trainer-item {
-  display: flex;
-  flex-direction: column-reverse;
-  gap: 2rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item {
-    flex-direction: row-reverse;
-    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 5);
-    align-items: center;
-  }
-  .trainer-item:nth-of-type(2n) {
-    flex-direction: row;
-  }
-}
-.trainer-item:not(:last-of-type) {
-  margin-bottom: 4rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item:not(:last-of-type) {
-    margin-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 7.5);
-  }
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item .wp-block-group {
-    flex: 1;
-  }
-}
-.trainer-item h3.wp-block-heading {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.5;
-  position: relative;
-  z-index: 1;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item h3.wp-block-heading {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
-  }
-}
-.trainer-item h3.wp-block-heading mark {
-  font-size: 0.75rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item h3.wp-block-heading mark {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.75);
-  }
-}
-.trainer-item h3.wp-block-heading:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  aspect-ratio: 168/28;
-  background-image: url(../../assets/images/name-bg.png);
-  background-size: cover;
-  width: 10.25rem;
-  bottom: -0.625rem;
-  left: -1.125rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item h3.wp-block-heading:before {
-    width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 10.25);
-    bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * -0.625);
-    left: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * -1.125);
-  }
-}
-.trainer-item h4.wp-block-heading {
-  margin-top: 1.5rem;
-  font-size: 0.875rem;
-  font-weight: 400;
-  position: relative;
-  width: -webkit-fit-content;
-  width: fit-content;
-  z-index: 1;
-  margin-left: 0 !important;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item h4.wp-block-heading {
-    margin-top: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2);
-    margin-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2);
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-  }
-}
-.trainer-item h4.wp-block-heading:before {
-  content: "";
-  position: absolute;
-  width: calc(100% + 1.75rem);
-  left: -0.875rem;
-  bottom: 0.25rem;
-  height: 0.625rem;
-  background-color: #FCDFDC;
-  z-index: -1;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item h4.wp-block-heading:before {
-    width: calc(100% + clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.75);
-    left: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * -0.875);
-    bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.25);
-    height: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.625);
-  }
-}
-.trainer-item p {
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 2;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item p {
-    line-height: 2.64;
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-  }
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item .wp-block-columns-is-layout-flex {
-    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.25);
-  }
-}
-.trainer-item .wp-block-columns-is-layout-flex:not(:last-of-type) {
-  margin-bottom: 1rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item .wp-block-columns-is-layout-flex:not(:last-of-type) {
-    margin-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.75);
-  }
-}
-.trainer-item .wp-block-columns-is-layout-flex .wp-block-column:first-of-type {
-  margin-bottom: 0.5rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item .wp-block-columns-is-layout-flex .wp-block-column:first-of-type {
-    margin-bottom: 0;
-    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 5.5);
-    border-bottom: 1px solid #FCDFDC;
-    display: flex;
-    align-items: center;
-  }
-}
-.trainer-item .wp-block-columns-is-layout-flex .wp-block-column:first-of-type p {
-  width: -webkit-fit-content;
-  width: fit-content;
-  border-bottom: 1px solid #FCDFDC;
-  padding: 0 1.25rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item .wp-block-columns-is-layout-flex .wp-block-column:first-of-type p {
-    border-bottom: none;
-  }
-}
-.trainer-item .wp-block-columns-is-layout-flex .wp-block-column:last-of-type {
-  margin: 0;
-  border-bottom: 1px solid #D9D9D9;
-}
-.trainer-item .wp-block-columns-is-layout-flex .wp-block-column:last-of-type p {
-  width: -webkit-fit-content;
-  width: fit-content;
-  padding: 0 1.25rem 0.25rem;
-}
-.trainer-item .wp-block-columns-is-layout-flex .wp-block-column p {
-  line-height: 1.44;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .trainer-item .wp-block-image {
-    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 25.625);
-  }
-}
-
-.access {
-  margin-top: 2.25rem;
-  padding: 0 1.5rem 5rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .access {
-    margin-top: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 12.5);
-    padding: 0 calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.5) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 5);
-  }
-}
-
-@media print, only screen and ( min-width: 960px ) {
-  .access-map {
-    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 40.9375);
-  }
-}
-
-.access__text {
-  text-align: center;
-  font-size: 0.875rem;
-  line-height: 1.71;
-  font-weight: 500;
-  margin: 0 0 1rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .access__text {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.125);
-    margin-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2.5);
-  }
-}
-
-.access-contents {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .access-contents {
-    flex-direction: row;
-    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 6.25);
-    align-items: center;
-    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 77.5);
-    margin: 0 auto;
-  }
-}
-
-.access-studio {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .access-studio {
-    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2.625);
-    flex: 1;
-  }
-}
-
-.access-studio__title {
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 0 0 1rem;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .access-studio__title {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
-    margin-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
-  }
-}
-
-.access-studio__detail {
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin: 0 0 1rem;
-  line-height: 1.5;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .access-studio__detail {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-    margin-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
-  }
-}
-
-.voice-item {
-  padding: 1.5rem 1rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-@media print, only screen and ( min-width: 960px ) {
-  .voice-item {
-    padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 3.375);
-    border-radius: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2.5);
-  }
-}
-.voice-item p {
-  font-size: 0.8125rem;
-  font-weight: 400;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .voice-item p {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
-  }
-}
-.voice-item .wp-element-caption {
-  margin-bottom: 0;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .voice-item .wp-block-columns-is-layout-flex {
-    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 3.75);
-    align-items: center;
-  }
-}
-.voice-item .wp-block-columns-is-layout-flex .wp-block-column:first-of-type {
-  max-width: 6.875rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .voice-item .wp-block-columns-is-layout-flex .wp-block-column:first-of-type {
-    margin-right: 0;
-    margin-left: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 3);
-    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 6.875);
-  }
-}
-.voice-item .wp-block-columns-is-layout-flex .wp-block-column:last-of-type p {
-  line-height: 2;
-}
-@media print, only screen and ( min-width: 960px ) {
-  .voice-item .wp-block-columns-is-layout-flex .wp-block-column:last-of-type p {
-    line-height: 2.6;
-  }
-}
-
 .front-main {
   padding: 0;
   position: relative;
@@ -3708,7 +3283,7 @@ span.next {
   font-size: 1.125rem;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
   font-weight: 500;
-  color: #B69B76;
+  color: #8fc04a;
   margin: 0;
 }
 @media print, only screen and ( min-width: 960px ) {
@@ -3811,7 +3386,7 @@ span.next {
   }
 }
 .front-extend h2 + p {
-  color: #B69B76;
+  color: #8fc04a;
   font-size: 1.125rem;
   line-height: 1.77;
   margin: -2rem 0 0;
@@ -3824,7 +3399,7 @@ span.next {
   }
 }
 .front-extend h2 + p mark {
-  color: #B69B76 !important;
+  color: #8fc04a !important;
 }
 @media print, only screen and ( min-width: 960px ) {
   .front-extend h2 + p mark {
@@ -3863,7 +3438,7 @@ span.next {
   font-size: 1.125rem;
   line-height: 1.7;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
   font-weight: 500;
 }
 @media print, only screen and ( min-width: 960px ) {
@@ -4028,7 +3603,7 @@ span.next {
   }
 }
 .front-event .front-event__catch {
-  color: #B69B76;
+  color: #8fc04a;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
   font-size: 1.25rem;
   text-align: center;
@@ -4077,7 +3652,7 @@ span.next {
   text-align: center;
   font-size: 1.25rem;
   font-weight: 400;
-  color: #B69B76;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .front-event .wp-block-post-title {
@@ -4251,7 +3826,7 @@ span.next {
   line-height: 1.2;
   font-weight: 500;
   font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
-  color: #B69B76;
+  color: #8fc04a;
 }
 
 .entry-header__info {
