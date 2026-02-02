@@ -7,8 +7,6 @@ if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// get acf
-// $sample = get_field('sample');
 ?>
 
 <?php get_header(); ?>

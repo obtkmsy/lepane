@@ -74,25 +74,12 @@ if ( ! function_exists( 'the_first_text_block' ) ) {
 
 <article class="entry-item">
 	<a href="<?php the_permalink(); ?>" class="entry-item__link">
-		<div class="entry-item__info">
-			<p class="entry-item__date">
-				<?php posted_on(); ?>
-			</p>
-			<p class="entry-item__cat">
-				<?php
-				$cats = get_the_category();
-				if ( $cats ) {
-					echo esc_html( implode(' / ', wp_list_pluck( $cats, 'name' ) ) );
-				}
-				?>
-			</p>
-		</div>
 		<div class="entry-item__thumbnail">
 			<?php 
 			if ( has_post_thumbnail() ) {
 				$thumb_url = get_the_post_thumbnail_url( get_the_ID() );
 			} else {
-				$thumb_url = get_template_directory_uri() . '/assets/images/thumbnail.jpg';
+				$thumb_url = get_template_directory_uri() . '/assets/images/thumbnail.png';
 			}
 			?>
 			<img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php the_title_attribute(); ?>">
@@ -101,6 +88,19 @@ if ( ! function_exists( 'the_first_text_block' ) ) {
 			<h2 class="entry-item__title">
 				<?php the_title(); ?>
 			</h2>
+			<div class="entry-item__info">
+				<p class="entry-item__date">
+					<?php posted_on(); ?>
+				</p>
+				<p class="entry-item__cat">
+					<?php
+					$cats = get_the_category();
+					if ( $cats ) {
+						echo esc_html( implode(' / ', wp_list_pluck( $cats, 'name' ) ) );
+					}
+					?>
+				</p>
+			</div>
 			<p class="entry-item__text">
 				<?php the_first_text_block(); ?>
 			</p>
