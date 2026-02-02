@@ -1791,6 +1791,13 @@ button.swiper-pagination-bullet {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heder__logo-area {
+  position: relative;
+  z-index: 3;
 }
 
 .site-menu-button {
@@ -1841,7 +1848,7 @@ button.swiper-pagination-bullet {
   top: 0;
   width: 100%;
   bottom: 0;
-  z-index: 1000;
+  z-index: 2;
   padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -1850,6 +1857,10 @@ button.swiper-pagination-bullet {
           backface-visibility: hidden;
   opacity: 0;
   visibility: hidden;
+}
+.site-navigation.active {
+  opacity: 1;
+  visibility: visible;
 }
 @media print, only screen and ( min-width: 960px ) {
   .site-navigation {
@@ -2306,6 +2317,7 @@ button.swiper-pagination-bullet {
   width: 30px;
   height: 40px;
   display: none;
+  z-index: 3;
 }
 @media screen and (max-width: 768px) {
   .toggle_btn {
@@ -3808,6 +3820,11 @@ span.next {
   .front-trainer__image {
     max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 25.625);
   }
+}
+
+#chart01, #chart02 {
+  width: 100%;
+  height: 300px;
 }
 
 .single-post-contents {

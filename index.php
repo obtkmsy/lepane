@@ -1,11 +1,12 @@
 <?php
+
 /**
  * index.php
  *
  * アーカイブ用にて使用
  */
 
-if ( !defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 ?>

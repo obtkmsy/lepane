@@ -17,13 +17,17 @@
     top: 0;
     width: 100%;
     bottom: 0;
-    z-index: 1000;
+    z-index: 2;
     padding: rem(80) rem(32);
     display: flex;
     flex-direction: column;
     @include anime-all;
     opacity: 0;
     visibility: hidden;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
     @media #{$md-devices} {
         background-color: transparent;
         max-width: fluid-calc(860);
@@ -389,6 +393,7 @@ a.site-navigation-lists__title {
 	width: 30px;
 	height: 40px;
 	display: none;
+    z-index: 3;
 	@media screen and (max-width:768px){
 		display: block;
 	}

@@ -60,6 +60,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.heder__logo-area{
+    position: relative;
+    z-index: 3;
 }
 // ----------------------------------------------------------------
 // header ボタン
