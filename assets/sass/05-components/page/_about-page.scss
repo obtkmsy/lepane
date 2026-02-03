@@ -24,5 +24,14 @@
     }
    }
 }
- 
-
+ .about__staff-img{
+    gap: 20px !important;
+    .wp-block-image{
+         flex-grow: initial !important;
+           width: calc((100% - 20px) / 2) !important;
+         @media #{$md-devices}{
+            width: calc((100% - 80px) / 5) !important;
+         
+         }
+    }
+ }

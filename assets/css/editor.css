@@ -3005,7 +3005,7 @@ button.swiper-pagination-bullet {
   display: flex;
   justify-content: space-between;
   position: relative;
-  border-top: 2px solid #D17882;
+  border-top: 2px solid #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .local-navigation-items {
@@ -3026,7 +3026,7 @@ button.swiper-pagination-bullet {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  color: #D17882;
+  color: #8fc04a;
   line-height: 1.5;
   position: relative;
 }
@@ -3118,10 +3118,10 @@ button.swiper-pagination-bullet {
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 500;
-  color: #D17882;
+  color: #8fc04a;
   text-decoration: none;
   padding: 0 0.5rem 0.25rem;
-  border-bottom: 2px solid #D17882;
+  border-bottom: 2px solid #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .back-button {
@@ -3925,7 +3925,7 @@ span.next {
   font-size: 0.875rem;
 }
 .entry-header__date .weekday {
-  color: #D17882;
+  color: #8fc04a;
 }
 
 .hidden {

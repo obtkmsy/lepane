@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-    border-top: 2px solid $color-secondary;
+    border-top: 2px solid $color-primary;
     @media #{$md-devices} {
         margin-top: fluid-calc(60);
         padding-top: fluid-calc(32);
@@ -32,7 +32,7 @@
     text-decoration: none;
     font-size: rem(16);
     font-weight: 500;
-    color: $color-secondary;
+    color: $color-primary;
     line-height: 1.5;
     position: relative;
     @media #{$md-devices} {
@@ -111,10 +111,10 @@
     font-size: rem(16);
     line-height: 1.5;
     font-weight: 500;
-    color: $color-secondary;
+    color: $color-primary;
     text-decoration: none;
     padding: 0 rem(8) rem(4);
-    border-bottom: 2px solid $color-secondary;
+    border-bottom: 2px solid $color-primary;
     @media #{$md-devices} {
         font-size: fluid-calc(16);
         letter-spacing: .02em;
