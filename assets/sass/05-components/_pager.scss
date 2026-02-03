@@ -30,7 +30,7 @@
 
 .page-numbers {
 	font-size: rem(14);
-	color: $color-default;
+	color: $color-primary;
 	display: flex;
 	width: rem(40);
 	height: rem(40);
@@ -38,20 +38,20 @@
 	align-items: center;
     font-weight: 500;
 	text-decoration: none;
-	border: 1px solid #FCDFDC;
-    color: #FCDFDC;
+	border: 1px solid $color-primary;
+    color: $color-primary;
 	@media #{$md-devices} {
 		width: fluid-calc(40);
 		height: fluid-calc(40);
 		font-size: fluid-calc(14);
 		@include anime-all;
 		@include hover-customize {
-			background-color: #FCDFDC;
+			background-color: $color-primary;
 			color: #fff;
 		}
 	}
 	&.is-current {
-		background-color: #FCDFDC;
+		background-color: $color-primary;
 		color: #fff;
 	}
 }

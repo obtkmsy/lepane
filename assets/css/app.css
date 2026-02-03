@@ -1,18 +1,18 @@
-/*!*********************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss ***!
-  \*********************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/css-loader-virtual-12fb2bf6ea/8/.yarn/berry/cache/css-loader-npm-7.1.3-446668b56e-10c0.zip/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./.yarn/__virtual__/postcss-loader-virtual-273cc71e7d/8/.yarn/berry/cache/postcss-loader-npm-8.2.0-5ef532d469-10c0.zip/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./.yarn/__virtual__/sass-loader-virtual-a853fff6ca/8/.yarn/berry/cache/sass-loader-npm-16.0.6-af7e26fbcb-10c0.zip/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap);
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (1) ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/css-loader-virtual-12fb2bf6ea/8/.yarn/berry/cache/css-loader-npm-7.1.3-446668b56e-10c0.zip/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./.yarn/__virtual__/postcss-loader-virtual-273cc71e7d/8/.yarn/berry/cache/postcss-loader-npm-8.2.0-5ef532d469-10c0.zip/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./.yarn/__virtual__/sass-loader-virtual-a853fff6ca/8/.yarn/berry/cache/sass-loader-npm-16.0.6-af7e26fbcb-10c0.zip/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (1) ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap);
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (2) ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/css-loader-virtual-12fb2bf6ea/8/.yarn/berry/cache/css-loader-npm-7.1.3-446668b56e-10c0.zip/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./.yarn/__virtual__/postcss-loader-virtual-273cc71e7d/8/.yarn/berry/cache/postcss-loader-npm-8.2.0-5ef532d469-10c0.zip/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./.yarn/__virtual__/sass-loader-virtual-a853fff6ca/8/.yarn/berry/cache/sass-loader-npm-16.0.6-af7e26fbcb-10c0.zip/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (2) ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700&display=swap);
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (3) ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./.yarn/__virtual__/css-loader-virtual-12fb2bf6ea/8/.yarn/berry/cache/css-loader-npm-7.1.3-446668b56e-10c0.zip/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./.yarn/__virtual__/postcss-loader-virtual-273cc71e7d/8/.yarn/berry/cache/postcss-loader-npm-8.2.0-5ef532d469-10c0.zip/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./.yarn/__virtual__/sass-loader-virtual-a853fff6ca/8/.yarn/berry/cache/sass-loader-npm-16.0.6-af7e26fbcb-10c0.zip/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/sass/app.scss (3) ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 html {
   width: 100%;
@@ -3124,7 +3124,7 @@ button.swiper-pagination-bullet {
 
 .page-numbers {
   font-size: 0.875rem;
-  color: #000000;
+  color: #8fc04a;
   display: flex;
   width: 2.5rem;
   height: 2.5rem;
@@ -3132,8 +3132,8 @@ button.swiper-pagination-bullet {
   align-items: center;
   font-weight: 500;
   text-decoration: none;
-  border: 1px solid #FCDFDC;
-  color: #FCDFDC;
+  border: 1px solid #8fc04a;
+  color: #8fc04a;
 }
 @media print, only screen and ( min-width: 960px ) {
   .page-numbers {
@@ -3149,12 +3149,12 @@ button.swiper-pagination-bullet {
 }
 @media print and (hover: hover), only screen and ( min-width: 960px ) and (hover: hover) {
   .page-numbers:hover {
-    background-color: #FCDFDC;
+    background-color: #8fc04a;
     color: #fff;
   }
 }
 .page-numbers.is-current {
-  background-color: #FCDFDC;
+  background-color: #8fc04a;
   color: #fff;
 }
 
@@ -3167,6 +3167,69 @@ span.prev,
 span.next {
   opacity: 0;
   visibility: hidden;
+}
+
+.entry-item {
+  margin-bottom: 2.5rem;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .entry-item {
+    margin-bottom: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 5);
+  }
+}
+
+.entry-item__link {
+  text-decoration: none;
+  gap: 1.5rem;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .entry-item__link {
+    display: flex;
+    gap: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2.5);
+  }
+}
+.entry-item__link:hover .entry-item__title {
+  color: #8fc04a;
+}
+
+.entry-item__title {
+  margin: 0 !important;
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: #030303;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .entry-item__title {
+    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.5);
+    transition: all 0.8s;
+  }
+}
+
+.entry-item__thumbnail img {
+  width: 100%;
+  height: auto;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .entry-item__thumbnail img {
+    max-width: 200px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+.entry-item__text {
+  margin: 0 !important;
+  margin-top: 1rem !important;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* 制限したい行数を指定 */
+  overflow: hidden;
+}
+
+.entry-item__cat, .entry-item__date {
+  margin: 0 !important;
+  line-height: 1.4 !important;
 }
 
 .front-main {
@@ -3785,9 +3848,18 @@ span.next {
 }
 
 @media print, only screen and ( min-width: 960px ) {
-  .page-id-5 .site-main {
+  .about .site-main {
     max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 50);
     margin: 0 auto;
+  }
+}
+.about .wp-element-caption {
+  font-size: 0.6875rem !important;
+  line-height: 1.4;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .about .wp-element-caption {
+    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.6875) !important;
   }
 }
 

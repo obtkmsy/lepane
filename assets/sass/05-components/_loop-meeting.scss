@@ -9,3 +9,60 @@
 .archive-contents {
     
 }
+.entry-item{
+  margin-bottom: rem(40);
+   @media #{$md-devices}{
+    margin-bottom: fluid-calc(80);
+   }
+
+}
+
+.entry-item__link{
+  text-decoration: none; 
+   gap: rem(24);
+   @media #{$md-devices}{
+    display: flex;
+    gap: fluid-calc(40);
+   
+   }
+   &:hover{
+    .entry-item__title{
+      color: $color-primary;
+    }
+   }
+  
+}
+.entry-item__title{
+  margin: 0 !important;
+  margin-top: rem(16);
+  font-size: rem(18);
+   color: #030303;
+   @media #{$md-devices}{
+    font-size:  fluid-calc(24);
+   
+    transition: all .8s;
+   }
+}
+.entry-item__thumbnail img{
+  width: 100%;
+  height: auto;
+  @media #{$md-devices}{
+    max-width: 200px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+.entry-item__text{
+  margin: 0 !important;
+  margin-top: rem(16) !important;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* 制限したい行数を指定 */
+  overflow: hidden;
+}
+.entry-item__cat,.entry-item__date{
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}

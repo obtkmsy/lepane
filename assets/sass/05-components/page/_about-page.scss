@@ -9,11 +9,20 @@
 // ----------------------------------------------------------------
 // メインビジュアル
 // ----------------------------------------------------------------
-
-.page-id-5 .site-main{
+.about{
+.site-main{
     @media #{$md-devices}{
         max-width: fluid-calc(800);
         margin: 0 auto;
+        }
     }
-   
+     .wp-element-caption{
+        font-size: rem(11) !important;
+        line-height: 1.4;
+        @media #{$md-devices}{
+            font-size:  fluid-calc(11) !important;
+    }
+   }
 }
+ 
+
