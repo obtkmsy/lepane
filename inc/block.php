@@ -37,10 +37,10 @@ add_filter( 'block_categories_all', 'add_block_categories', 10, 2);
 if ( ! function_exists( 'register_acf_blocks' ) ) {
 	function register_acf_blocks() {
 		// // 汎用
-		register_block_type( __DIR__ . '/../blocks/banner' );
 		register_block_type( __DIR__ . '/../blocks/qa-list' );
-		register_block_type( __DIR__ . '/../blocks/course-list' );
-		register_block_type( __DIR__ . '/../blocks/main-slider' );
+		// register_block_type( __DIR__ . '/../blocks/banner' );
+		// register_block_type( __DIR__ . '/../blocks/course-list' );
+		// register_block_type( __DIR__ . '/../blocks/main-slider' );
 	}
 }
 add_action( 'init', 'register_acf_blocks' );
