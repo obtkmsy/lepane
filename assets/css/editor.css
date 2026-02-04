@@ -3928,6 +3928,10 @@ span.next {
   color: #8fc04a;
 }
 
+.blog .site-main {
+  margin-top: 5rem;
+}
+
 .hidden {
   display: none !important;
 }

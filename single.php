@@ -1,9 +1,10 @@
 <?php
+
 /**
  * single.php
  */
 
-if ( !defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 ?>
@@ -20,27 +21,29 @@ if ( !defined( 'ABSPATH' ) ) {
 				<p class="entry-header__cat">
 					<?php
 					$cats = get_the_category();
-					if ( $cats ) {
-						echo esc_html( implode(' / ', wp_list_pluck( $cats, 'name' ) ) );
+					if ($cats) {
+						echo esc_html(implode(' / ', wp_list_pluck($cats, 'name')));
 					}
 					?>
 				</p>
 			</div>
-			<div class="entry-header__thumbnail">
-				<?php 
-				if ( has_post_thumbnail() ) {
-					$thumb_url = get_the_post_thumbnail_url( get_the_ID() );
-				} else {
-					$thumb_url = get_template_directory_uri() . '/assets/images/thumbnail.png';
-				}
+			<!-- <div class="entry-header__thumbnail">
+				<?php
+				// if ( has_post_thumbnail() ) {
+				// 	$thumb_url = get_the_post_thumbnail_url( get_the_ID() );
+				// } else {
+				// 	$thumb_url = get_template_directory_uri() . '/assets/images/thumbnail.png';
+				// }
 				?>
-				<img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php the_title_attribute(); ?>">
-			</div>
-			<?php if ( have_posts() ): ?>
-				<?php while ( have_posts() ): the_post(); ?>
-				<div class="single-post-content">
-					<?php the_content(); ?>
-				</div>
+				<img src="<?php //echo esc_url( $thumb_url ); 
+									?>" alt="<?php //the_title_attribute(); 
+																																?>">
+			</div> -->
+			<?php if (have_posts()): ?>
+				<?php while (have_posts()): the_post(); ?>
+					<div class="single-post-content">
+						<?php the_content(); ?>
+					</div>
 				<?php endwhile; ?>
 			<?php else: endif; ?>
 			<?php get_template_part('template', 'parts/entry/local-navigation'); ?>
