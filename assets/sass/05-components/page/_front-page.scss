@@ -562,5 +562,53 @@
 
 .front-voice__group{
     display: flex;
+    flex-wrap: wrap;
+    gap: rem(16);
+    @media #{$md-devices}{
+    gap: fluid-calc(40);
+    }
 }
-
+.front-voice__item{
+    width:100%;
+    box-shadow: 1px 4px 4px rgba(0,0,0,.25);
+    margin: 0;
+    border: 1px solid $color-primary;
+    padding: rem(16);
+    position: relative;
+     @media #{$md-devices}{
+         width:calc((100% - fluid-calc(80)) / 3);
+     }
+     &::before{
+        content: '';
+        width: 80px;
+        height: 0;
+        /* 台形の高さ */
+        border-top: 160px solid #F2FFF2;
+        /* 左右の斜辺を作るための透明なボーダー */
+        border-left: 0px solid transparent;
+        border-right: 100px solid transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+     }
+}
+.front-voice__header{
+    display: flex;
+    p{
+        font-size: rem(14);
+        color: $color-primary;
+        margin: 0;
+         @media #{$md-devices}{
+            font-size:  fluid-calc(14);
+         }
+    }
+    figure{
+        max-width: rem(90);
+    }
+}
+.front-voice__text{
+    font-size: rem(12);
+    @media #{$md-devices}{
+        font-size: fluid-calc(14);
+    }
+}
