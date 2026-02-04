@@ -134,6 +134,16 @@ if (locate_template('inc/menu.php') !== '') {
 
 
 /**
+ * サイドメニューの設定
+ */
+if (locate_template('inc/side-menu.php') !== '') {
+	require_once locate_template('inc/side-menu.php');
+}
+
+
+
+
+/**
  * フロントの設定
  * - 不要なタグを出力しない
  * - titleタグの設定
