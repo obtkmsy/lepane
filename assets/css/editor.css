@@ -3957,6 +3957,10 @@ span.next {
   height: 300px;
 }
 
+.front-voice__group {
+  display: flex;
+}
+
 .single-post-contents {
   margin-top: 7.5rem;
 }

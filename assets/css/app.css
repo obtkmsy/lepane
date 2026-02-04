@@ -3914,6 +3914,10 @@ span.next {
   height: 300px;
 }
 
+.front-voice__group {
+  display: flex;
+}
+
 @media print, only screen and ( min-width: 960px ) {
   .about .site-main {
     max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 50);

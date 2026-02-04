@@ -50,16 +50,15 @@ if (!defined('ABSPATH')) {
 
 		// $chart02_label = get_field('chart02_label');
 		?>
+		<script>
+			const chart01Labels = <?php echo json_encode($labels); ?>;
+			const chart01Data = <?php echo json_encode($data); ?>;
+			const chart02Labels = <?php echo json_encode($chart02_labels); ?>;
+			const chart02Data = <?php echo json_encode($chart02_data); ?>;
+			const chart02Label = "<?php echo esc_js($chart02_label ?: '得点'); ?>";
+		</script>
 	<?php endif; ?>
-	<script>
-		const chart01Labels = <?php echo json_encode($labels); ?>;
-		const chart01Data = <?php echo json_encode($data); ?>;
-	</script>
-	<script>
-		const chart02Labels = <?php echo json_encode($chart02_labels); ?>;
-		const chart02Data = <?php echo json_encode($chart02_data); ?>;
-		const chart02Label = "<?php echo esc_js($chart02_label ?: '得点'); ?>";
-	</script>
+
 
 
 </main>
