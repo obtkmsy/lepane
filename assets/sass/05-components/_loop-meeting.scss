@@ -36,10 +36,9 @@
   margin: 0 !important;
   margin-top: rem(16);
   font-size: rem(18);
-   color: #030303;
    @media #{$md-devices}{
     font-size:  fluid-calc(24);
-   
+    color: #030303;
     transition: all .8s;
    }
 }
@@ -66,3 +65,67 @@
   margin: 0 !important;
   line-height: 1.4 !important;
 }
+
+.category__wrapper{
+    padding: 0 rem(24);
+    margin-top: rem(40);
+     @media #{$md-devices} {
+        max-width: fluid-calc(1180);
+        width: 100%;
+        margin:  fluid-calc(80) auto 0;
+     }
+   
+}
+
+.category__title{
+    text-align: center;
+    border-top: 2px solid $color-primary;
+     border-bottom: 2px solid $color-primary;
+}
+.category__list{
+    display: flex;
+    flex-direction: row;
+     flex-wrap: wrap;
+     gap: rem(16);
+     margin-top: rem(24);
+     padding: 0;
+    @media #{$md-devices}{
+        flex-direction: row;
+        gap: fluid-calc(32);
+    }
+}
+.category__item{
+    background-color: beige;
+    padding: rem(16) rem(24);
+    border-radius: rem(16);
+     width: calc((100% - 16px) / 2);
+    list-style: none;
+     @media #{$md-devices}{
+        width: calc((100% - 72px) / 3);
+     }
+}
+
+.category__link{
+  color: $color-default;
+  text-decoration: none;
+}
+.category__ttl{
+  text-align: center;
+  font-weight: 400;
+  color: $color-primary;
+  a{
+    color: $color-primary;
+  }
+}
+.category__text{
+  display: -webkit-box;
+   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* 制限したい行数を指定 */
+  overflow: hidden;
+  line-height: 1.4;
+   @media #{$md-devices}{
+ -webkit-line-clamp: 3; /* 制限したい行数を指定 */
+ line-height: 1.6;
+   }
+}
+

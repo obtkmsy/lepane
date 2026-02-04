@@ -21,7 +21,7 @@ if (!defined('ABSPATH')) {
 				<a href="<?php echo home_url(); ?>/" class="footer-navigation-lists__title">トップ</a>
 			</li>
 			<li class="footer-navigation-lists__item">
-				<a href="<?php echo home_url(); ?>/schedule" class="footer-navigation-lists__title">交流会日程</a>
+				<a href="<?php echo home_url(); ?>#meeting" class="footer-navigation-lists__title">交流会日程</a>
 			</li>
 			<li class="footer-navigation-lists__item">
 				<a href="<?php echo home_url(); ?>/about" class="footer-navigation-lists__title">初参加ガイド</a>

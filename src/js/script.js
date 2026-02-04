@@ -99,3 +99,67 @@ jQuery(function () {
     });
   }
 });
+
+jQuery(function () {
+  var canvas1 = document.getElementById("chart01");
+  if (canvas1) {
+    new Chart(canvas1.getContext("2d"), {
+      type: "bar",
+      data: {
+        labels: chart01Labels,
+        datasets: [
+          {
+            label: "得点",
+            data: chart01Data,
+            backgroundColor: "rgba(255, 99, 132, 0.4)",
+            borderColor: "rgba(255,99,132,1)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                max: 100,
+              },
+            },
+          ],
+        },
+      },
+    });
+  }
+});
+
+var canvas2 = document.getElementById("chart02");
+if (canvas2) {
+  new Chart(canvas2.getContext("2d"), {
+    type: "bar",
+    data: {
+      labels: chart02Labels,
+      datasets: [
+        {
+          label: chart02Label,
+          data: chart02Data,
+          backgroundColor: "rgba(153, 102, 255, 0.4)",
+          borderColor: "rgba(153, 102, 255, 1)",
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+              max: 100,
+            },
+          },
+        ],
+      },
+    },
+  });
+}
