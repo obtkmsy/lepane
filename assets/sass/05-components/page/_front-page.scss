@@ -541,6 +541,12 @@
     }
 }
 
+.wp-block-media-text__content{
+    padding: 0 !important;
+}
+.front__creed{
+    gap: rem(24);
+}
 .front-trainer__image {
     order: 2;
     position: relative;
@@ -658,7 +664,9 @@
 .front-meeting__list-area h3 a::after {
   transform: rotate(-45deg);
 }
-
+.wp-block-post-excerpt__more-text{
+    text-align: center;
+}
 .front-column{
      @media #{$md-devices}{
 display: flex;

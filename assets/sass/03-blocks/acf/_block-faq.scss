@@ -8,7 +8,7 @@
 
 
 .wp-block-qa-item__title {
-    font-size: rem(16);
+    font-size: rem(14) !important;
     background-color: #F2FFF2;
     display: flex;
     gap: rem(8);
@@ -17,7 +17,7 @@
     position: relative;
     margin: 0!important;
     @media #{$md-devices} {
-        font-size: fluid-calc(18);
+        font-size: fluid-calc(18) !important;
         padding: fluid-calc(32) fluid-calc(64) fluid-calc(32) fluid-calc(32);
         gap: fluid-calc(32);
         align-items: center;
