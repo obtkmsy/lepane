@@ -18,7 +18,12 @@ if (!defined('ABSPATH')) {
               <p>
               <?php
                 $event_date = function_exists('get_field') ? get_field('event_date') : '';
-                echo $event_date ? esc_html($event_date) : get_the_date('Y年n月j日（D）');
+
+                if (!empty($event_date)) {
+                  echo esc_html($event_date);
+                } else {
+                  echo '開催日未定';
+                }
               ?>
               </p>
               <h2 class="category__ttl"><?php the_title(); ?></h2>

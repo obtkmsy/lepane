@@ -139,34 +139,32 @@ window.addEventListener(
 
 add_filter('render_block', function ($content, $block) {
 
-	// Post Date ブロックだけ対象
 	if (($block['blockName'] ?? '') !== 'core/post-date') {
-	  return $content;
+		return $content;
 	}
-  
-	// ループ中の投稿を取得
+
 	global $post;
 	if (empty($post) || empty($post->ID)) {
-	  return $content;
+		return $content;
 	}
-  
-	// ACFの event_date をそのまま表示（ACF側で Y年n月j日（D） 設定済み前提）
+
 	if (!function_exists('get_field')) {
-	  return $content;
+		return $content;
 	}
-  
+
 	$val = get_field('event_date', $post->ID);
-	if (empty($val)) {
-	  return $content; // 未設定なら元の公開日表示に戻す
-	}
-  
-	// 元のブロックのclassをできるだけ保持
+
 	$class = 'wp-block-post-date';
 	$extra = $block['attrs']['className'] ?? '';
-	if ($extra) $class .= ' ' . $extra;
-  
+	if ($extra) {
+		$class .= ' ' . $extra;
+	}
+
+	if (empty($val)) {
+		return '<div class="' . esc_attr($class) . '">開催日未定</div>';
+	}
 	return '<div class="' . esc_attr($class) . '">' . esc_html($val) . '</div>';
-  
-  }, 10, 2);
+
+}, 10, 2);
   
   
