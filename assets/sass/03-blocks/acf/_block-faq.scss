@@ -9,7 +9,7 @@
 
 .wp-block-qa-item__title {
     font-size: rem(16);
-    background-color: #FCE2DF;
+    background-color: #F2FFF2;
     display: flex;
     gap: rem(8);
     padding: rem(24) rem(48) rem(24) rem(16);
@@ -31,7 +31,7 @@
         min-width: rem(24);
         height: rem(24);
         font-size: rem(14);
-        background-color: #D17882;
+        background-color: $color-primary;
         border-radius: 100%;
         color:#fff;
         display: flex;
@@ -62,7 +62,7 @@
             position: absolute;
             width: 100%;
             height: 1px;
-            background-color: #D17882;
+            background-color: $color-primary;
             inset: 0;
             margin: auto;
             z-index: 1;
@@ -72,7 +72,7 @@
             position: absolute;
             height: 100%;
             width: 1px;
-            background-color: #D17882;
+            background-color: $color-primary;
             inset: 0;
             margin: auto;
             z-index: 1;
@@ -85,16 +85,18 @@
     overflow: hidden;
     height: 0;
     transition: height 240ms ease;
+    background-color: rgb(247, 160, 97, .1);
     @include anime-all;
     p {
         font-size: rem(14);
         display: flex;
         gap: rem(16);
         font-weight: 500;
-        padding: rem(24) rem(16) 0;
+        padding: rem(24) rem(16) rem(24);
+        margin: 0;
         @media #{$md-devices} {
             font-size: fluid-calc(16);
-            padding: fluid-calc(32) fluid-calc(32) 0;
+            padding: fluid-calc(32) fluid-calc(32) fluid-calc(32);
         }
         &:before {
             content: "A";
@@ -102,9 +104,10 @@
             min-width: rem(24);
             height: rem(24);
             font-size: rem(14);
-            color: #D17882;
+            color: #fff;
             border-radius: 100%;
-            border: 1px solid #D17882;
+            border: 1px solid #F7A061;
+            background-color: #F7A061;
             display: flex;
             align-items: center;
             justify-content: center;

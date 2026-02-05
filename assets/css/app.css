@@ -1408,7 +1408,7 @@ button.swiper-pagination-bullet {
 
 .wp-block-qa-item__title {
   font-size: 1rem;
-  background-color: #FCE2DF;
+  background-color: #F2FFF2;
   display: flex;
   gap: 0.5rem;
   padding: 1.5rem 3rem 1.5rem 1rem;
@@ -1438,7 +1438,7 @@ button.swiper-pagination-bullet {
   min-width: 1.5rem;
   height: 1.5rem;
   font-size: 0.875rem;
-  background-color: #D17882;
+  background-color: #8fc04a;
   border-radius: 100%;
   color: #fff;
   display: flex;
@@ -1474,7 +1474,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   width: 100%;
   height: 1px;
-  background-color: #D17882;
+  background-color: #8fc04a;
   inset: 0;
   margin: auto;
   z-index: 1;
@@ -1484,7 +1484,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   height: 100%;
   width: 1px;
-  background-color: #D17882;
+  background-color: #8fc04a;
   inset: 0;
   margin: auto;
   z-index: 1;
@@ -1497,6 +1497,7 @@ button.swiper-pagination-bullet {
   overflow: hidden;
   height: 0;
   transition: height 240ms ease;
+  background-color: rgba(247, 160, 97, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -1506,12 +1507,13 @@ button.swiper-pagination-bullet {
   display: flex;
   gap: 1rem;
   font-weight: 500;
-  padding: 1.5rem 1rem 0;
+  padding: 1.5rem 1rem 1.5rem;
+  margin: 0;
 }
 @media print, only screen and ( min-width: 960px ) {
   .wp-block-qa-item__detail p {
     font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1);
-    padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2) 0;
+    padding: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2) calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 2);
   }
 }
 .wp-block-qa-item__detail p:before {
@@ -1520,9 +1522,10 @@ button.swiper-pagination-bullet {
   min-width: 1.5rem;
   height: 1.5rem;
   font-size: 0.875rem;
-  color: #D17882;
+  color: #fff;
   border-radius: 100%;
-  border: 1px solid #D17882;
+  border: 1px solid #F7A061;
+  background-color: #F7A061;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3975,6 +3978,66 @@ span.next {
 @media print, only screen and ( min-width: 960px ) {
   .front-voice__text {
     font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
+  }
+}
+
+.front-meeting__list-area h3 a {
+  display: block;
+  color: #8fc04a;
+  padding: 1.5rem 0;
+  text-decoration: none;
+  position: relative;
+  border-radius: 14px;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .front-meeting__list-area h3 a {
+    transition: all 0.8s;
+  }
+  .front-meeting__list-area h3 a:hover {
+    background-color: #8fc04a;
+    color: #fff;
+  }
+  .front-meeting__list-area h3 a:hover::before {
+    background-color: #fff;
+  }
+  .front-meeting__list-area h3 a:hover::after {
+    background-color: #fff;
+  }
+}
+
+.front-meeting__list-area h3 a::before,
+.front-meeting__list-area h3 a::after {
+  content: "";
+  position: absolute;
+  bottom: 0.5rem;
+  left: calc(50% - 2px);
+  width: 3px;
+  height: 20px;
+  border-radius: 9999px;
+  background-color: #8fc04a;
+  transform-origin: 50% calc(100% - 2px);
+  transition: all 0.8s;
+}
+
+.front-meeting__list-area h3 a::before {
+  transform: rotate(45deg);
+}
+
+.front-meeting__list-area h3 a::after {
+  transform: rotate(-45deg);
+}
+
+.front-column {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.front-column__sub {
+  width: 100%;
+}
+@media print, only screen and ( min-width: 960px ) {
+  .front-column__sub {
+    max-width: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 15.625);
   }
 }
 
