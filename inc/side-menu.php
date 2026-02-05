@@ -1,24 +1,24 @@
 <?php
 add_filter('render_block', function ($block_content, $block) {
 
+	static $inserted = false;
+	if ($inserted) {
+		return $block_content;
+	}
+
 	$attrs = $block['attrs'] ?? [];
 	$class = $attrs['className'] ?? '';
 
-	$is_target = (strpos($class, 'front-column__main') !== false)
-		|| (strpos($block_content, 'front-column__main') !== false);
-
-	if (!$is_target) {
+	if (strpos($class, 'front-column__main') === false) {
 		return $block_content;
 	}
 
 	$acf_scope = 0;
-
 	if (is_front_page()) {
 		$acf_scope = (int) get_option('page_on_front');
 	} else {
 		$acf_scope = (int) get_queried_object_id();
 	}
-
 	if ($acf_scope === 0) {
 		$acf_scope = 'option';
 	}
@@ -41,7 +41,6 @@ add_filter('render_block', function ($block_content, $block) {
 		<?php if ($has_archive): ?>
 			<div class="archive-list">
 				<?php while (have_rows('archive-list', $acf_scope)): the_row(); ?>
-
 					<?php $date = get_sub_field('archive-list__date'); ?>
 
 					<div class="archive-list__group">
@@ -52,7 +51,6 @@ add_filter('render_block', function ($block_content, $block) {
 						<?php if (have_rows('archive-list__item')): ?>
 							<div class="archive-list__items">
 								<?php while (have_rows('archive-list__item')): the_row(); ?>
-
 									<?php
 									$title  = get_sub_field('archive-list__title');
 									$link   = get_sub_field('archive-list__url');
@@ -71,21 +69,17 @@ add_filter('render_block', function ($block_content, $block) {
 											<span class="archive-list__title"><?php echo esc_html($title); ?></span>
 										</div>
 									<?php endif; ?>
-
 								<?php endwhile; ?>
 							</div>
 						<?php endif; ?>
 					</div>
-
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
 
-
 		<?php if ($has_banner): ?>
 			<div class="side-banner">
 				<?php while (have_rows('side-banner', $acf_scope)): the_row(); ?>
-
 					<?php
 					$img    = get_sub_field('side-banner__img');
 					$link   = get_sub_field('side-banner__url');
@@ -107,11 +101,8 @@ add_filter('render_block', function ($block_content, $block) {
 							<?php echo $img_html; ?>
 						</a>
 					<?php elseif ($img_html): ?>
-						<div class="side-banner__item">
-							<?php echo $img_html; ?>
-						</div>
+						<div class="side-banner__item"><?php echo $img_html; ?></div>
 					<?php endif; ?>
-
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
@@ -119,6 +110,9 @@ add_filter('render_block', function ($block_content, $block) {
 	</div>
 	<?php
 	$sub_html = ob_get_clean();
+
+	$inserted = true;
+
 	return $block_content . $sub_html;
 
 }, 10, 2);
