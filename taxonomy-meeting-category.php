@@ -16,7 +16,10 @@ if (!defined('ABSPATH')) {
           <li class="category__item">
             <a href="<?php the_permalink(); ?>" class="category__link">
               <p>
-                <?php echo get_the_date('Y年n月j日（D）'); ?>
+              <?php
+                $event_date = function_exists('get_field') ? get_field('event_date') : '';
+                echo $event_date ? esc_html($event_date) : get_the_date('Y年n月j日（D）');
+              ?>
               </p>
               <h2 class="category__ttl"><?php the_title(); ?></h2>
               <p class="category__text"><?php the_excerpt(); ?></p>

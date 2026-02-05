@@ -20,7 +20,6 @@ $the_query = new WP_Query($args);
 ?>
 
 <?php get_header(); ?>
-
 <main role="main">
 	<div class="cta">
 		<h3 class="cta__heading">まずは無料オンライン相談会から♪<br>気になる点を解消しましょう</h3>
