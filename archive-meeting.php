@@ -8,21 +8,32 @@ if ( !defined( 'ABSPATH' ) ) {
 <?php get_header(); ?>
 
 <main>
-  <h1><?php post_type_archive_title(); ?></h1>
+<div class="category__wrapper">
+  <h1 class="category__title"><?php post_type_archive_title(); ?></h1>
 
   <?php if (have_posts()): ?>
-    <ul>
-      <?php while (have_posts()): the_post(); ?>
-        <li>
-          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-        </li>
-      <?php endwhile; ?>
-    </ul>
-  <?php else: ?>
-    <p>記事がありません。</p>
+      <ul class="category__list">
+        <?php while (have_posts()): the_post(); ?>
+          <li class="category__item">
+            <a href="<?php the_permalink(); ?>" class="category__link">
+              <p>
+              <?php
+                $event_date = function_exists('get_field') ? get_field('event_date') : '';
+                echo $event_date ? esc_html($event_date) : get_the_date('Y年n月j日（D）');
+              ?>
+              </p>
+              <h2 class="category__ttl"><?php the_title(); ?></h2>
+              <p class="category__text"><?php the_excerpt(); ?></p>
+            </a>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+    <?php else: ?>
+      <p>記事がありません。</p>
   <?php endif; ?>
 
   <?php get_template_part('template', 'parts/component/pager'); ?>
+    </div>
 </main>
 
 <?php get_footer(); ?>
