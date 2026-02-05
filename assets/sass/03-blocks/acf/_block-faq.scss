@@ -25,6 +25,7 @@
             cursor: pointer!important;
         }
     }
+    
     &:before {
         content: "Q";
         font-family: $font-english;
@@ -50,6 +51,7 @@
         aspect-ratio: 1;
         right: rem(16);
         top: rem(32);
+        transition: all .4s;
         @media #{$md-devices} {
             height: fit-content;
             top: 0;
@@ -79,14 +81,21 @@
             @include anime-all;
         }
     }
+    &.open{
+        span{
+            transform: rotate(180deg);
+            &::after{
+                display: none;
+            }
+        }
+    }
 }
 
 .wp-block-qa-item__detail {
-    overflow: hidden;
-    height: 0;
-    transition: height 240ms ease;
+    display: none;
+    // transition: height 240ms ease;
     background-color: rgb(247, 160, 97, .1);
-    @include anime-all;
+    // @include anime-all;
     p {
         font-size: rem(14);
         display: flex;
