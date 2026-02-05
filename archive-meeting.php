@@ -33,11 +33,11 @@ if ( !defined( 'ABSPATH' ) ) {
           </li>
         <?php endwhile; ?>
       </ul>
+      <?php get_template_part('template', 'parts/component/pager'); ?>
     <?php else: ?>
       <p>記事がありません。</p>
   <?php endif; ?>
 
-  <?php get_template_part('template', 'parts/component/pager'); ?>
     </div>
 </main>
 
