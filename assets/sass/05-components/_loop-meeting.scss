@@ -36,6 +36,7 @@
   margin: 0 !important;
   margin-top: rem(16);
   font-size: rem(18);
+  color: $color-primary;
    @media #{$md-devices}{
     font-size:  fluid-calc(24);
     color: #030303;

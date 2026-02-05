@@ -164,3 +164,17 @@ jQuery(function ($) {
     });
   }
 });
+
+jQuery(function () {
+  //.accordion_oneの中の.accordion_headerがクリックされたら
+  jQuery(".archive-list__date").click(function () {
+    //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
+    jQuery(this).next(".archive-list__items").slideToggle();
+    jQuery(this).toggleClass("open");
+  });
+  jQuery(".wp-block-qa-item__title").click(function () {
+    //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
+    jQuery(this).next(".wp-block-qa-item__detail").slideToggle();
+    jQuery(this).toggleClass("open");
+  });
+});
