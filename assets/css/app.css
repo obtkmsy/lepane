@@ -4069,7 +4069,7 @@ span.next {
 }
 .front-column__sub .archive-list__date {
   background-color: #C4EA8F;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   padding: 0.875rem 1.5rem 0.875rem 3rem;
   display: flex;
   align-items: center;
@@ -4077,7 +4077,7 @@ span.next {
 }
 @media print, only screen and ( min-width: 960px ) {
   .front-column__sub .archive-list__date {
-    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 1.5);
+    font-size: calc(clamp(0.75rem, -1.132rem + 2.94vw, 1rem) * 0.875);
     cursor: pointer;
   }
 }
@@ -4089,9 +4089,9 @@ span.next {
   width: 0;
   height: 0;
   border-style: solid;
-  border-right: 12px solid transparent;
-  border-left: 12px solid transparent;
-  border-top: 21px solid #81b73a;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-top: 12px solid #81b73a;
   border-bottom: 0;
   display: block;
   margin-top: 0.25rem;
@@ -4126,6 +4126,10 @@ span.next {
   padding: 0;
   margin: 0;
   margin-top: auto;
+}
+
+.archive-list__title {
+  font-size: 0.75rem;
 }
 
 .loop-meeting__ttl a {
@@ -4184,7 +4188,7 @@ span.next {
 }
 
 .is-style-narrow-size {
-  gap: 1.5rem;
+  gap: 1.5rem !important;
 }
 
 .single-post-contents {

@@ -691,13 +691,13 @@ display: flex;
     }
     .archive-list__date{
         background-color: #C4EA8F;
-        font-size: rem(18);
+        font-size: rem(14);
         padding: rem(14) rem(24) rem(14) rem(48);
         display: flex;
         align-items: center;
         justify-content: space-between;
         @media #{$md-devices}{
-            font-size: fluid-calc(24);
+            font-size: fluid-calc(14);
             cursor: pointer;
         }
         &.open{
@@ -710,9 +710,9 @@ display: flex;
             width: 0;
             height: 0;
             border-style: solid;
-            border-right: 12px solid transparent;
-            border-left: 12px solid transparent;
-            border-top: 21px solid #81b73a;
+            border-right: 8px solid transparent;
+            border-left: 8px solid transparent;
+            border-top: 12px solid #81b73a;
             border-bottom: 0;
             display: block;
             margin-top: rem(4);
@@ -749,6 +749,9 @@ display: flex;
         margin: 0;
         margin-top: auto;
     }
+}
+.archive-list__title{
+    font-size: rem(12);
 }
 .loop-meeting__ttl a{
     color: $color-primary;
