@@ -774,6 +774,21 @@ display: flex;
     margin-top: rem(40);
 }
 
+.side-banner__item {
+    margin-bottom: rem(8);
+    text-decoration: none;
+    display: block;
+}
+
 .archive-list__group{
     margin-bottom: rem(24);
+}
+
+.side-banner__text {
+    margin: 0!important;
+    color: #8fc04a!important;
+}
+
+.side-banner__item img + .side-banner__text {
+    color: #000!important;
 }

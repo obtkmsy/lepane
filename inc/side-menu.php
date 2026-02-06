@@ -102,7 +102,7 @@ add_filter('render_block', function ($block_content, $block) {
 						<a class="side-banner__item" href="<?php echo esc_url($url); ?>"<?php echo $target ? ' target="' . esc_attr($target) . '" rel="noopener"' : ''; ?>>
 							<?php echo $img_html; ?>
 							<?php if (!empty($text)): ?>
-								<p class="side-banner__text"><?php echo esc_html($text); ?></@>
+								<p class="side-banner__text"><?php echo esc_html($text); ?></p>
 							<?php endif; ?>
 						</a>
 					<?php elseif ($img_html || $text): ?>
