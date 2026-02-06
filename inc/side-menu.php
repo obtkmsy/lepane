@@ -29,8 +29,9 @@ add_filter('render_block', function ($block_content, $block) {
 
 	$has_archive = have_rows('archive-list', $acf_scope);
 	$has_banner  = have_rows('side-banner',  $acf_scope);
+	$has_text  = have_rows('text-link',  $acf_scope);
 
-	if (!$has_archive && !$has_banner) {
+	if (!$has_archive && !$has_banner && !$has_text) {
 		return $block_content;
 	}
 
@@ -83,6 +84,7 @@ add_filter('render_block', function ($block_content, $block) {
 					<?php
 					$img    = get_sub_field('side-banner__img');
 					$link   = get_sub_field('side-banner__url');
+					$text   = get_sub_field('side-banner__text');
 					$url    = is_array($link) ? ($link['url'] ?? '') : (string) $link;
 					$target = is_array($link) ? ($link['target'] ?? '') : '';
 
@@ -99,13 +101,22 @@ add_filter('render_block', function ($block_content, $block) {
 					<?php if (!empty($url)): ?>
 						<a class="side-banner__item" href="<?php echo esc_url($url); ?>"<?php echo $target ? ' target="' . esc_attr($target) . '" rel="noopener"' : ''; ?>>
 							<?php echo $img_html; ?>
+							<?php if (!empty($text)): ?>
+								<p class="side-banner__text"><?php echo esc_html($text); ?></@>
+							<?php endif; ?>
 						</a>
-					<?php elseif ($img_html): ?>
-						<div class="side-banner__item"><?php echo $img_html; ?></div>
+					<?php elseif ($img_html || $text): ?>
+						<div class="side-banner__item">
+							<?php echo $img_html; ?>
+							<?php if (!empty($text)): ?>
+								<p class="side-banner__text"><?php echo esc_html($text); ?></p>
+							<?php endif; ?>
+						</div>
 					<?php endif; ?>
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
+
 
 	</div>
 	<?php
