@@ -723,9 +723,12 @@ display: flex;
 .front-loop-list li{
     background-color: beige;
     border-radius: rem(16);
-    padding: rem(16)  rem(24);
+    padding: rem(16)  rem(16);
     > div{
         padding: 0 !important;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     .loop-meeting__ttl{
         margin-top: rem(24);
@@ -733,6 +736,10 @@ display: flex;
     }
     .wp-block-post-excerpt{
         margin: rem(16) 0 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
     }
     .wp-block-post-excerpt__excerpt{
         margin: rem(8) 0;
@@ -740,6 +747,7 @@ display: flex;
     .wp-block-post-excerpt__more-text{
         padding: 0;
         margin: 0;
+        margin-top: auto;
     }
 }
 .loop-meeting__ttl a{
@@ -761,4 +769,8 @@ display: flex;
 }
 .side-banner{
     margin-top: rem(40);
+}
+
+.archive-list__group{
+    margin-bottom: rem(24);
 }

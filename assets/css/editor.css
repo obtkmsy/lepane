@@ -4144,10 +4144,13 @@ span.next {
 .front-loop-list li {
   background-color: beige;
   border-radius: 1rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
 }
 .front-loop-list li > div {
   padding: 0 !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .front-loop-list li .loop-meeting__ttl {
   margin-top: 1.5rem;
@@ -4155,6 +4158,9 @@ span.next {
 }
 .front-loop-list li .wp-block-post-excerpt {
   margin: 1rem 0 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .front-loop-list li .wp-block-post-excerpt__excerpt {
   margin: 0.5rem 0;
@@ -4162,6 +4168,7 @@ span.next {
 .front-loop-list li .wp-block-post-excerpt__more-text {
   padding: 0;
   margin: 0;
+  margin-top: auto;
 }
 
 .loop-meeting__ttl a {
@@ -4184,6 +4191,10 @@ span.next {
 
 .side-banner {
   margin-top: 2.5rem;
+}
+
+.archive-list__group {
+  margin-bottom: 1.5rem;
 }
 
 .single-post-contents {
