@@ -15,9 +15,10 @@ if (!defined('ABSPATH')) {
 		<article class="single-post-contents">
 			<h2 class="entry-header__title"><?php the_title(); ?></h2>
 			<div class="entry-header__info">
-				<p class="entry-header__date">
-					<?php posted_on(); ?>
-				</p>
+				<!-- <p class="entry-header__date">
+					<?php //posted_on(); 
+					?>
+				</p> -->
 				<p class="entry-header__cat">
 					<?php
 					$cats = get_the_category();

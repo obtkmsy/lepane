@@ -37,7 +37,7 @@ if (!defined('ABSPATH')) {
 				?>
 				<img src="<?php //echo esc_url( $thumb_url ); 
 									?>" alt="<?php //the_title_attribute(); 
-																																?>">
+														?>">
 			</div> -->
 			<?php if (have_posts()): ?>
 				<?php while (have_posts()): the_post(); ?>
