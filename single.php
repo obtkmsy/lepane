@@ -46,7 +46,8 @@ if (!defined('ABSPATH')) {
 					</div>
 				<?php endwhile; ?>
 			<?php else: endif; ?>
-			<?php get_template_part('template', 'parts/entry/local-navigation'); ?>
+			<?php //get_template_part('template', 'parts/entry/local-navigation'); 
+			?>
 		</article>
 	</div>
 </main>
