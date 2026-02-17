@@ -104,6 +104,9 @@
      @media #{$md-devices}{
         width: calc((100% - 72px) / 3);
      }
+     &.is-noon {
+      background-color: #F5DCDC;
+     }
 }
 
 .category__link{

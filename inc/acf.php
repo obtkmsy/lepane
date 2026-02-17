@@ -137,14 +137,10 @@ window.addEventListener(
 	11
 );
 
+
 add_filter('render_block', function ($content, $block) {
 
-	if (($block['blockName'] ?? '') !== 'core/post-date') {
-		return $content;
-	}
-
-	global $post;
-	if (empty($post) || empty($post->ID)) {
+	if (($block['blockName'] ?? '') !== 'core/post-template') {
 		return $content;
 	}
 
@@ -152,19 +148,192 @@ add_filter('render_block', function ($content, $block) {
 		return $content;
 	}
 
-	$val = get_field('event_date', $post->ID);
+	// <li class="... wp-block-post ... post-123 ..."> を拾って、post-123 の 123 を使う
+	$content = preg_replace_callback(
+		'/(<li\b[^>]*class="[^"]*\bwp-block-post\b[^"]*"[^>]*>)/',
+		function ($m) {
 
-	$class = 'wp-block-post-date';
-	$extra = $block['attrs']['className'] ?? '';
-	if ($extra) {
-		$class .= ' ' . $extra;
-	}
+			$li = $m[1];
 
-	if (empty($val)) {
-		return '<div class="' . esc_attr($class) . '">開催日未定</div>';
-	}
-	return '<div class="' . esc_attr($class) . '">' . esc_html($val) . '</div>';
+			// class に post-123 がある前提
+			if (!preg_match('/\bpost-(\d+)\b/', $li, $mm)) {
+				return $li;
+			}
+
+			$post_id = (int) $mm[1];
+
+			// meeting 以外は触らない
+			if (get_post_type($post_id) !== 'meeting') {
+				return $li;
+			}
+
+			// event_time が true なら is-noon 付与
+			$event_time = (bool) get_field('event_time', $post_id);
+			if (!$event_time) {
+				return $li;
+			}
+
+			// 既に付いてたら二重付与しない
+			if (strpos($li, ' is-noon') !== false) {
+				return $li;
+			}
+
+			return preg_replace('/class="([^"]*)"/', 'class="$1 is-noon"', $li, 1);
+		},
+		$content
+	);
+
+	return $content;
 
 }, 10, 2);
-  
-  
+
+
+add_filter('render_block', function ($content, $block) {
+
+	$block_name = $block['blockName'] ?? '';
+
+	// 1) Post Date ブロック：event_date を表示（なければ開催日未定）
+	if ($block_name === 'core/post-date') {
+
+		global $post;
+		if (empty($post) || empty($post->ID) || !function_exists('get_field')) {
+			return $content;
+		}
+
+		$val = get_field('event_date', $post->ID);
+
+		$class = 'wp-block-post-date';
+		$extra = $block['attrs']['className'] ?? '';
+		if ($extra) $class .= ' ' . $extra;
+
+		if (empty($val)) {
+			return '<div class="' . esc_attr($class) . '">開催日未定</div>';
+		}
+		return '<div class="' . esc_attr($class) . '">' . esc_html($val) . '</div>';
+	}
+
+	// 2) Post Template ブロック：meeting かつ event_time=true の投稿に is-noon を付与
+	if ($block_name === 'core/post-template') {
+
+		global $post;
+		if (empty($post) || get_post_type($post) !== 'meeting' || !function_exists('get_field')) {
+			return $content;
+		}
+
+		$event_time = (bool) get_field('event_time', $post->ID);
+		if (!$event_time) {
+			return $content;
+		}
+
+		return preg_replace(
+			'/class="([^"]*wp-block-post[^"]*)"/',
+			'class="$1 is-noon"',
+			$content,
+			1
+		);
+	}
+
+	return $content;
+
+}, 10, 2);
+
+
+
+add_action('pre_get_posts', function ($q) {
+
+	if (is_admin() || ! $q->is_main_query()) return;
+	if (! $q->is_post_type_archive('event')) return;
+
+	$q->set('event_custom_sort', 1);
+	$q->set('orderby', 'none');
+
+}, 20);
+
+add_action('pre_get_posts', function ($q) {
+
+	if (is_admin() || ! $q->is_main_query()) return;
+	if (! $q->is_post_type_archive('event')) return;
+	$q->set('event_custom_sort', 1);
+	$q->set('orderby', 'none');
+
+}, 20);
+
+
+
+add_action('pre_get_posts', function ($q) {
+
+	if (is_admin() || ! $q->is_main_query()) return;
+	if (! $q->is_tax('meeting-category')) return;
+	$q->set('post_type', 'meeting');
+	$q->set('meeting_custom_sort', 1);
+	$q->set('orderby', 'none');
+
+}, 9999);
+
+
+add_filter('posts_clauses', function ($clauses, $q) {
+
+	if (is_admin() || ! $q->is_main_query()) return $clauses;
+	if (! $q->get('meeting_custom_sort')) return $clauses;
+
+	global $wpdb;
+
+	if (strpos($clauses['join'], 'event_date_pm') === false) {
+		$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS event_date_pm
+			ON ({$wpdb->posts}.ID = event_date_pm.post_id AND event_date_pm.meta_key = 'event_date')";
+	}
+	$clauses['orderby'] = "
+		CASE
+			WHEN event_date_pm.meta_value IS NULL OR event_date_pm.meta_value = '' THEN 1
+			ELSE 0
+		END ASC,
+		CAST(event_date_pm.meta_value AS UNSIGNED) ASC,
+		{$wpdb->posts}.post_modified DESC
+	";
+
+	return $clauses;
+
+}, 9999, 2);
+
+
+
+ add_action('pre_get_posts', function ($q) {
+
+	if (is_admin()) return;
+	$post_type = $q->get('post_type');
+	$is_meeting = ($post_type === 'meeting')
+		|| (is_array($post_type) && in_array('meeting', $post_type, true));
+
+	if (! $is_meeting) return;
+	$q->set('suppress_filters', false);
+	$q->set('meeting_custom_sort', 1);
+
+	$q->set('orderby', 'none');
+
+}, 9999);
+
+
+add_filter('posts_clauses', function ($clauses, $q) {
+
+	if (is_admin()) return $clauses;
+	if (! $q->get('meeting_custom_sort')) return $clauses;
+
+	global $wpdb;
+
+	if (strpos($clauses['join'], 'event_date_pm') === false) {
+		$clauses['join'] .= " LEFT JOIN {$wpdb->postmeta} AS event_date_pm
+			ON ({$wpdb->posts}.ID = event_date_pm.post_id AND event_date_pm.meta_key = 'event_date')";
+	}
+
+	$clauses['orderby'] = "
+		CASE
+			WHEN event_date_pm.meta_value IS NULL OR event_date_pm.meta_value = '' THEN 1
+			ELSE 0
+		END ASC,
+		CAST(event_date_pm.meta_value AS UNSIGNED) ASC,
+		{$wpdb->posts}.post_modified DESC
+	";
+
+	return $clauses;
+
+}, 9999, 2);

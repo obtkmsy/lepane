@@ -29,7 +29,7 @@ add_filter('render_block', function ($block_content, $block) {
 
 	$has_archive = have_rows('archive-list', $acf_scope);
 	$has_banner  = have_rows('side-banner',  $acf_scope);
-	$has_text  = have_rows('text-link',  $acf_scope);
+	$has_text    = have_rows('text-link',    $acf_scope);
 
 	if (!$has_archive && !$has_banner && !$has_text) {
 		return $block_content;
@@ -55,19 +55,23 @@ add_filter('render_block', function ($block_content, $block) {
 									<?php
 									$title  = get_sub_field('archive-list__title');
 									$link   = get_sub_field('archive-list__url');
+									$switch = (bool) get_sub_field('archive-list__switch'); // ←追加
+
 									$url    = is_array($link) ? ($link['url'] ?? '') : (string) $link;
 									$target = is_array($link) ? ($link['target'] ?? '') : '';
+
+									$title_class = 'archive-list__title' . ($switch ? ' is-noon' : ''); // ←追加
 									?>
 
 									<?php if (!empty($url)): ?>
 										<a class="archive-list__item" href="<?php echo esc_url($url); ?>"<?php echo $target ? ' target="' . esc_attr($target) . '" rel="noopener"' : ''; ?>>
 											<?php if (!empty($title)): ?>
-												<span class="archive-list__title"><?php echo esc_html($title); ?></span>
+												<span class="<?php echo esc_attr($title_class); ?>"><?php echo esc_html($title); ?></span>
 											<?php endif; ?>
 										</a>
 									<?php elseif (!empty($title)): ?>
 										<div class="archive-list__item">
-											<span class="archive-list__title"><?php echo esc_html($title); ?></span>
+											<span class="<?php echo esc_attr($title_class); ?>"><?php echo esc_html($title); ?></span>
 										</div>
 									<?php endif; ?>
 								<?php endwhile; ?>
@@ -116,7 +120,6 @@ add_filter('render_block', function ($block_content, $block) {
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
-
 
 	</div>
 	<?php
