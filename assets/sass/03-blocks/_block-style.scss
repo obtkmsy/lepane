@@ -21,7 +21,7 @@
             margin: fluid-calc(32) 0;
         }
         a {
-            color: $color-primary;
+            // color: $color-primary;
             text-decoration: underline;
             @media #{$md-devices} {
                 @include hover-customize {
@@ -30,6 +30,12 @@
             }
         }
     }
+    
+        .wp-block-post-excerpt__more-text{
+                a{
+                    color: $color-primary;
+                }
+        }
 
     h2.wp-block-heading {
         font-size: rem(18);

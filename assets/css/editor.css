@@ -1235,7 +1235,6 @@ button.swiper-pagination-bullet {
   }
 }
 .wp-block-post-content p a {
-  color: #8fc04a;
   text-decoration: underline;
 }
 @media print, only screen and ( min-width: 960px ) {
@@ -1249,6 +1248,9 @@ button.swiper-pagination-bullet {
   .wp-block-post-content p a:hover {
     text-decoration: none;
   }
+}
+.wp-block-post-content .wp-block-post-excerpt__more-text a {
+  color: #8fc04a;
 }
 .wp-block-post-content h2.wp-block-heading {
   font-size: 1.125rem;
