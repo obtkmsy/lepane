@@ -4246,7 +4246,6 @@ span.next {
   margin-top: 1rem;
   line-height: 1.2;
   font-weight: 500;
-  font-family: "Zen Old Mincho", "Zen Kaku Gothic New", "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo sans-serif;
   color: #8fc04a;
 }
 
@@ -4271,6 +4270,10 @@ span.next {
 
 .blog .site-main {
   margin-top: 5rem;
+}
+
+.single iframe {
+  width: 100%;
 }
 
 .hidden {

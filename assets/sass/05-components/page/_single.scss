@@ -20,7 +20,7 @@
     margin-top: rem(16);
     line-height: 1.2;
     font-weight: 500;
-    font-family: $font-mincho;
+    // font-family: $font-mincho;
     color: $color-primary;
 }
 
@@ -48,3 +48,6 @@
     margin-top: rem(80);
 }
 
+.single iframe{
+    width: 100%;
+}
